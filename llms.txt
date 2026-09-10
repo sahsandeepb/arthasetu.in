@@ -1,0 +1,33 @@
+# ArthaSetu India
+
+> Independent India-focused tax, money and finance calculation platform.
+
+Canonical domain: https://arthasetu.in/
+
+ArthaSetu India provides one calculator workspace for Income Tax, GST, TDS, EMI, SIP, FD, Salary, CAGR and Lumpsum calculations. It is a private platform and is not affiliated with the Government of India, a government department, bank, regulator or statutory authority.
+
+## Calculator routes
+- https://arthasetu.in/income-tax — Income Tax Calculator India for Tax Year 2026–27 / AY 2026–27
+- https://arthasetu.in/gst — GST Calculator India
+- https://arthasetu.in/tds — TDS Calculator India
+- https://arthasetu.in/emi — EMI Calculator India
+- https://arthasetu.in/sip — SIP Calculator India
+- https://arthasetu.in/fd — Fixed Deposit (FD) Calculator India
+- https://arthasetu.in/salary — Salary / Take-Home Calculator India
+- https://arthasetu.in/cagr — CAGR Calculator India
+- https://arthasetu.in/lumpsum — Lumpsum Investment Calculator India
+
+## Calculator design
+- One visible calculator workspace changes its mode, inputs, formula and result.
+- Mathematical calculators show the formula and assumptions used.
+- Tax, GST and TDS calculations are intentionally scoped; the site does not pretend that a simplified calculator replaces an official filing or statutory determination.
+- Tax and regulatory information should be verified against the applicable primary source and effective period before acting.
+
+## Primary sources
+- Income Tax Department: https://www.incometax.gov.in/
+- GST Council: https://www.gstcouncil.gov.in/
+- Reserve Bank of India: https://www.rbi.org.in/
+
+## Important
+- ArthaSetu India does not claim government ownership, affiliation or endorsement.
+- No claim is made that the site will rank first, appear in every AI system, receive AdSense approval, or generate a particular level of traffic or revenue.
