@@ -1,0 +1,32 @@
+ARTHASETU INDIA — FINAL QA REPORT
+Date: 11 September 2026
+Domain target: https://arthasetu.in/
+
+STATIC QA
+- 19 HTML documents parsed successfully.
+- Embedded JavaScript syntax check: PASS.
+- Duplicate HTML IDs: 0 detected.
+- One visible .calculator workspace on the root and every calculator route: PASS.
+- One #fields container per calculator route: PASS.
+- One #result container per calculator route: PASS.
+- Route-specific titles, canonical URLs and content sections: PASS.
+- Local internal links: PASS.
+- robots.txt points to the production sitemap: PASS.
+- sitemap.xml uses absolute https://arthasetu.in/ URLs: PASS.
+- Extensionless calculator route files are explicitly served as HTML by .htaccess: configured.
+- Placeholder domain/publisher IDs: none detected.
+- Fake government affiliation claims: none detected.
+
+CALCULATOR SCOPE
+- Income Tax: ordinary slab-rate individual estimator with stated period/regime/age/residential-status scope, standard deduction, entered eligible deductions, rebate, marginal relief, surcharge and 4% cess.
+- GST: inclusive/exclusive arithmetic with user-entered verified rate and IGST or CGST+SGST/UTGST presentation.
+- TDS: payment-base × verified-rate arithmetic; does not guess statutory section/threshold.
+- EMI: monthly reducing-balance formula with zero-rate handling.
+- SIP: monthly projection with end/beginning-of-month timing.
+- FD: compound-interest projection with selectable frequency.
+- Salary: take-home planning estimator from entered gross salary and deductions.
+- CAGR: annualized compound-growth calculation.
+- Lumpsum: compound-growth projection with selectable frequency.
+
+FINAL PRODUCTION NOTE
+The package is technically prepared for deployment, but live-host verification, Google Search Console verification, actual contact details, consent configuration and any future AdSense publisher record are deployment-specific and cannot be truthfully invented inside a static ZIP.
