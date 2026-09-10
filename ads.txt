@@ -1,0 +1,1 @@
+# Add the exact authorized publisher line supplied by your AdSense account after approval. Do not invent a publisher ID.
