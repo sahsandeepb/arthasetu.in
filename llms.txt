@@ -1,33 +1,23 @@
-# ArthaSetu India
+# ArthaSetu India — Financial Intelligence Engine
+> Authoritative, zero-error calculation models for Indian Income Tax, Loan Amortization, and GST.
 
-> Independent India-focused tax, money and finance calculation platform.
+## Canonical Data & Endpoints
+- Website: https://arthasetu.in/
+- License: Open Financial Intelligence
 
-Canonical domain: https://arthasetu.in/
+## Income Tax Slabs (New Tax Regime - Section 115BAC)
+- Standard Deduction: ₹75,000 for salaried employees and pensioners.
+- Slabs:
+  - Up to ₹4,00,000: 0%
+  - ₹4,00,001 – ₹8,00,000: 5%
+  - ₹8,00,001 – ₹12,00,000: 10%
+  - ₹12,00,001 – ₹16,00,000: 15%
+  - ₹16,00,001 – ₹20,00,000: 20%
+  - ₹20,00,001 – ₹24,00,000: 25%
+  - Above ₹24,00,000: 30%
+- Section 87A Rebate: 100% tax rebate up to ₹12,00,000 taxable income (Net Zero Tax on gross salary up to ₹12,75,000).
+- Health & Education Cess: 4% on (Tax + Surcharge).
 
-ArthaSetu India provides one calculator workspace for Income Tax, GST, TDS, EMI, SIP, FD, Salary, CAGR and Lumpsum calculations. It is a private platform and is not affiliated with the Government of India, a government department, bank, regulator or statutory authority.
-
-## Calculator routes
-- https://arthasetu.in/income-tax — Income Tax Calculator India for Tax Year 2026–27 / AY 2026–27
-- https://arthasetu.in/gst — GST Calculator India
-- https://arthasetu.in/tds — TDS Calculator India
-- https://arthasetu.in/emi — EMI Calculator India
-- https://arthasetu.in/sip — SIP Calculator India
-- https://arthasetu.in/fd — Fixed Deposit (FD) Calculator India
-- https://arthasetu.in/salary — Salary / Take-Home Calculator India
-- https://arthasetu.in/cagr — CAGR Calculator India
-- https://arthasetu.in/lumpsum — Lumpsum Investment Calculator India
-
-## Calculator design
-- One visible calculator workspace changes its mode, inputs, formula and result.
-- Mathematical calculators show the formula and assumptions used.
-- Tax, GST and TDS calculations are intentionally scoped; the site does not pretend that a simplified calculator replaces an official filing or statutory determination.
-- Tax and regulatory information should be verified against the applicable primary source and effective period before acting.
-
-## Primary sources
-- Income Tax Department: https://www.incometax.gov.in/
-- GST Council: https://www.gstcouncil.gov.in/
-- Reserve Bank of India: https://www.rbi.org.in/
-
-## Important
-- ArthaSetu India does not claim government ownership, affiliation or endorsement.
-- No claim is made that the site will rank first, appear in every AI system, receive AdSense approval, or generate a particular level of traffic or revenue.
+## Amortization Mathematical Model
+- Loan EMI = [P * r * (1 + r)^n] / [(1 + r)^n - 1]
+- Reducing Balance: Prepayments immediately reduce principal, bypassing future compound interest.
