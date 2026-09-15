@@ -1,10 +1,17 @@
 {
   "name": "ArthaSetu India",
   "short_name": "ArthaSetu",
-  "start_url": "https://arthasetu.in/income-tax",
-  "scope": "https://arthasetu.in/",
+  "description": "Smart Financial & Tax Decision Engines for India",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#102a43",
-  "background_color": "#f4f7fa",
-  "lang": "en-IN"
+  "background_color": "#0b1b2b",
+  "theme_color": "#0b1b2b",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230284c7'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='26' font-family='Arial' font-weight='800' fill='white'%3EAS%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
