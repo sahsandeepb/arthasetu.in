@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1b2b"/>
+      <stop offset="100%" stop-color="#070d14"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Glow Border -->
+  <rect x="20" y="20" width="1160" height="590" rx="24" fill="none" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Brand Badge Icon -->
+  <rect x="80" y="80" width="80" height="80" rx="20" fill="#0284c7"/>
+  <text x="120" y="132" fill="#ffffff" font-size="36" font-family="system-ui, -apple-system, sans-serif" font-weight="800" text-anchor="middle">AS</text>
+  
+  <!-- Brand Text -->
+  <text x="180" y="130" fill="#ffffff" font-size="34" font-family="system-ui, -apple-system, sans-serif" font-weight="800">ArthaSetu India</text>
+  <text x="180" y="152" fill="#94a3b8" font-size="16" font-family="system-ui, -apple-system, sans-serif" font-weight="600" letter-spacing="1.5">FINANCIAL INTELLIGENCE LAB</text>
+  
+  <!-- Main Heading -->
+  <text x="80" y="270" fill="#ffffff" font-size="54" font-family="system-ui, -apple-system, sans-serif" font-weight="800" letter-spacing="-1">
+    Smart Tax &amp; Financial
+  </text>
+  <text x="80" y="340" fill="url(#accentGrad)" font-size="54" font-family="system-ui, -apple-system, sans-serif" font-weight="800" letter-spacing="-1">
+    Decision Workspace
+  </text>
+  
+  <!-- Features List Subtitle -->
+  <text x="80" y="420" fill="#cbd5e1" font-size="22" font-family="system-ui, -apple-system, sans-serif" font-weight="500">
+    • Income Tax Breakeven (New vs Old)  • Home Loan Prepayment Optimizer
+  </text>
+  <text x="80" y="460" fill="#cbd5e1" font-size="22" font-family="system-ui, -apple-system, sans-serif" font-weight="500">
+    • CTC Hike In-Hand Reality Check      • Instant GST, SIP &amp; FD Engines
+  </text>
+  
+  <!-- Footer Tag -->
+  <rect x="80" y="520" width="340" height="42" rx="10" fill="#111c2a" stroke="#334155" stroke-width="1"/>
+  <text x="250" y="547" fill="#38bdf8" font-size="16" font-family="system-ui, -apple-system, sans-serif" font-weight="700" text-anchor="middle">https://arthasetu.in</text>
+</svg>
