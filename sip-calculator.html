@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+<title>SIP Calculator Online | Mutual Fund Step-Up SIP Return Calculator | ArthaSetu</title>
+<meta name="description" content="Calculate returns on your Mutual Fund SIP and Step-Up SIP investments. See future maturity corpus, invested amount, and estimated wealth gain online with ArthaSetu.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://arthasetu.in/sip-calculator.html">
+<meta name="theme-color" content="#0284c7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArthaSetu">
+<meta property="og:title" content="Mutual Fund SIP & Step-Up SIP Return Calculator">
+<meta property="og:description" content="Simulate wealth growth with compound interest on monthly SIP investments. Includes yearly step-up percentage for realistic long-term planning.">
+<meta property="og:url" content="https://arthasetu.in/sip-calculator.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230284c7'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='26' font-family='Arial' font-weight='800' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
+
+<!-- Google AdSense Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7895642857043729" crossorigin="anonymous"></script>
+
+<!-- Structured Data: WebApplication + BreadcrumbList + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "@id":"https://arthasetu.in/sip-calculator.html#calculator",
+      "name":"SIP & Step-Up SIP Calculator",
+      "url":"https://arthasetu.in/sip-calculator.html",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"All",
+      "isAccessibleForFree":true,
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://arthasetu.in/sip-calculator.html#breadcrumbs",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://arthasetu.in/"},
+        {"@type":"ListItem","position":2,"name":"Investment Tools","item":"https://arthasetu.in/investments.html"},
+        {"@type":"ListItem","position":3,"name":"SIP Calculator","item":"https://arthasetu.in/sip-calculator.html"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://arthasetu.in/sip-calculator.html#faq",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"What is a Step-Up SIP and why is it recommended?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"A Step-Up SIP allows an investor to automatically increase their monthly contribution by a fixed percentage (e.g., 10% each year) in tandem with annual salary increments, substantially boosting the final maturity corpus."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"What is the average expected return on an equity mutual fund SIP in India?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Historically, broad-market Indian equity indices (Nifty 50 and Nifty 500) have delivered annualized compounding returns (XIRR) in the range of 12% to 15% over rolling periods exceeding 10 to 15 years."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"How are long-term capital gains on equity mutual funds taxed in India?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Under current statutory rules, long-term capital gains (LTCG) on equity-oriented funds held for more than 12 months are exempt up to ₹1,25,000 per financial year, and gains exceeding this ceiling are taxed at 12.5% without indexation."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --primary:#0284c7;--primary2:#0369a1;--soft:#f0f9ff;--soft2:#e0f2fe;
+  --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#fff;
+  --green:#047857;--red:#b91c1c;--radius:16px;--shadow:0 10px 30px rgba(15,23,42,.05)
+}
+*{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%}
+a{color:var(--primary2);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select{font:inherit}
+.wrap{width:100%;max-width:1080px;margin:auto;padding:0 16px}
+
+/* Sticky Header */
+.nav{position:-webkit-sticky;position:sticky;top:0;z-index:100;background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:900;text-decoration:none}
+.mark{width:32px;height:32px;border-radius:9px;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:900;font-size:13px}
+.badge{font-size:11.5px;color:var(--green);font-weight:800}
+.crumb{font-size:12px;color:var(--muted);padding:12px 0 4px;white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* Hero Unit */
+.hero{margin:8px 0 16px;background:linear-gradient(135deg,#eff8ff,#fff);border:1px solid #bae6fd;border-radius:var(--radius);padding:clamp(16px, 3.5vw, 24px)}
+.eyebrow{font-size:11px;letter-spacing:.7px;text-transform:uppercase;font-weight:900;color:var(--primary2);margin-bottom:4px}
+h1{font-size:clamp(21px,4vw,32px);line-height:1.2;font-weight:900}
+.lead{margin-top:6px;color:#475569;font-size:clamp(13px, 2vw, 14.5px)}
+.direct{margin-top:12px;background:#fff;border:1px solid #cbd5e1;border-left:4px solid var(--primary);border-radius:10px;padding:12px 14px;font-size:13.5px}
+.direct strong{color:var(--primary2)}
+
+/* Layout Grid */
+.grid{display:grid;grid-template-columns:1fr 330px;gap:16px;align-items:start}
+.card,.content{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(15px, 3vw, 22px)}
+.card h2{font-size:clamp(16.5px, 2.5vw, 19px);margin-bottom:12px}
+
+/* Sizing Fields */
+.fields{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.field label{display:block;font-size:11px;font-weight:900;color:var(--muted);margin-bottom:4px;text-transform:uppercase}
+.field input,.field select{width:100%;height:46px;border:1.5px solid #cbd5e1;border-radius:10px;padding:0 12px;background:#fff;color:var(--ink);font-size:16px;font-weight:700;outline:none;-webkit-appearance:none;transition:border-color .15s}
+.field select{background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748b'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:18px;padding-right:32px}
+.field input:focus,.field select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(2,132,199,.12)}
+.hint{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.25}
+
+/* Action Buttons */
+.actions{display:grid;grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));gap:8px;margin-top:16px}
+.btn{min-height:46px;border:0;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.btn-main{background:var(--primary);color:#fff}
+.btn-light{background:#f1f5f9;color:var(--ink)}
+.btn-main:hover{background:var(--primary2)}
+
+/* Summary Panel */
+.summary{position:-webkit-sticky;position:sticky;top:72px}
+.big-save{background:var(--soft);border:1px solid #bae6fd;border-radius:13px;padding:16px;margin-bottom:12px;text-align:center}
+.big-save span{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.5px}
+.big-save strong{display:block;font-size:clamp(23px, 4vw, 30px);line-height:1.15;color:var(--green);margin-top:4px}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.metric{border:1px solid var(--line);background:#f8fafc;border-radius:10px;padding:10px}
+.metric span{display:block;color:var(--muted);font-size:10.5px;font-weight:800}
+.metric strong{display:block;font-size:15.5px;margin-top:2px}
+.notice{margin-top:12px;padding:10px 12px;border-radius:10px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-size:11.5px;line-height:1.45}
+
+/* Adaptive Visualization Bars */
+.chart{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:14px}
+.chart h3{font-size:13px;margin-bottom:10px}
+.bars{display:grid;gap:8px}
+.bar-row{display:grid;grid-template-columns:90px 1fr 90px;align-items:center;gap:8px;font-size:12px}
+.track{height:12px;background:#e2e8f0;border-radius:99px;overflow:hidden}
+.fill{height:100%;background:var(--primary);border-radius:99px}
+
+/* Fluid Table */
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:16px;border-radius:10px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;min-width:440px;font-size:12.5px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line)}
+th{background:#f1f5f9;color:var(--muted);font-weight:900}
+.good{color:var(--green);font-weight:900}
+
+/* Content & FAQs */
+.content{margin:18px 0 28px}
+.content h2{font-size:17.5px;margin:18px 0 8px}
+.content h2:first-child{margin-top:0}
+.content p{color:#334155;margin-bottom:10px;font-size:13px}
+.faq{margin-top:8px}
+.faq details{border-top:1px solid var(--line);padding:10px 0}
+.faq summary{cursor:pointer;font-weight:850;font-size:13px}
+.faq p{margin-top:6px;font-size:12.5px;color:#475569}
+
+.embed{margin-top:16px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:11px;padding:12px}
+.embed summary{cursor:pointer;font-weight:850;font-size:12px}
+.embed textarea{width:100%;height:65px;margin-top:8px;padding:8px;border:1px solid var(--line);border-radius:8px;font:11px monospace;resize:none}
+.footer{border-top:1px solid var(--line);background:#fff;color:var(--muted);padding:22px 0;font-size:12px;text-align:center}
+
+@media(max-width:880px){
+  .grid{grid-template-columns:1fr}
+  .summary{position:static}
+}
+@media(max-width:560px){
+  .fields{grid-template-columns:1fr}
+  .actions{grid-template-columns:1fr 1fr}
+  .badge{display:none}
+  .bar-row{grid-template-columns:75px 1fr 80px}
+}
+@media print{
+  .nav,.actions,.embed,.footer{display:none!important}
+  body{background:#fff}
+  .summary{position:static}
+  .card,.content,.hero{box-shadow:none;border:none;padding:0}
+}
+</style>
+</head>
+
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><span class="mark">AS</span><span>ArthaSetu</span></a>
+    <span class="badge">100% Free & Private</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> › <a href="/investments.html">Investment Tools</a> › SIP Calculator
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">Wealth Creation Engine</div>
+    <h1>Mutual Fund SIP & Step-Up Calculator</h1>
+    <p class="lead">Simulate compound returns on your monthly Systematic Investment Plan (SIP) with optional yearly step-up percentage to build long-term financial freedom.</p>
+    <div class="direct" id="directAnswer">Calculating your wealth growth…</div>
+  </section>
+
+  <div class="grid">
+    <section class="card" id="calculator">
+      <h2>Investment Parameters</h2>
+      <div class="fields">
+        <div class="field">
+          <label for="monthlyInv">Monthly SIP Amount (₹)</label>
+          <input id="monthlyInv" type="number" value="10000" min="500" max="10000000" step="500" inputmode="decimal">
+          <div class="hint">Starting investment transferred each month.</div>
+        </div>
+        <div class="field">
+          <label for="expReturn">Expected Return (% p.a.)</label>
+          <input id="expReturn" type="number" value="12" min="1" max="50" step="0.5" inputmode="decimal">
+          <div class="hint">Historically 12% to 15% for broad Indian equities.</div>
+        </div>
+        <div class="field">
+          <label for="tenureYrs">Time Horizon (Years)</label>
+          <input id="tenureYrs" type="number" value="15" min="1" max="45" step="1" inputmode="numeric">
+          <div class="hint">Longer horizons multiply compounding wealth.</div>
+        </div>
+        <div class="field">
+          <label for="stepUpPct">Annual Step-Up (% each year)</label>
+          <input id="stepUpPct" type="number" value="10" min="0" max="100" step="1" inputmode="numeric">
+          <div class="hint">Increase your SIP every year as your income grows (0 for flat SIP).</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-main" id="share">Share on WhatsApp</button>
+        <button class="btn btn-light" id="print">Print / PDF</button>
+        <button class="btn btn-light" id="csv">Download CSV</button>
+        <button class="btn btn-light" id="reset">Reset</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Monthly Contribution</th>
+              <th>Total Invested</th>
+              <th>Estimated Corpus Value</th>
+            </tr>
+          </thead>
+          <tbody id="projectionTable"></tbody>
+        </table>
+      </div>
+
+      <div class="chart">
+        <h3>Invested Amount vs Capital Gains</h3>
+        <div class="bars" id="bars"></div>
+      </div>
+
+      <details class="embed">
+        <summary>Embed this SIP Calculator on your site / blog</summary>
+        <textarea readonly onclick="this.select()"><iframe src="https://arthasetu.in/sip-calculator.html" title="Mutual Fund SIP Calculator" width="100%" height="800" loading="lazy" style="border:0;border-radius:12px"></iframe>
+<p style="font-size:11px">Powered by <a href="https://arthasetu.in/">ArthaSetu</a></p></textarea>
+      </details>
+    </section>
+
+    <aside class="summary">
+      <div class="card">
+        <div class="big-save">
+          <span>EXPECTED TOTAL MATURITY CORPUS</span>
+          <strong id="corpusVal">—</strong>
+        </div>
+        <div class="mini">
+          <div class="metric"><span>Total Invested</span><strong id="investedVal">—</strong></div>
+          <div class="metric"><span>Estimated Wealth Gain</span><strong id="gainVal">—</strong></div>
+          <div class="metric"><span>Wealth Multiplier</span><strong id="multiplierVal">—</strong></div>
+          <div class="metric"><span>Ending Monthly SIP</span><strong id="endingSipVal">—</strong></div>
+        </div>
+        <div class="notice" id="compNotice">Rule of Compounding: Small continuous contributions grow exponentially in later years.</div>
+      </div>
+    </aside>
+  </div>
+
+  <article class="content">
+    <h2>The Magic of Step-Up SIP Over Regular Flat SIP</h2>
+    <p>While a standard SIP keeps your monthly contribution constant throughout your tenure, a <strong>Step-Up SIP</strong> increases your contribution every 12 months by a modest percentage (e.g., 10%). Because your income naturally increases with appraisals and increments, stepping up your SIP by just 10% each year can nearly double your ultimate maturity corpus over a 15-to-20-year investment horizon without straining your cash flows.</p>
+
+    <h2>Mathematical Formula Behind SIP Compounding</h2>
+    <p>A standard SIP follows the future value of an annuity formula: <code>M = P × [((1 + i)^n - 1) / i] × (1 + i)</code>, where <em>P</em> represents monthly investment, <em>i</em> denotes monthly compounded interest rate, and <em>n</em> represents the total number of monthly installments.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>What if I stop or pause my SIP midway?</summary>
+        <p>Mutual fund SIPs are completely flexible. You can pause, modify, or stop your SIP at any time without penalty. Your existing accumulated units continue to grow and earn compounding returns in the fund.</p>
+      </details>
+      <details>
+        <summary>Is there any lock-in period for SIP investments?</summary>
+        <p>Open-ended equity and debt mutual funds have no lock-in; you can redeem them whenever needed. However, ELSS (Equity Linked Savings Scheme) tax-saving funds have a statutory 3-year lock-in on each monthly installment.</p>
+      </details>
+      <details>
+        <summary>What is Rupee Cost Averaging in SIP?</summary>
+        <p>Rupee cost averaging means that when market prices (NAV) drop, your fixed monthly SIP amount buys more units, and when markets rally, it buys fewer units. This naturally lowers your average cost per unit without timing the market.</p>
+      </details>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© 2026 ArthaSetu • Open wealth planning and financial intelligence engines for Indian investors.</p>
+    <p style="margin-top:5px"><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+(() => {
+  const $ = id => document.getElementById(id);
+  const money = n => new Intl.NumberFormat("en-IN", {
+    style:"currency", currency:"INR", maximumFractionDigits:0
+  }).format(Math.max(0, Number(n) || 0));
+
+  const num = (id, fallback, min, max) => {
+    let v = Number($(id).value);
+    if (!Number.isFinite(v)) v = fallback;
+    if (min != null) v = Math.max(min, v);
+    if (max != null) v = Math.min(max, v);
+    return v;
+  };
+
+  function calculateSip(monthlyBase, annualReturn, years, stepUpPercent) {
+    const r = (annualReturn / 100) / 12;
+    let totalInvested = 0;
+    let corpus = 0;
+    let currentMonthly = monthlyBase;
+    const projections = [];
+
+    for (let yr = 1; yr <= years; yr++) {
+      let yrInvested = 0;
+      for (let m = 1; m <= 12; m++) {
+        corpus = (corpus + currentMonthly) * (1 + r);
+        yrInvested += currentMonthly;
+      }
+      totalInvested += yrInvested;
+      projections.push({
+        year: yr,
+        monthly: currentMonthly,
+        invested: totalInvested,
+        futureValue: corpus
+      });
+      if (stepUpPercent > 0) {
+        currentMonthly = currentMonthly * (1 + (stepUpPercent / 100));
+      }
+    }
+
+    return {
+      totalInvested,
+      corpus,
+      gain: Math.max(0, corpus - totalInvested),
+      endingMonthly: projections[projections.length - 1].monthly,
+      projections
+    };
+  }
+
+  function render() {
+    const monthly = num("monthlyInv", 10000, 500, 10000000);
+    const rate = num("expReturn", 12, 1, 50);
+    const years = num("tenureYrs", 15, 1, 45);
+    const stepUp = num("stepUpPct", 10, 0, 100);
+
+    const res = calculateSip(monthly, rate, years, stepUp);
+
+    $("corpusVal").textContent = money(res.corpus);
+    $("investedVal").textContent = money(res.totalInvested);
+    $("gainVal").textContent = money(res.gain);
+    $("multiplierVal").textContent = (res.corpus / Math.max(1, res.totalInvested)).toFixed(2) + "x";
+    $("endingSipVal").textContent = money(res.endingMonthly) + "/mo";
+
+    const stepText = stepUp > 0 ? ` with an annual ${stepUp}% Step-Up` : " with a flat monthly SIP";
+    $("directAnswer").innerHTML =
+      `Investing <strong>${money(monthly)}/month</strong> at an expected <strong>${rate.toFixed(1)}% p.a.</strong> for <strong>${years} years</strong>${stepText} is projected to grow into a maturity corpus of <strong>${money(res.corpus)}</strong> (gain of <strong>${money(res.gain)}</strong> on <strong>${money(res.totalInvested)}</strong> invested).`;
+
+    const sampleYears = res.projections.filter(p => p.year === 1 || p.year === 3 || p.year === 5 || p.year === 10 || p.year === years || p.year % 5 === 0);
+    const uniqueSample = [...new Map(sampleYears.map(item => [item.year, item])).values()];
+
+    $("projectionTable").innerHTML = uniqueSample.map(p => `
+      <tr>
+        <td>Year ${p.year}</td>
+        <td>${money(p.monthly)}</td>
+        <td>${money(p.invested)}</td>
+        <td class="good" style="font-weight:800">${money(p.futureValue)}</td>
+      </tr>
+    `).join("");
+
+    const pInv = (res.totalInvested / res.corpus) * 100;
+    const pGain = (res.gain / res.corpus) * 100;
+
+    $("bars").innerHTML = `
+      <div class="bar-row">
+        <span>Invested</span>
+        <div class="track"><div class="fill" style="width:${pInv.toFixed(1)}%;background:var(--primary)"></div></div>
+        <strong>${money(res.totalInvested)}</strong>
+      </div>
+      <div class="bar-row">
+        <span>Capital Gain</span>
+        <div class="track"><div class="fill" style="width:${pGain.toFixed(1)}%;background:var(--green)"></div></div>
+        <strong style="color:var(--green)">${money(res.gain)}</strong>
+      </div>
+    `;
+  }
+
+  $("share").addEventListener("click", () => {
+    const text = `ArthaSetu SIP Wealth Calculator\nMaturity Corpus: ${$("corpusVal").textContent}\nTotal Invested: ${$("investedVal").textContent}\nGain: ${$("gainVal").textContent}\nhttps://arthasetu.in/sip-calculator.html`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
+  });
+
+  $("print").addEventListener("click", () => window.print());
+
+  $("csv").addEventListener("click", () => {
+    const rows = [["Year", "Monthly Contribution", "Total Invested", "Maturity Corpus"]];
+    document.querySelectorAll("#projectionTable tr").forEach(tr => {
+      rows.push([...tr.querySelectorAll("td")].map(td => td.innerText));
+    });
+    const csv = rows.map(r => r.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "arthasetu-sip-wealth-projection.csv";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  $("reset").addEventListener("click", () => {
+    $("monthlyInv").value = 10000;
+    $("expReturn").value = 12;
+    $("tenureYrs").value = 15;
+    $("stepUpPct").value = 10;
+    render();
+  });
+
+  ["monthlyInv","expReturn","tenureYrs","stepUpPct"].forEach(id => {
+    $(id).addEventListener("input", render);
+    $(id).addEventListener("change", render);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
