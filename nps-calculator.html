@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+<title>NPS Calculator Online | National Pension System Maturity & Pension | ArthaSetu</title>
+<meta name="description" content="Calculate your National Pension System (NPS) maturity corpus, monthly pension, and lumpsum withdrawal. Includes Section 80CCD(1B) tax savings online with ArthaSetu.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://arthasetu.in/nps-calculator.html">
+<meta name="theme-color" content="#0284c7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArthaSetu">
+<meta property="og:title" content="NPS Calculator (Monthly Pension, Lump-Sum Corpus & Tax Relief)">
+<meta property="og:description" content="Simulate retirement wealth under Tier-1 NPS with equity and debt asset allocation, annuity rates, and Section 80CCD(1B) extra ₹50k exemption.">
+<meta property="og:url" content="https://arthasetu.in/nps-calculator.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230284c7'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='26' font-family='Arial' font-weight='800' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
+
+<!-- Google AdSense Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7895642857043729" crossorigin="anonymous"></script>
+
+<!-- Structured Data: WebApplication + BreadcrumbList + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "@id":"https://arthasetu.in/nps-calculator.html#calculator",
+      "name":"NPS Calculator",
+      "url":"https://arthasetu.in/nps-calculator.html",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"All",
+      "isAccessibleForFree":true,
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://arthasetu.in/nps-calculator.html#breadcrumbs",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://arthasetu.in/"},
+        {"@type":"ListItem","position":2,"name":"Retirement & Pension","item":"https://arthasetu.in/schemes.html"},
+        {"@type":"ListItem","position":3,"name":"NPS Calculator","item":"https://arthasetu.in/nps-calculator.html"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://arthasetu.in/nps-calculator.html#faq",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"What is the minimum annuity percentage required in NPS at age 60?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Under PFRDA statutory guidelines, a subscriber retiring at age 60 must utilize a minimum of 40% of their accumulated pension wealth to purchase a life annuity for regular monthly pension. Up to 60% of the corpus can be withdrawn as a 100% tax-free lump sum."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"What is the exclusive tax benefit of NPS under Section 80CCD(1B)?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Under Section 80CCD(1B) of the Income Tax Act, subscribers receive an exclusive income tax deduction of up to ₹50,000 per financial year in Tier-1 accounts over and above the Section 80C ceiling of ₹1.5 Lakh."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Is the 60% lump-sum withdrawal from NPS tax-free?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Yes. The 60% lump-sum withdrawal upon reaching retirement age is completely exempt from income tax under Section 10(12A). The remaining 40% deployed into an annuity is not taxed upfront, though monthly annuity payouts are taxable at your applicable income tax slabs."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --primary:#0284c7;--primary2:#0369a1;--soft:#f0f9ff;--soft2:#e0f2fe;
+  --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#fff;
+  --green:#047857;--red:#b91c1c;--radius:16px;--shadow:0 10px 30px rgba(15,23,42,.05)
+}
+*,*::before,*::after{
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-behavior:smooth;
+  width:100%;
+  overflow-x:hidden;
+}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  width:100%;
+}
+a{color:var(--primary2);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select{font:inherit}
+
+/* Fluid Layout Wrapper (MacBook & Desktop Optimized) */
+.wrap{
+  width:100%;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:clamp(14px, 3vw, 24px);
+  padding-right:clamp(14px, 3vw, 24px);
+}
+
+/* Nav */
+.nav{
+  position:-webkit-sticky;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.98);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  width:100%;
+}
+.nav-in{
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:var(--ink);
+  font-weight:900;
+  font-size:16px;
+}
+.mark{
+  width:32px;
+  height:32px;
+  border-radius:9px;
+  background:var(--primary);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:13px;
+}
+.badge{
+  font-size:12px;
+  color:var(--green);
+  font-weight:800;
+}
+.crumb{
+  font-size:12px;
+  color:var(--muted);
+  padding:14px 0 6px;
+  white-space:nowrap;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* Hero Section */
+.hero{
+  margin:8px 0 20px;
+  background:linear-gradient(135deg,#eff8ff,#fff);
+  border:1px solid #bae6fd;
+  border-radius:var(--radius);
+  padding:clamp(18px, 3vw, 28px);
+  width:100%;
+}
+.eyebrow{
+  font-size:11px;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+  font-weight:900;
+  color:var(--primary2);
+  margin-bottom:5px;
+}
+h1{
+  font-size:clamp(21px, 3.5vw, 32px);
+  line-height:1.25;
+  font-weight:900;
+  word-wrap:break-word;
+}
+.lead{
+  margin-top:6px;
+  color:#475569;
+  font-size:clamp(13.5px, 1.8vw, 15px);
+  max-width:880px;
+}
+.direct{
+  margin-top:14px;
+  background:#fff;
+  border:1px solid #cbd5e1;
+  border-left:4px solid var(--primary);
+  border-radius:10px;
+  padding:12px 16px;
+  font-size:14px;
+  word-break:break-word;
+}
+.direct strong{color:var(--primary2)}
+
+/* Laptop & Desktop Precision Grid */
+.grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) 350px;
+  gap:20px;
+  align-items:start;
+  width:100%;
+}
+.card,.content{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:clamp(16px, 2.5vw, 24px);
+  min-width:0;
+}
+.card h2{
+  font-size:clamp(17px, 2vw, 20px);
+  margin-bottom:14px;
+}
+
+/* Form Fields */
+.fields{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:14px;
+  width:100%;
+}
+.field{
+  min-width:0;
+}
+.field label{
+  display:block;
+  font-size:11px;
+  font-weight:900;
+  color:var(--muted);
+  margin-bottom:5px;
+  text-transform:uppercase;
+}
+.field input,.field select{
+  width:100%;
+  min-height:46px;
+  height:46px;
+  border:1.5px solid #cbd5e1;
+  border-radius:10px;
+  padding:0 12px;
+  background:#fff;
+  color:var(--ink);
+  font-size:16px;
+  font-weight:700;
+  outline:none;
+  -webkit-appearance:none;
+  transition:border-color .15s;
+}
+.field select{
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748b'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-size:18px;
+  padding-right:32px;
+}
+.field input:focus,.field select:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(2,132,199,.12);
+}
+.hint{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:4px;
+  line-height:1.3;
+}
+
+/* Action Buttons */
+.actions{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(115px, 1fr));
+  gap:8px;
+  margin-top:18px;
+  width:100%;
+}
+.btn{
+  min-height:46px;
+  border:0;
+  border-radius:10px;
+  padding:8px 12px;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.btn-main{background:var(--primary);color:#fff}
+.btn-light{background:#f1f5f9;color:var(--ink)}
+.btn-main:hover{background:var(--primary2)}
+
+/* Summary Panel */
+.summary{
+  position:-webkit-sticky;
+  position:sticky;
+  top:76px;
+  min-width:0;
+}
+.big-save{
+  background:var(--soft);
+  border:1px solid #bae6fd;
+  border-radius:13px;
+  padding:16px;
+  margin-bottom:12px;
+  text-align:center;
+}
+.big-save span{
+  font-size:11px;
+  color:var(--muted);
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.big-save strong{
+  display:block;
+  font-size:clamp(22px, 3.2vw, 28px);
+  line-height:1.2;
+  color:var(--green);
+  margin-top:4px;
+  word-break:break-word;
+}
+.mini{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:8px;
+}
+.metric{
+  border:1px solid var(--line);
+  background:#f8fafc;
+  border-radius:10px;
+  padding:10px 12px;
+  min-width:0;
+}
+.metric span{
+  display:block;
+  color:var(--muted);
+  font-size:10.5px;
+  font-weight:800;
+}
+.metric strong{
+  display:block;
+  font-size:14.5px;
+  margin-top:2px;
+  word-break:break-word;
+}
+.notice{
+  margin-top:12px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:#f0fdf4;
+  border:1px solid #bbf7d0;
+  color:#166534;
+  font-size:11.5px;
+  line-height:1.45;
+}
+
+/* Visualization Bar */
+.chart{
+  margin-top:18px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px;
+  width:100%;
+}
+.chart h3{font-size:13px;margin-bottom:10px}
+.bars{display:grid;gap:8px}
+.bar-row{
+  display:grid;
+  grid-template-columns:90px minmax(0, 1fr) 90px;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+}
+.track{height:12px;background:#e2e8f0;border-radius:99px;overflow:hidden;width:100%}
+.fill{height:100%;background:var(--primary);border-radius:99px}
+
+/* Tables */
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  margin-top:18px;
+  border-radius:10px;
+  border:1px solid var(--line);
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:440px;
+  font-size:12.5px;
+}
+th,td{
+  text-align:left;
+  padding:9px 12px;
+  border-bottom:1px solid var(--line);
+}
+th{background:#f1f5f9;color:var(--muted);font-weight:900}
+.good{color:var(--green);font-weight:900}
+
+/* Content & FAQs */
+.content{margin:20px 0 30px;width:100%}
+.content h2{font-size:18px;margin:20px 0 8px}
+.content h2:first-child{margin-top:0}
+.content p{color:#334155;margin-bottom:10px;font-size:13.5px}
+.faq{margin-top:10px}
+.faq details{border-top:1px solid var(--line);padding:10px 0}
+.faq summary{cursor:pointer;font-weight:850;font-size:13px}
+.faq p{margin-top:6px;font-size:12.5px;color:#475569}
+
+.embed{
+  margin-top:18px;
+  background:#f8fafc;
+  border:1px dashed #cbd5e1;
+  border-radius:11px;
+  padding:12px;
+}
+.embed summary{cursor:pointer;font-weight:850;font-size:12px}
+.embed textarea{
+  width:100%;
+  height:65px;
+  margin-top:8px;
+  padding:8px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  font:11px monospace;
+  resize:none;
+}
+.footer{
+  border-top:1px solid var(--line);
+  background:#fff;
+  color:var(--muted);
+  padding:24px 0;
+  font-size:12px;
+  text-align:center;
+  width:100%;
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width:880px){
+  .grid{grid-template-columns:1fr}
+  .summary{position:static}
+}
+@media (max-width:560px){
+  .fields{grid-template-columns:1fr}
+  .actions{grid-template-columns:repeat(2, 1fr)}
+  .badge{display:none}
+  .bar-row{grid-template-columns:75px minmax(0, 1fr) 75px}
+}
+@media print{
+  .nav,.actions,.embed,.footer{display:none!important}
+  body{background:#fff}
+  .summary{position:static}
+  .card,.content,.hero{box-shadow:none;border:none;padding:0}
+}
+</style>
+</head>
+
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><span class="mark">AS</span><span>ArthaSetu</span></a>
+    <span class="badge">PFRDA Compliant</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> › <a href="/schemes.html">Retirement & Pension</a> › NPS Calculator
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">National Pension System Retirement Engine</div>
+    <h1>NPS Calculator (Corpus, Lump-Sum & Monthly Pension)</h1>
+    <p class="lead">Simulate compound growth on your monthly Tier-1 NPS contributions, check 60% tax-free lump-sum withdrawal, and calculate monthly annuity pension at age 60.</p>
+    <div class="direct" id="directAnswer">Calculating your NPS pension…</div>
+  </section>
+
+  <div class="grid">
+    <section class="card" id="calculator">
+      <h2>Retirement & Investment Details</h2>
+      <div class="fields">
+        <div class="field">
+          <label for="monthlyContrib">Monthly Contribution (₹)</label>
+          <input id="monthlyContrib" type="number" value="5000" min="500" max="10000000" step="500" inputmode="decimal">
+          <div class="hint">Min ₹500/month (or ₹1,000/year) in Tier-1.</div>
+        </div>
+        <div class="field">
+          <label for="currentAge">Your Current Age (Years)</label>
+          <input id="currentAge" type="number" value="28" min="18" max="65" step="1" inputmode="numeric">
+          <div class="hint">NPS entry age is between 18 and 70 years.</div>
+        </div>
+        <div class="field">
+          <label for="retirementAge">Retirement Age (Years)</label>
+          <input id="retirementAge" type="number" value="60" min="50" max="75" step="1" inputmode="numeric">
+          <div class="hint">Standard retirement age in NPS is 60 years.</div>
+        </div>
+        <div class="field">
+          <label for="expReturn">Expected Growth Rate (% p.a.)</label>
+          <input id="expReturn" type="number" value="10" min="4" max="25" step="0.5" inputmode="decimal">
+          <div class="hint">Historically 9% to 12% across blended Equity & Debt.</div>
+        </div>
+        <div class="field">
+          <label for="annuityRatio">Corpus Deployed in Annuity (%)</label>
+          <select id="annuityRatio">
+            <option value="40" selected>40% (Statutory Minimum Required)</option>
+            <option value="50">50% Annuity (Higher Pension)</option>
+            <option value="60">60% Annuity</option>
+            <option value="80">80% Annuity</option>
+            <option value="100">100% Annuity (Max Monthly Pension)</option>
+          </select>
+          <div class="hint">Min 40% mandatory to buy life annuity at 60.</div>
+        </div>
+        <div class="field">
+          <label for="annuityRate">Expected Annuity Return (% p.a.)</label>
+          <input id="annuityRate" type="number" value="6" min="3" max="15" step="0.5" inputmode="decimal">
+          <div class="hint">Life insurance annuity yields range from 5.5% to 6.5%.</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-main" id="share">Share on WhatsApp</button>
+        <button class="btn btn-light" id="print">Print / PDF</button>
+        <button class="btn btn-light" id="csv">Download CSV</button>
+        <button class="btn btn-light" id="reset">Reset</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>NPS Retirement Component</th>
+              <th>Percentage Split</th>
+              <th>Amount Breakdown</th>
+            </tr>
+          </thead>
+          <tbody id="npsBreakdown"></tbody>
+        </table>
+      </div>
+
+      <div class="chart">
+        <h3>Invested Principal vs Capital Growth</h3>
+        <div class="bars" id="bars"></div>
+      </div>
+
+      <details class="embed">
+        <summary>Embed this NPS Calculator on your site / blog</summary>
+        <textarea readonly onclick="this.select()"><iframe src="https://arthasetu.in/nps-calculator.html" title="NPS Calculator Online" width="100%" height="800" loading="lazy" style="border:0;border-radius:12px"></iframe>
+<p style="font-size:11px">Powered by <a href="https://arthasetu.in/">ArthaSetu</a></p></textarea>
+      </details>
+    </section>
+
+    <aside class="summary">
+      <div class="card">
+        <div class="big-save">
+          <span>EXPECTED MONTHLY PENSION</span>
+          <strong id="monthlyPensionVal">—</strong>
+        </div>
+        <div class="mini">
+          <div class="metric"><span>Total Pension Wealth</span><strong id="totalCorpusVal">—</strong></div>
+          <div class="metric"><span>Lump-Sum (Tax-Free)</span><strong id="lumpSumVal">—</strong></div>
+          <div class="metric"><span>Total Invested</span><strong id="totalInvVal">—</strong></div>
+          <div class="metric"><span>Investment Period</span><strong id="tenureVal">—</strong></div>
+        </div>
+        <div class="notice" id="taxBenefitNotice">Exclusive Tax Deduction: Save up to ₹15,600 extra per year under Section 80CCD(1B) on ₹50,000 deposits.</div>
+      </div>
+    </aside>
+  </div>
+
+  <article class="content">
+    <h2>Why National Pension System (NPS) is a Core Retirement Pillar</h2>
+    <p>NPS is regulated by the <strong>Pension Fund Regulatory and Development Authority (PFRDA)</strong>. It is one of the lowest-cost investment vehicles in the world, with fund management charges capped under 0.09%. Subscribers can choose their asset allocation across Equities (E), Corporate Debt (C), Government Securities (G), and Alternative Assets (A).</p>
+
+    <h2>The 60:40 Retirement Withdrawal Framework</h2>
+    <p>Upon attaining 60 years of age, you are entitled to withdraw up to <strong>60% of your total corpus tax-free</strong> as a lump sum under Section 10(12A). The remaining <strong>40% minimum</strong> must be utilized to purchase an annuity from a PFRDA-empanelled life insurance company to provide a guaranteed pension for life.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Can I withdraw 100% of my NPS corpus without buying an annuity?</summary>
+        <p>If your accumulated total NPS corpus at retirement is less than or equal to ₹5,00,000, you have the option to withdraw 100% of the corpus as a lump sum without any mandatory annuity requirement.</p>
+      </details>
+      <details>
+        <summary>What is the difference between NPS Tier-1 and Tier-2 accounts?</summary>
+        <p>Tier-1 is the primary retirement account with tax benefits and lock-in until age 60. Tier-2 is a voluntary savings facility with zero lock-in and complete liquidity, but without any tax deductions.</p>
+      </details>
+      <details>
+        <summary>Is the monthly pension from the annuity taxable?</summary>
+        <p>Yes. While the 60% lump sum is 100% tax-exempt, the monthly annuity payouts are treated as regular income and taxed according to your applicable income tax slabs in retirement.</p>
+      </details>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© 2026 ArthaSetu • Open financial and retirement intelligence engines for Indian citizens.</p>
+    <p style="margin-top:5px"><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+(() => {
+  const $ = id => document.getElementById(id);
+  const money = n => new Intl.NumberFormat("en-IN", {
+    style:"currency", currency:"INR", maximumFractionDigits:0
+  }).format(Math.max(0, Number(n) || 0));
+
+  const num = (id, fallback, min, max) => {
+    let v = Number($(id).value);
+    if (!Number.isFinite(v)) v = fallback;
+    if (min != null) v = Math.max(min, v);
+    if (max != null) v = Math.min(max, v);
+    return v;
+  };
+
+  function render() {
+    const monthly = num("monthlyContrib", 5000, 500, 10000000);
+    const age = num("currentAge", 28, 18, 65);
+    const retAge = num("retirementAge", 60, Math.max(50, age + 1), 75);
+    const rate = num("expReturn", 10, 1, 25);
+    const annuityPct = num("annuityRatio", 40, 40, 100);
+    const annuityRate = num("annuityRate", 6, 1, 20);
+
+    const years = Math.max(1, retAge - age);
+    const months = years * 12;
+    const r = (rate / 100) / 12;
+
+    // Compounded Future Value of Monthly Annuity
+    const totalCorpus = monthly * ((Math.pow(1 + r, months) - 1) / r) * (1 + r);
+    const totalInvested = monthly * months;
+    const capitalGains = Math.max(0, totalCorpus - totalInvested);
+
+    const annuityAmount = totalCorpus * (annuityPct / 100);
+    const lumpSumAmount = totalCorpus * ((100 - annuityPct) / 100);
+    const monthlyPension = (annuityAmount * (annuityRate / 100)) / 12;
+
+    $("monthlyPensionVal").textContent = money(monthlyPension) + "/mo";
+    $("totalCorpusVal").textContent = money(totalCorpus);
+    $("lumpSumVal").textContent = money(lumpSumAmount);
+    $("totalInvVal").textContent = money(totalInvested);
+    $("tenureVal").textContent = `${years} Years (${months} mos)`;
+
+    $("directAnswer").innerHTML =
+      `Contributing <strong>${money(monthly)}/month</strong> from age ${age} to ${retAge} (${years} years) at <strong>${rate.toFixed(1)}% p.a.</strong> accumulates an estimated pension wealth of <strong>${money(totalCorpus)}</strong>. With a ${annuityPct}% annuity allocation at ${annuityRate.toFixed(1)}%, you get a <strong>monthly pension of ${money(monthlyPension)}</strong> plus a <strong>tax-free lump sum of ${money(lumpSumAmount)}</strong>.`;
+
+    $("npsBreakdown").innerHTML = `
+      <tr>
+        <td>Total Accumulated Corpus</td>
+        <td>100%</td>
+        <td style="font-weight:900">${money(totalCorpus)}</td>
+      </tr>
+      <tr>
+        <td>Tax-Free Lump-Sum Withdrawal</td>
+        <td>${100 - annuityPct}%</td>
+        <td class="good">${money(lumpSumAmount)}</td>
+      </tr>
+      <tr>
+        <td>Annuity Investment (Life Pension)</td>
+        <td>${annuityPct}%</td>
+        <td>${money(annuityAmount)}</td>
+      </tr>
+      <tr style="font-weight:900;background:#f8fafc">
+        <td>Monthly Pension for Life</td>
+        <td>${annuityRate.toFixed(1)}% p.a.</td>
+        <td class="good" style="font-size:14px">${money(monthlyPension)}/month</td>
+      </tr>
+      <tr>
+        <td>Total Principal Deposited</td>
+        <td>—</td>
+        <td>${money(totalInvested)}</td>
+      </tr>
+      <tr>
+        <td>Total Compounded Gain</td>
+        <td>—</td>
+        <td class="good">${money(capitalGains)}</td>
+      </tr>
+    `;
+
+    const pInv = (totalInvested / totalCorpus) * 100;
+    const pGain = (capitalGains / totalCorpus) * 100;
+
+    $("bars").innerHTML = `
+      <div class="bar-row">
+        <span>Principal</span>
+        <div class="track"><div class="fill" style="width:${pInv.toFixed(1)}%;background:var(--primary)"></div></div>
+        <strong>${money(totalInvested)}</strong>
+      </div>
+      <div class="bar-row">
+        <span>Gains</span>
+        <div class="track"><div class="fill" style="width:${pGain.toFixed(1)}%;background:var(--green)"></div></div>
+        <strong style="color:var(--green)">${money(capitalGains)}</strong>
+      </div>
+    `;
+  }
+
+  $("share").addEventListener("click", () => {
+    const text = `ArthaSetu NPS Calculator\nMonthly Pension: ${$("monthlyPensionVal").textContent}\nTotal Wealth: ${$("totalCorpusVal").textContent}\nhttps://arthasetu.in/nps-calculator.html`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
+  });
+
+  $("print").addEventListener("click", () => window.print());
+
+  $("csv").addEventListener("click", () => {
+    const rows = [["Component", "Percentage", "Amount"]];
+    document.querySelectorAll("#npsBreakdown tr").forEach(tr => {
+      rows.push([...tr.querySelectorAll("td")].map(td => td.innerText));
+    });
+    const csv = rows.map(r => r.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "arthasetu-nps-retirement-projection.csv";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  $("reset").addEventListener("click", () => {
+    $("monthlyContrib").value = 5000;
+    $("currentAge").value = 28;
+    $("retirementAge").value = 60;
+    $("expReturn").value = 10;
+    $("annuityRatio").value = 40;
+    $("annuityRate").value = 6;
+    render();
+  });
+
+  ["monthlyContrib","currentAge","retirementAge","expReturn","annuityRatio","annuityRate"].forEach(id => {
+    $(id).addEventListener("input", render);
+    $(id).addEventListener("change", render);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
