@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+<title>SWP Calculator Online | Systematic Withdrawal Plan Cash Flow | ArthaSetu</title>
+<meta name="description" content="Calculate monthly cash flow, total withdrawals, and final remaining balance on your mutual fund Systematic Withdrawal Plan (SWP) online with ArthaSetu.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://arthasetu.in/swp-calculator.html">
+<meta name="theme-color" content="#0284c7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArthaSetu">
+<meta property="og:title" content="Mutual Fund SWP Calculator (Regular Monthly Income & Balance Growth)">
+<meta property="og:description" content="Simulate monthly income stream, capital gains, and ending portfolio balance for retirement and wealth planning. Free financial tool by ArthaSetu.">
+<meta property="og:url" content="https://arthasetu.in/swp-calculator.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230284c7'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='26' font-family='Arial' font-weight='800' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
+
+<!-- Google AdSense Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7895642857043729" crossorigin="anonymous"></script>
+
+<!-- Structured Data: WebApplication + BreadcrumbList + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "@id":"https://arthasetu.in/swp-calculator.html#calculator",
+      "name":"SWP Calculator",
+      "url":"https://arthasetu.in/swp-calculator.html",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"All",
+      "isAccessibleForFree":true,
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://arthasetu.in/swp-calculator.html#breadcrumbs",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://arthasetu.in/"},
+        {"@type":"ListItem","position":2,"name":"Investment Tools","item":"https://arthasetu.in/investments.html"},
+        {"@type":"ListItem","position":3,"name":"SWP Calculator","item":"https://arthasetu.in/swp-calculator.html"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://arthasetu.in/swp-calculator.html#faq",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"What is a Systematic Withdrawal Plan (SWP) in mutual funds?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"A Systematic Withdrawal Plan (SWP) allows an investor to withdraw a predetermined sum of money from their mutual fund corpus at regular intervals (usually monthly). While you withdraw a fixed amount, the remaining balance continues to compound and earn market returns."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Is SWP better than a dividend payout plan or fixed deposit interest?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Yes. In an SWP, only the capital gains portion embedded within each redemption is taxed, whereas FD interest and mutual fund dividends are taxed entirely at applicable income tax slab rates. This makes SWP substantially more tax-efficient for retirees and high-net-worth individuals."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"What is the ideal withdrawal rate in an SWP to avoid depleting the corpus?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Financial advisors generally recommend a withdrawal rate between 6% and 8% annually. If the expected annual rate of return on your balanced or hybrid fund exceeds your withdrawal rate, your corpus will not deplete and can grow over time."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --primary:#0284c7;--primary2:#0369a1;--soft:#f0f9ff;--soft2:#e0f2fe;
+  --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#fff;
+  --green:#047857;--red:#b91c1c;--radius:16px;--shadow:0 10px 30px rgba(15,23,42,.05)
+}
+*,*::before,*::after{
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-behavior:smooth;
+  width:100%;
+  overflow-x:hidden;
+}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  width:100%;
+}
+a{color:var(--primary2);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select{font:inherit}
+
+/* Fluid Responsive Container */
+.wrap{
+  width:100%;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:clamp(14px, 3vw, 24px);
+  padding-right:clamp(14px, 3vw, 24px);
+}
+
+/* Nav */
+.nav{
+  position:-webkit-sticky;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.98);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  width:100%;
+}
+.nav-in{
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:var(--ink);
+  font-weight:900;
+  font-size:16px;
+}
+.mark{
+  width:32px;
+  height:32px;
+  border-radius:9px;
+  background:var(--primary);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:13px;
+}
+.badge{
+  font-size:12px;
+  color:var(--green);
+  font-weight:800;
+}
+.crumb{
+  font-size:12px;
+  color:var(--muted);
+  padding:14px 0 6px;
+  white-space:nowrap;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* Hero Section */
+.hero{
+  margin:8px 0 20px;
+  background:linear-gradient(135deg,#eff8ff,#fff);
+  border:1px solid #bae6fd;
+  border-radius:var(--radius);
+  padding:clamp(18px, 3vw, 28px);
+  width:100%;
+}
+.eyebrow{
+  font-size:11px;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+  font-weight:900;
+  color:var(--primary2);
+  margin-bottom:5px;
+}
+h1{
+  font-size:clamp(21px, 3.5vw, 32px);
+  line-height:1.25;
+  font-weight:900;
+  word-wrap:break-word;
+}
+.lead{
+  margin-top:6px;
+  color:#475569;
+  font-size:clamp(13.5px, 1.8vw, 15px);
+  max-width:880px;
+}
+.direct{
+  margin-top:14px;
+  background:#fff;
+  border:1px solid #cbd5e1;
+  border-left:4px solid var(--primary);
+  border-radius:10px;
+  padding:12px 16px;
+  font-size:14px;
+  word-break:break-word;
+}
+.direct strong{color:var(--primary2)}
+
+/* Laptop & Desktop Precision Grid */
+.grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) 350px;
+  gap:20px;
+  align-items:start;
+  width:100%;
+}
+.card,.content{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:clamp(16px, 2.5vw, 24px);
+  min-width:0;
+}
+.card h2{
+  font-size:clamp(17px, 2vw, 20px);
+  margin-bottom:14px;
+}
+
+/* Form Fields */
+.fields{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:14px;
+  width:100%;
+}
+.field{
+  min-width:0;
+}
+.field label{
+  display:block;
+  font-size:11px;
+  font-weight:900;
+  color:var(--muted);
+  margin-bottom:5px;
+  text-transform:uppercase;
+}
+.field input,.field select{
+  width:100%;
+  min-height:46px;
+  height:46px;
+  border:1.5px solid #cbd5e1;
+  border-radius:10px;
+  padding:0 12px;
+  background:#fff;
+  color:var(--ink);
+  font-size:16px;
+  font-weight:700;
+  outline:none;
+  -webkit-appearance:none;
+  transition:border-color .15s;
+}
+.field select{
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748b'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-size:18px;
+  padding-right:32px;
+}
+.field input:focus,.field select:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(2,132,199,.12);
+}
+.hint{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:4px;
+  line-height:1.3;
+}
+
+/* Action Buttons */
+.actions{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(115px, 1fr));
+  gap:8px;
+  margin-top:18px;
+  width:100%;
+}
+.btn{
+  min-height:46px;
+  border:0;
+  border-radius:10px;
+  padding:8px 12px;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.btn-main{background:var(--primary);color:#fff}
+.btn-light{background:#f1f5f9;color:var(--ink)}
+.btn-main:hover{background:var(--primary2)}
+
+/* Summary Panel */
+.summary{
+  position:-webkit-sticky;
+  position:sticky;
+  top:76px;
+  min-width:0;
+}
+.big-save{
+  background:var(--soft);
+  border:1px solid #bae6fd;
+  border-radius:13px;
+  padding:16px;
+  margin-bottom:12px;
+  text-align:center;
+}
+.big-save span{
+  font-size:11px;
+  color:var(--muted);
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.big-save strong{
+  display:block;
+  font-size:clamp(22px, 3.2vw, 28px);
+  line-height:1.2;
+  color:var(--green);
+  margin-top:4px;
+  word-break:break-word;
+}
+.mini{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:8px;
+}
+.metric{
+  border:1px solid var(--line);
+  background:#f8fafc;
+  border-radius:10px;
+  padding:10px 12px;
+  min-width:0;
+}
+.metric span{
+  display:block;
+  color:var(--muted);
+  font-size:10.5px;
+  font-weight:800;
+}
+.metric strong{
+  display:block;
+  font-size:14.5px;
+  margin-top:2px;
+  word-break:break-word;
+}
+.notice{
+  margin-top:12px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:#f0fdf4;
+  border:1px solid #bbf7d0;
+  color:#166534;
+  font-size:11.5px;
+  line-height:1.45;
+}
+
+/* Visualization Bar */
+.chart{
+  margin-top:18px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px;
+  width:100%;
+}
+.chart h3{font-size:13px;margin-bottom:10px}
+.bars{display:grid;gap:8px}
+.bar-row{
+  display:grid;
+  grid-template-columns:90px minmax(0, 1fr) 90px;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+}
+.track{height:12px;background:#e2e8f0;border-radius:99px;overflow:hidden;width:100%}
+.fill{height:100%;background:var(--primary);border-radius:99px}
+
+/* Tables */
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  margin-top:18px;
+  border-radius:10px;
+  border:1px solid var(--line);
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:440px;
+  font-size:12.5px;
+}
+th,td{
+  text-align:left;
+  padding:9px 12px;
+  border-bottom:1px solid var(--line);
+}
+th{background:#f1f5f9;color:var(--muted);font-weight:900}
+.good{color:var(--green);font-weight:900}
+.warn{color:var(--red);font-weight:900}
+
+/* Content & FAQs */
+.content{margin:20px 0 30px;width:100%}
+.content h2{font-size:18px;margin:20px 0 8px}
+.content h2:first-child{margin-top:0}
+.content p{color:#334155;margin-bottom:10px;font-size:13.5px}
+.faq{margin-top:10px}
+.faq details{border-top:1px solid var(--line);padding:10px 0}
+.faq summary{cursor:pointer;font-weight:850;font-size:13px}
+.faq p{margin-top:6px;font-size:12.5px;color:#475569}
+
+.embed{
+  margin-top:18px;
+  background:#f8fafc;
+  border:1px dashed #cbd5e1;
+  border-radius:11px;
+  padding:12px;
+}
+.embed summary{cursor:pointer;font-weight:850;font-size:12px}
+.embed textarea{
+  width:100%;
+  height:65px;
+  margin-top:8px;
+  padding:8px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  font:11px monospace;
+  resize:none;
+}
+.footer{
+  border-top:1px solid var(--line);
+  background:#fff;
+  color:var(--muted);
+  padding:24px 0;
+  font-size:12px;
+  text-align:center;
+  width:100%;
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width:880px){
+  .grid{grid-template-columns:1fr}
+  .summary{position:static}
+}
+@media (max-width:560px){
+  .fields{grid-template-columns:1fr}
+  .actions{grid-template-columns:repeat(2, 1fr)}
+  .badge{display:none}
+  .bar-row{grid-template-columns:75px minmax(0, 1fr) 75px}
+}
+@media print{
+  .nav,.actions,.embed,.footer{display:none!important}
+  body{background:#fff}
+  .summary{position:static}
+  .card,.content,.hero{box-shadow:none;border:none;padding:0}
+}
+</style>
+</head>
+
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><span class="mark">AS</span><span>ArthaSetu</span></a>
+    <span class="badge">Wealth Cash Flow Model</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> › <a href="/investments.html">Investment Tools</a> › SWP Calculator
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">Regular Cash Flow & Retirement Planning</div>
+    <h1>Mutual Fund SWP Calculator Online</h1>
+    <p class="lead">Simulate monthly cash withdrawals, total cumulative payout, and remaining portfolio balance on your mutual fund Systematic Withdrawal Plan.</p>
+    <div class="direct" id="directAnswer">Calculating your SWP cash flow…</div>
+  </section>
+
+  <div class="grid">
+    <section class="card" id="calculator">
+      <h2>Enter Plan Parameters</h2>
+      <div class="fields">
+        <div class="field">
+          <label for="initialInvest">Initial Investment Corpus (₹)</label>
+          <input id="initialInvest" type="number" value="2500000" min="50000" max="100000000" step="50000" inputmode="decimal">
+          <div class="hint">Starting mutual fund lumpsum corpus.</div>
+        </div>
+        <div class="field">
+          <label for="monthlyWithdrawal">Monthly Withdrawal Amount (₹)</label>
+          <input id="monthlyWithdrawal" type="number" value="18000" min="500" max="5000000" step="1000" inputmode="decimal">
+          <div class="hint">Fixed monthly cash payout transferred to bank.</div>
+        </div>
+        <div class="field">
+          <label for="expectedReturn">Expected Rate of Return (% p.a.)</label>
+          <input id="expectedReturn" type="number" value="9.5" min="1" max="25" step="0.25" inputmode="decimal">
+          <div class="hint">Typically 8% to 12% for Hybrid/Equity funds.</div>
+        </div>
+        <div class="field">
+          <label for="tenureYears">Withdrawal Duration (Years)</label>
+          <input id="tenureYears" type="number" value="10" min="1" max="40" step="1" inputmode="numeric">
+          <div class="hint">Number of years you plan to withdraw income.</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-main" id="share">Share on WhatsApp</button>
+        <button class="btn btn-light" id="print">Print / PDF</button>
+        <button class="btn btn-light" id="csv">Download CSV</button>
+        <button class="btn btn-light" id="reset">Reset</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Opening Balance</th>
+              <th>Total Annual Withdrawal</th>
+              <th>Annual Interest Gain</th>
+              <th>Closing Balance</th>
+            </tr>
+          </thead>
+          <tbody id="swpScheduleTable"></tbody>
+        </table>
+      </div>
+
+      <div class="chart">
+        <h3>Withdrawals vs Remaining Portfolio Balance</h3>
+        <div class="bars" id="bars"></div>
+      </div>
+
+      <details class="embed">
+        <summary>Embed this SWP Calculator on your website / blog</summary>
+        <textarea readonly onclick="this.select()"><iframe src="https://arthasetu.in/swp-calculator.html" title="SWP Calculator Online" width="100%" height="800" loading="lazy" style="border:0;border-radius:12px"></iframe>
+<p style="font-size:11px">Powered by <a href="https://arthasetu.in/">ArthaSetu</a></p></textarea>
+      </details>
+    </section>
+
+    <aside class="summary">
+      <div class="card">
+        <div class="big-save">
+          <span>FINAL REMAINING BALANCE</span>
+          <strong id="finalBalanceVal">—</strong>
+        </div>
+        <div class="mini">
+          <div class="metric"><span>Total Withdrawn</span><strong id="totalWithdrawnVal">—</strong></div>
+          <div class="metric"><span>Initial Corpus</span><strong id="initialCorpusVal">—</strong></div>
+          <div class="metric"><span>Withdrawal Rate</span><strong id="withdrawalRateVal">—</strong></div>
+          <div class="metric"><span>Corpus Sustainability</span><strong id="sustainabilityVal">—</strong></div>
+        </div>
+        <div class="notice" id="swpNotice">Calculating sustainability…</div>
+      </div>
+    </aside>
+  </div>
+
+  <article class="content">
+    <h2>How a Systematic Withdrawal Plan (SWP) Works in India</h2>
+    <p>An SWP allows an investor to redeem a specific rupee amount from a mutual fund scheme on a fixed day every month. Unlike selling the entire corpus, only the units required to generate your monthly withdrawal are redeemed. The remaining units stay invested in the market, continuing to generate compound interest and dividend growth.</p>
+
+    <h2>Tax Efficiency: SWP vs Bank FD Interest</h2>
+    <p>In a bank Fixed Deposit, the entire annual interest payout is fully taxable at your income tax slab rate under "Income from Other Sources". In contrast, with an SWP, each withdrawal consists of two parts: <strong>Principal Return</strong> (completely non-taxable) and <strong>Capital Gains</strong>. Only the capital gains portion is subject to tax (equity LTCG is tax-exempt up to ₹1.25 Lakh per financial year, and taxed at 12.5% beyond that), resulting in significantly lower tax outgo for retirees.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Can my SWP balance become zero?</summary>
+        <p>Yes. If your monthly withdrawal amount is significantly higher than the fund's annual rate of return, your capital will gradually decrease each month until the corpus is fully exhausted. Keeping your annual withdrawal rate below or equal to your expected return preserves the principal indefinitely.</p>
+      </details>
+      <details>
+        <summary>Can I increase or pause my SWP amount midway?</summary>
+        <p>Yes. Systematic Withdrawal Plans are fully flexible. You can modify your withdrawal amount, pause the payouts, or withdraw a lumpsum amount whenever needed without penalty.</p>
+      </details>
+      <details>
+        <summary>Which mutual fund categories are best suited for an SWP?</summary>
+        <p>Conservative Hybrid Funds, Balanced Advantage / Dynamic Asset Allocation Funds, and Equity Savings Funds are widely considered optimal for SWPs as they balance periodic market volatility with long-term capital preservation.</p>
+      </details>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© 2026 ArthaSetu • Open financial and wealth intelligence engines for Indian investors.</p>
+    <p style="margin-top:5px"><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+(() => {
+  const $ = id => document.getElementById(id);
+  const money = n => new Intl.NumberFormat("en-IN", {
+    style:"currency", currency:"INR", maximumFractionDigits:0
+  }).format(Math.max(0, Number(n) || 0));
+
+  const num = (id, fallback, min, max) => {
+    let v = Number($(id).value);
+    if (!Number.isFinite(v)) v = fallback;
+    if (min != null) v = Math.max(min, v);
+    if (max != null) v = Math.min(max, v);
+    return v;
+  };
+
+  function calculateSwp(initialCorpus, monthlyWithdrawal, ratePct, years) {
+    const monthlyRate = (ratePct / 100) / 12;
+    let balance = initialCorpus;
+    let totalWithdrawn = 0;
+    const schedule = [];
+    let isExhausted = false;
+    let exhaustedMonth = 0;
+
+    for (let yr = 1; yr <= years; yr++) {
+      const open = balance;
+      let yrWithdrawn = 0;
+      let yrInterest = 0;
+
+      for (let m = 1; m <= 12; m++) {
+        if (balance <= 0) {
+          if (!isExhausted) {
+            isExhausted = true;
+            exhaustedMonth = (yr - 1) * 12 + m;
+          }
+          break;
+        }
+
+        const growth = balance * monthlyRate;
+        yrInterest += growth;
+        balance += growth;
+
+        const actualPayout = Math.min(balance, monthlyWithdrawal);
+        balance -= actualPayout;
+        yrWithdrawn += actualPayout;
+        totalWithdrawn += actualPayout;
+      }
+
+      schedule.push({
+        year: yr,
+        open,
+        withdrawn: yrWithdrawn,
+        interest: yrInterest,
+        close: Math.max(0, balance)
+      });
+
+      if (balance <= 0) break;
+    }
+
+    return {
+      initialCorpus,
+      totalWithdrawn,
+      finalBalance: Math.max(0, balance),
+      isExhausted,
+      exhaustedMonth,
+      schedule
+    };
+  }
+
+  function render() {
+    const corpus = num("initialInvest", 2500000, 50000, 100000000);
+    const withdrawal = num("monthlyWithdrawal", 18000, 500, 5000000);
+    const rate = num("expectedReturn", 9.5, 1, 30);
+    const years = num("tenureYears", 10, 1, 40);
+
+    const res = calculateSwp(corpus, withdrawal, rate, years);
+
+    const annualWithdrawal = withdrawal * 12;
+    const withdrawalRate = (annualWithdrawal / corpus) * 100;
+
+    $("finalBalanceVal").textContent = money(res.finalBalance);
+    $("totalWithdrawnVal").textContent = money(res.totalWithdrawn);
+    $("initialCorpusVal").textContent = money(corpus);
+    $("withdrawalRateVal").textContent = `${withdrawalRate.toFixed(2)}% / yr`;
+
+    if (res.isExhausted) {
+      $("sustainabilityVal").textContent = "Corpus Exhausted";
+      $("sustainabilityVal").style.color = "var(--red)";
+      $("swpNotice").textContent = `Warning: Your withdrawal rate (${withdrawalRate.toFixed(1)}%) exceeds growth rate. Corpus runs out in ${(res.exhaustedMonth / 12).toFixed(1)} years.`;
+      $("swpNotice").style.background = "#fff1f2";
+      $("swpNotice").style.color = "#9f1239";
+      $("swpNotice").style.borderColor = "#fecdd3";
+      $("directAnswer").innerHTML = `Withdrawing <strong>${money(withdrawal)}/month</strong> against a <strong>${money(corpus)}</strong> corpus at <strong>${rate.toFixed(1)}%</strong> exhausts the entire balance in <strong>${(res.exhaustedMonth / 12).toFixed(1)} years</strong>. Total payout received: <strong>${money(res.totalWithdrawn)}</strong>.`;
+    } else {
+      const isGrowing = res.finalBalance >= corpus;
+      $("sustainabilityVal").textContent = isGrowing ? "Growing Corpus" : "Sustained";
+      $("sustainabilityVal").style.color = "var(--green)";
+      $("swpNotice").textContent = isGrowing
+        ? `Healthy SWP: Annual withdrawal rate (${withdrawalRate.toFixed(1)}%) is below expected returns. Your capital is growing while providing cash flow.`
+        : `Sustainable: Corpus easily covers ${years} years of payouts with a healthy remaining balance of ${money(res.finalBalance)}.`;
+      $("swpNotice").style.background = "#f0fdf4";
+      $("swpNotice").style.color = "#166534";
+      $("swpNotice").style.borderColor = "#bbf7d0";
+      $("directAnswer").innerHTML = `Withdrawing <strong>${money(withdrawal)}/month</strong> for <strong>${years} years</strong> provides a total cash flow of <strong>${money(res.totalWithdrawn)}</strong>, leaving an estimated remaining balance of <strong>${money(res.finalBalance)}</strong> at <strong>${rate.toFixed(1)}% p.a.</strong> return.`;
+    }
+
+    $("swpScheduleTable").innerHTML = res.schedule.map(s => `
+      <tr>
+        <td>Year ${s.year}</td>
+        <td>${money(s.open)}</td>
+        <td>${money(s.withdrawn)}</td>
+        <td class="good">${money(s.interest)}</td>
+        <td style="font-weight:800" class="${s.close === 0 ? 'warn' : ''}">${money(s.close)}</td>
+      </tr>
+    `).join("");
+
+    const totalPortfolioValue = res.totalWithdrawn + res.finalBalance;
+    const pWithdrawn = (res.totalWithdrawn / Math.max(1, totalPortfolioValue)) * 100;
+    const pBalance = (res.finalBalance / Math.max(1, totalPortfolioValue)) * 100;
+
+    $("bars").innerHTML = `
+      <div class="bar-row">
+        <span>Payout</span>
+        <div class="track"><div class="fill" style="width:${pWithdrawn.toFixed(1)}%;background:var(--primary)"></div></div>
+        <strong>${money(res.totalWithdrawn)}</strong>
+      </div>
+      <div class="bar-row">
+        <span>Balance</span>
+        <div class="track"><div class="fill" style="width:${pBalance.toFixed(1)}%;background:var(--green)"></div></div>
+        <strong style="color:var(--green)">${money(res.finalBalance)}</strong>
+      </div>
+    `;
+  }
+
+  $("share").addEventListener("click", () => {
+    const text = `ArthaSetu Mutual Fund SWP Calculator\nMonthly Payout: ${money($("monthlyWithdrawal").value)}\nTotal Withdrawn: ${$("totalWithdrawnVal").textContent}\nRemaining Balance: ${$("finalBalanceVal").textContent}\nhttps://arthasetu.in/swp-calculator.html`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
+  });
+
+  $("print").addEventListener("click", () => window.print());
+
+  $("csv").addEventListener("click", () => {
+    const rows = [["Year", "Opening Balance", "Total Withdrawn", "Interest Earned", "Closing Balance"]];
+    document.querySelectorAll("#swpScheduleTable tr").forEach(tr => {
+      rows.push([...tr.querySelectorAll("td")].map(td => td.innerText));
+    });
+    const csv = rows.map(r => r.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "arthasetu-swp-cash-flow-schedule.csv";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  $("reset").addEventListener("click", () => {
+    $("initialInvest").value = 2500000;
+    $("monthlyWithdrawal").value = 18000;
+    $("expectedReturn").value = 9.5;
+    $("tenureYears").value = 10;
+    render();
+  });
+
+  ["initialInvest","monthlyWithdrawal","expectedReturn","tenureYears"].forEach(id => {
+    $(id).addEventListener("input", render);
+    $(id).addEventListener("change", render);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
