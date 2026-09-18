@@ -404,4 +404,79 @@ th{background:#f1f5f9;color:var(--muted);font-weight:900}
       `On an annual package of <strong>${money(ctc)} CTC</strong>, your monthly take-home salary is approximately <strong>${money(activeInHand)}/month</strong>. The <strong>${betterRegime}</strong> saves you roughly <strong>${money(diff)}/month</strong> based on current deductions.`;
 
     $("regimeNotice").textContent = inHandNew >= inHandOld
-      ? `New Regime gives you ${money(diff * 12)} more annual take-home compared to Old Regime with ₹${oldDed} deductions
+      ? `New Regime gives you ${money(diff * 12)} more annual take-home compared to Old Regime with ₹${oldDed} deductions.`
+      : `Old Regime gives you ${money(diff * 12)} more annual take-home thanks to your ₹${oldDed} tax deductions.`;
+
+    $("comparisonTable").innerHTML = `
+      <tr><td>Monthly Gross Salary</td><td>${money(monthlyGross)}</td><td>${money(monthlyGross)}</td></tr>
+      <tr><td>Standard Deduction</td><td>₹75,000</td><td>₹50,000</td></tr>
+      <tr><td>Total Exemptions / Deductions</td><td>₹0</td><td>${money(oldDed)}</td></tr>
+      <tr><td>Annual Tax Liability</td><td class="${taxNewAnnual <= taxOldAnnual ? 'good' : ''}">${money(taxNewAnnual)}</td><td class="${taxOldAnnual < taxNewAnnual ? 'good' : ''}">${money(taxOldAnnual)}</td></tr>
+      <tr><td>Net Monthly Take-Home</td><td class="${inHandNew >= inHandOld ? 'good' : ''}" style="font-weight:900;font-size:15px">${money(inHandNew)}</td><td class="${inHandOld > inHandNew ? 'good' : ''}" style="font-weight:900;font-size:15px">${money(inHandOld)}</td></tr>
+    `;
+
+    const totalOut = monthlyGross;
+    const pInHand = (activeInHand / totalOut) * 100;
+    const pEpf = (monthlyEpf / totalOut) * 100;
+    const pTax = (activeTaxMonthly / totalOut) * 100;
+
+    $("bars").innerHTML = `
+      <div class="bar-row">
+        <span>In-Hand</span>
+        <div class="track"><div class="fill" style="width:${pInHand.toFixed(1)}%;background:var(--green)"></div></div>
+        <strong>${money(activeInHand)}</strong>
+      </div>
+      <div class="bar-row">
+        <span>EPF</span>
+        <div class="track"><div class="fill" style="width:${pEpf.toFixed(1)}%"></div></div>
+        <strong>${money(monthlyEpf)}</strong>
+      </div>
+      <div class="bar-row">
+        <span>Income Tax</span>
+        <div class="track"><div class="fill" style="width:${Math.max(1, pTax).toFixed(1)}%;background:var(--red)"></div></div>
+        <strong>${money(activeTaxMonthly)}</strong>
+      </div>
+    `;
+  }
+
+  $("share").addEventListener("click", () => {
+    const text = `ArthaSetu 15 LPA In-Hand Salary Calculator\nTake-Home: ${$("mInHand").textContent}/month\nAnnual Tax: ${$("aTax").textContent}\nhttps://arthasetu.in/salary-15-lpa.html`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
+  });
+
+  $("print").addEventListener("click", () => window.print());
+
+  $("csv").addEventListener("click", () => {
+    const rows = [["Component", "New Regime", "Old Regime"]];
+    document.querySelectorAll("#comparisonTable tr").forEach(tr => {
+      rows.push([...tr.querySelectorAll("td")].map(td => td.innerText));
+    });
+    const csv = rows.map(r => r.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "arthasetu-15-lpa-salary-breakdown.csv";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  $("reset").addEventListener("click", () => {
+    $("ctc").value = 1500000;
+    $("basicPct").value = 40;
+    $("epfMode").value = "actual";
+    $("profTax").value = 200;
+    $("oldDeductions").value = 250000;
+    $("regimePref").value = "new";
+    render();
+  });
+
+  ["ctc","basicPct","epfMode","profTax","oldDeductions","regimePref"].forEach(id => {
+    $(id).addEventListener("input", render);
+    $(id).addEventListener("change", render);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
