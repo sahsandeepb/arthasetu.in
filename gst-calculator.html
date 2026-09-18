@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+<title>GST Calculator Online | Inclusive & Exclusive Tax Breakdown | ArthaSetu</title>
+<meta name="description" content="Calculate GST online with instant CGST, SGST, and IGST breakdown. Supports 5%, 12%, 18%, 28% and custom tax rates for inclusive and exclusive amounts.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://arthasetu.in/gst-calculator.html">
+<meta name="theme-color" content="#0284c7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArthaSetu">
+<meta property="og:title" content="Online GST Calculator (Inclusive & Exclusive with CGST/SGST Split)">
+<meta property="og:description" content="Calculate exact GST amount, pre-tax base, and intra-state (CGST+SGST) vs inter-state (IGST) breakup instantly. Free tool by ArthaSetu.">
+<meta property="og:url" content="https://arthasetu.in/gst-calculator.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230284c7'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='26' font-family='Arial' font-weight='800' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
+
+<!-- Google AdSense Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7895642857043729" crossorigin="anonymous"></script>
+
+<!-- Structured Data: WebApplication + BreadcrumbList + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "@id":"https://arthasetu.in/gst-calculator.html#calculator",
+      "name":"GST Calculator",
+      "url":"https://arthasetu.in/gst-calculator.html",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"All",
+      "isAccessibleForFree":true,
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://arthasetu.in/gst-calculator.html#breadcrumbs",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://arthasetu.in/"},
+        {"@type":"ListItem","position":2,"name":"Business & Tax Tools","item":"https://arthasetu.in/gst.html"},
+        {"@type":"ListItem","position":3,"name":"GST Calculator","item":"https://arthasetu.in/gst-calculator.html"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://arthasetu.in/gst-calculator.html#faq",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"How to calculate GST exclusive amount?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"To add GST to a base price: GST Amount = (Base Amount × GST Rate) / 100. Total Invoice Value = Base Amount + GST Amount."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"How to calculate GST inclusive amount?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"To extract GST from a MRP or gross total: GST Amount = Total Value - [Total Value × (100 / (100 + GST Rate))]. Pre-tax Base = Total Value - GST Amount."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"What is the difference between CGST, SGST and IGST?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"For intra-state transactions (within the same state), GST is split equally between the central government (CGST) and state government (SGST). For inter-state supply (between two states), full Integrated GST (IGST) is charged."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --primary:#0284c7;--primary2:#0369a1;--soft:#f0f9ff;--soft2:#e0f2fe;
+  --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#fff;
+  --green:#047857;--red:#b91c1c;--radius:16px;--shadow:0 10px 30px rgba(15,23,42,.05)
+}
+*{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%}
+a{color:var(--primary2);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select{font:inherit}
+.wrap{width:100%;max-width:1080px;margin:auto;padding:0 16px}
+
+/* Sticky Header */
+.nav{position:-webkit-sticky;position:sticky;top:0;z-index:100;background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:900;text-decoration:none}
+.mark{width:32px;height:32px;border-radius:9px;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:900;font-size:13px}
+.badge{font-size:11.5px;color:var(--green);font-weight:800}
+.crumb{font-size:12px;color:var(--muted);padding:12px 0 4px;white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* Hero Unit */
+.hero{margin:8px 0 16px;background:linear-gradient(135deg,#eff8ff,#fff);border:1px solid #bae6fd;border-radius:var(--radius);padding:clamp(16px, 3.5vw, 24px)}
+.eyebrow{font-size:11px;letter-spacing:.7px;text-transform:uppercase;font-weight:900;color:var(--primary2);margin-bottom:4px}
+h1{font-size:clamp(21px,4vw,32px);line-height:1.2;font-weight:900}
+.lead{margin-top:6px;color:#475569;font-size:clamp(13px, 2vw, 14.5px)}
+.direct{margin-top:12px;background:#fff;border:1px solid #cbd5e1;border-left:4px solid var(--primary);border-radius:10px;padding:12px 14px;font-size:13.5px}
+.direct strong{color:var(--primary2)}
+
+/* Layout Grid */
+.grid{display:grid;grid-template-columns:1fr 330px;gap:16px;align-items:start}
+.card,.content{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(15px, 3vw, 22px)}
+.card h2{font-size:clamp(16.5px, 2.5vw, 19px);margin-bottom:12px}
+
+/* Sizing Fields */
+.fields{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.field label{display:block;font-size:11px;font-weight:900;color:var(--muted);margin-bottom:4px;text-transform:uppercase}
+.field input,.field select{width:100%;height:46px;border:1.5px solid #cbd5e1;border-radius:10px;padding:0 12px;background:#fff;color:var(--ink);font-size:16px;font-weight:700;outline:none;-webkit-appearance:none;transition:border-color .15s}
+.field select{background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748b'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:18px;padding-right:32px}
+.field input:focus,.field select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(2,132,199,.12)}
+.hint{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.25}
+
+/* Rate Pill Selector */
+.rate-pills{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.rate-pill{flex:1;min-width:44px;height:34px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;font-size:12.5px;font-weight:800;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:all .15s}
+.rate-pill.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* Action Buttons */
+.actions{display:grid;grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));gap:8px;margin-top:16px}
+.btn{min-height:46px;border:0;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.btn-main{background:var(--primary);color:#fff}
+.btn-light{background:#f1f5f9;color:var(--ink)}
+.btn-main:hover{background:var(--primary2)}
+
+/* Summary Panel */
+.summary{position:-webkit-sticky;position:sticky;top:72px}
+.big-save{background:var(--soft);border:1px solid #bae6fd;border-radius:13px;padding:16px;margin-bottom:12px;text-align:center}
+.big-save span{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.5px}
+.big-save strong{display:block;font-size:clamp(23px, 4vw, 30px);line-height:1.15;color:var(--primary2);margin-top:4px}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.metric{border:1px solid var(--line);background:#f8fafc;border-radius:10px;padding:10px}
+.metric span{display:block;color:var(--muted);font-size:10.5px;font-weight:800}
+.metric strong{display:block;font-size:15.5px;margin-top:2px}
+.notice{margin-top:12px;padding:10px 12px;border-radius:10px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-size:11.5px;line-height:1.45}
+
+/* Fluid Table */
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:16px;border-radius:10px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;min-width:440px;font-size:12.5px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line)}
+th{background:#f1f5f9;color:var(--muted);font-weight:900}
+.good{color:var(--green);font-weight:900}
+
+/* Content & FAQs */
+.content{margin:18px 0 28px}
+.content h2{font-size:17.5px;margin:18px 0 8px}
+.content h2:first-child{margin-top:0}
+.content p{color:#334155;margin-bottom:10px;font-size:13px}
+.faq{margin-top:8px}
+.faq details{border-top:1px solid var(--line);padding:10px 0}
+.faq summary{cursor:pointer;font-weight:850;font-size:13px}
+.faq p{margin-top:6px;font-size:12.5px;color:#475569}
+
+.embed{margin-top:16px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:11px;padding:12px}
+.embed summary{cursor:pointer;font-weight:850;font-size:12px}
+.embed textarea{width:100%;height:65px;margin-top:8px;padding:8px;border:1px solid var(--line);border-radius:8px;font:11px monospace;resize:none}
+.footer{border-top:1px solid var(--line);background:#fff;color:var(--muted);padding:22px 0;font-size:12px;text-align:center}
+
+@media(max-width:880px){
+  .grid{grid-template-columns:1fr}
+  .summary{position:static}
+}
+@media(max-width:560px){
+  .fields{grid-template-columns:1fr}
+  .actions{grid-template-columns:1fr 1fr}
+  .badge{display:none}
+}
+@media print{
+  .nav,.actions,.embed,.footer{display:none!important}
+  body{background:#fff}
+  .summary{position:static}
+  .card,.content,.hero{box-shadow:none;border:none;padding:0}
+}
+</style>
+</head>
+
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><span class="mark">AS</span><span>ArthaSetu</span></a>
+    <span class="badge">100% Free & Private</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> › <a href="/gst.html">Business & Tax Tools</a> › GST Calculator
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">GST Invoicing & Taxation Engine</div>
+    <h1>Online GST Calculator (Inclusive & Exclusive)</h1>
+    <p class="lead">Instantly compute base amounts, total GST tax liability, and CGST/SGST vs IGST split across all official Indian GST slabs.</p>
+    <div class="direct" id="directAnswer">Calculating GST details…</div>
+  </section>
+
+  <div class="grid">
+    <section class="card" id="calculator">
+      <h2>Transaction Details</h2>
+      <div class="fields">
+        <div class="field">
+          <label for="amount">Amount (₹)</label>
+          <input id="amount" type="number" value="10000" min="1" max="100000000" step="100" inputmode="decimal">
+          <div class="hint">Enter your invoice price or total MRP.</div>
+        </div>
+        <div class="field">
+          <label for="calcType">Calculation Mode</label>
+          <select id="calcType">
+            <option value="exclusive" selected>Exclusive (Add GST to Net Price)</option>
+            <option value="inclusive">Inclusive (Extract GST from Gross/MRP)</option>
+          </select>
+          <div class="hint">Exclusive adds tax; Inclusive separates pre-tax value.</div>
+        </div>
+        <div class="field">
+          <label for="rate">GST Rate (%)</label>
+          <input id="rate" type="number" value="18" min="0.1" max="100" step="0.5" inputmode="decimal">
+          <div class="rate-pills">
+            <button type="button" class="rate-pill" data-val="5">5%</button>
+            <button type="button" class="rate-pill" data-val="12">12%</button>
+            <button type="button" class="rate-pill active" data-val="18">18%</button>
+            <button type="button" class="rate-pill" data-val="28">28%</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="supplyType">Supply Type</label>
+          <select id="supplyType">
+            <option value="intra" selected>Intra-State (CGST + SGST)</option>
+            <option value="inter">Inter-State (IGST)</option>
+          </select>
+          <div class="hint">Same state splits 50:50; Different state uses IGST.</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-main" id="share">Share on WhatsApp</button>
+        <button class="btn btn-light" id="print">Print / PDF</button>
+        <button class="btn btn-light" id="csv">Download CSV</button>
+        <button class="btn btn-light" id="reset">Reset</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>GST Component</th>
+              <th>Tax Rate</th>
+              <th>Calculated Amount</th>
+            </tr>
+          </thead>
+          <tbody id="gstTable"></tbody>
+        </table>
+      </div>
+
+      <details class="embed">
+        <summary>Embed this GST Calculator on your site / blog</summary>
+        <textarea readonly onclick="this.select()"><iframe src="https://arthasetu.in/gst-calculator.html" title="GST Calculator Online" width="100%" height="800" loading="lazy" style="border:0;border-radius:12px"></iframe>
+<p style="font-size:11px">Powered by <a href="https://arthasetu.in/">ArthaSetu</a></p></textarea>
+      </details>
+    </section>
+
+    <aside class="summary">
+      <div class="card">
+        <div class="big-save">
+          <span>FINAL INVOICE TOTAL</span>
+          <strong id="finalTotal">—</strong>
+        </div>
+        <div class="mini">
+          <div class="metric"><span>Net Pre-Tax Base</span><strong id="baseVal">—</strong></div>
+          <div class="metric"><span>Total GST Tax</span><strong id="taxVal">—</strong></div>
+          <div class="metric"><span>CGST Share</span><strong id="cgstVal">—</strong></div>
+          <div class="metric"><span>SGST / IGST</span><strong id="sgstVal">—</strong></div>
+        </div>
+        <div class="notice" id="splitNotice">Compliant with Central Goods and Services Tax Rules.</div>
+      </div>
+    </aside>
+  </div>
+
+  <article class="content">
+    <h2>How GST Calculation Works in India</h2>
+    <p>Under the GST regime, tax is levied at each stage of supply based on destination. For intra-state supply within the same state or union territory, the tax rate is divided equally between <strong>CGST</strong> (Central GST) and <strong>SGST</strong> (State GST). For interstate transactions between two different states, the entire tax is levied as <strong>IGST</strong> (Integrated GST).</p>
+
+    <h2>GST Inclusive vs Exclusive Formula</h2>
+    <p>When creating a B2B invoice where GST is extra: <code>GST Amount = (Pre-tax Base × GST Rate) / 100</code>. When breaking down a B2C retail MRP where tax is already included: <code>Base Amount = Total Amount × (100 / (100 + GST Rate))</code> and <code>GST = Total Amount - Base Amount</code>.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>What are the 4 primary GST tax rate slabs in India?</summary>
+        <p>The four primary GST slabs are 5% (essential goods), 12% (processed items), 18% (standard goods and services), and 28% (luxury and sin goods).</p>
+      </details>
+      <details>
+        <summary>When is IGST charged instead of CGST and SGST?</summary>
+        <p>IGST is charged when the supplier and the place of supply are in two different states or union territories, or in the case of imports and exports.</p>
+      </details>
+      <details>
+        <summary>Can registered businesses claim Input Tax Credit (ITC)?</summary>
+        <p>Yes. Businesses with valid GSTIN can claim Input Tax Credit on eligible purchases to offset their output GST liability upon filing GSTR-3B.</p>
+      </details>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© 2026 ArthaSetu • Open financial and taxation intelligence engines for Indian businesses.</p>
+    <p style="margin-top:5px"><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+(() => {
+  const $ = id => document.getElementById(id);
+  const money = n => new Intl.NumberFormat("en-IN", {
+    style:"currency", currency:"INR", maximumFractionDigits:2
+  }).format(Math.max(0, Number(n) || 0));
+
+  const num = (id, fallback, min, max) => {
+    let v = Number($(id).value);
+    if (!Number.isFinite(v)) v = fallback;
+    if (min != null) v = Math.max(min, v);
+    if (max != null) v = Math.min(max, v);
+    return v;
+  };
+
+  function render() {
+    const entered = num("amount", 10000, 0, 1000000000);
+    const mode = $("calcType").value;
+    const rate = num("rate", 18, 0, 100);
+    const supply = $("supplyType").value;
+
+    let baseAmount = 0, gstAmount = 0, totalAmount = 0;
+
+    if (mode === "exclusive") {
+      baseAmount = entered;
+      gstAmount = (baseAmount * rate) / 100;
+      totalAmount = baseAmount + gstAmount;
+    } else {
+      totalAmount = entered;
+      baseAmount = totalAmount * (100 / (100 + rate));
+      gstAmount = totalAmount - baseAmount;
+    }
+
+    const halfRate = rate / 2;
+    const halfGst = gstAmount / 2;
+
+    $("finalTotal").textContent = money(totalAmount);
+    $("baseVal").textContent = money(baseAmount);
+    $("taxVal").textContent = money(gstAmount);
+
+    if (supply === "intra") {
+      $("cgstVal").textContent = money(halfGst);
+      $("sgstVal").textContent = money(halfGst);
+      $("splitNotice").textContent = `Intra-State: Split into CGST (${halfRate}%) and SGST (${halfRate}%).`;
+      $("gstTable").innerHTML = `
+        <tr><td>Pre-Tax Base Amount</td><td>—</td><td>${money(baseAmount)}</td></tr>
+        <tr><td>CGST (Central Tax)</td><td>${halfRate.toFixed(2)}%</td><td class="good">${money(halfGst)}</td></tr>
+        <tr><td>SGST (State Tax)</td><td>${halfRate.toFixed(2)}%</td><td class="good">${money(halfGst)}</td></tr>
+        <tr><td>Total Tax (GST)</td><td>${rate.toFixed(2)}%</td><td class="good">${money(gstAmount)}</td></tr>
+        <tr style="font-weight:900"><td>Total Invoice Value</td><td>—</td><td>${money(totalAmount)}</td></tr>
+      `;
+    } else {
+      $("cgstVal").textContent = "₹0.00";
+      $("sgstVal").textContent = money(gstAmount);
+      $("splitNotice").textContent = `Inter-State: 100% credited to Integrated GST (IGST).`;
+      $("gstTable").innerHTML = `
+        <tr><td>Pre-Tax Base Amount</td><td>—</td><td>${money(baseAmount)}</td></tr>
+        <tr><td>IGST (Integrated Tax)</td><td>${rate.toFixed(2)}%</td><td class="good">${money(gstAmount)}</td></tr>
+        <tr style="font-weight:900"><td>Total Invoice Value</td><td>—</td><td>${money(totalAmount)}</td></tr>
+      `;
+    }
+
+    $("directAnswer").innerHTML =
+      `For an entered amount of <strong>${money(entered)}</strong> at <strong>${rate.toFixed(1)}% GST</strong> (${mode}), the net pre-tax base is <strong>${money(baseAmount)}</strong>, total GST is <strong>${money(gstAmount)}</strong>, and total payable is <strong>${money(totalAmount)}</strong>.`;
+  }
+
+  document.querySelectorAll(".rate-pill").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".rate-pill").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      $("rate").value = btn.getAttribute("data-val");
+      render();
+    });
+  });
+
+  $("share").addEventListener("click", () => {
+    const text = `ArthaSetu Online GST Calculator\nBase: ${$("baseVal").textContent}\nGST: ${$("taxVal").textContent}\nTotal: ${$("finalTotal").textContent}\nhttps://arthasetu.in/gst-calculator.html`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
+  });
+
+  $("print").addEventListener("click", () => window.print());
+
+  $("csv").addEventListener("click", () => {
+    const rows = [["Component", "Tax Rate", "Amount"]];
+    document.querySelectorAll("#gstTable tr").forEach(tr => {
+      rows.push([...tr.querySelectorAll("td")].map(td => td.innerText));
+    });
+    const csv = rows.map(r => r.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "arthasetu-gst-calculation.csv";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  $("reset").addEventListener("click", () => {
+    $("amount").value = 10000;
+    $("calcType").value = "exclusive";
+    $("rate").value = 18;
+    $("supplyType").value = "intra";
+    document.querySelectorAll(".rate-pill").forEach(p => p.classList.remove("active"));
+    document.querySelector(".rate-pill[data-val='18']").classList.add("active");
+    render();
+  });
+
+  ["amount","calcType","rate","supplyType"].forEach(id => {
+    $(id).addEventListener("input", render);
+    $(id).addEventListener("change", render);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
