@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+<title>Capital Gains Tax Calculator Online | STCG & LTCG Tax Rates | ArthaSetu</title>
+<meta name="description" content="Calculate Short-Term and Long-Term Capital Gains Tax on equity shares, mutual funds, and real estate. Includes 12.5% LTCG, 20% STCG, and ₹1.25 Lakh exemption on ArthaSetu.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://arthasetu.in/capital-gains-calculator.html">
+<meta name="theme-color" content="#0284c7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArthaSetu">
+<meta property="og:title" content="Capital Gains Tax Calculator (STCG vs LTCG on Shares, MF & Property)">
+<meta property="og:description" content="Calculate net capital gains, statutory deductions, 4% health & education cess, and final tax liability across asset classes. Free Indian taxation tool.">
+<meta property="og:url" content="https://arthasetu.in/capital-gains-calculator.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230284c7'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='26' font-family='Arial' font-weight='800' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
+
+<!-- Google AdSense Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7895642857043729" crossorigin="anonymous"></script>
+
+<!-- Structured Data: WebApplication + BreadcrumbList + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "@id":"https://arthasetu.in/capital-gains-calculator.html#calculator",
+      "name":"Capital Gains Tax Calculator",
+      "url":"https://arthasetu.in/capital-gains-calculator.html",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"All",
+      "isAccessibleForFree":true,
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://arthasetu.in/capital-gains-calculator.html#breadcrumbs",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://arthasetu.in/"},
+        {"@type":"ListItem","position":2,"name":"Tax Planning Tools","item":"https://arthasetu.in/tax.html"},
+        {"@type":"ListItem","position":3,"name":"Capital Gains Tax Calculator","item":"https://arthasetu.in/capital-gains-calculator.html"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://arthasetu.in/capital-gains-calculator.html#faq",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"What are the statutory tax rates for STCG and LTCG on listed equities in India?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Short-Term Capital Gains (STCG) on listed shares and equity mutual funds held up to 12 months are taxed at 20% under Section 111A. Long-Term Capital Gains (LTCG) on holdings exceeding 12 months are taxed at 12.5% under Section 112A, with an annual statutory exemption of up to ₹1,25,000."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"How is real estate capital gain taxed after the revised tax provisions?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Immovable property held for more than 24 months is classified as long-term. Under revised rules, long-term capital gains on real estate are taxed at 12.5% without indexation. For properties acquired prior to 23 July 2024, individual resident taxpayers may compute tax under the older 20% rate with indexation if it proves more beneficial."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Can capital losses be set off against capital gains?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Long-term capital losses (LTCL) can only be set off against long-term capital gains. Short-term capital losses (STCL) can be set off against both short-term and long-term capital gains. Unadjusted capital losses can be carried forward for up to 8 assessment years."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --primary:#0284c7;--primary2:#0369a1;--soft:#f0f9ff;--soft2:#e0f2fe;
+  --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#fff;
+  --green:#047857;--red:#b91c1c;--radius:16px;--shadow:0 10px 30px rgba(15,23,42,.05)
+}
+*,*::before,*::after{
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-behavior:smooth;
+  width:100%;
+  overflow-x:hidden;
+}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  width:100%;
+}
+a{color:var(--primary2);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select{font:inherit}
+
+/* Fluid Responsive Container */
+.wrap{
+  width:100%;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:clamp(14px, 3vw, 24px);
+  padding-right:clamp(14px, 3vw, 24px);
+}
+
+/* Nav */
+.nav{
+  position:-webkit-sticky;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.98);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  width:100%;
+}
+.nav-in{
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:var(--ink);
+  font-weight:900;
+  font-size:16px;
+}
+.mark{
+  width:32px;
+  height:32px;
+  border-radius:9px;
+  background:var(--primary);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:13px;
+}
+.badge{
+  font-size:12px;
+  color:var(--green);
+  font-weight:800;
+}
+.crumb{
+  font-size:12px;
+  color:var(--muted);
+  padding:14px 0 6px;
+  white-space:nowrap;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* Hero Section */
+.hero{
+  margin:8px 0 20px;
+  background:linear-gradient(135deg,#eff8ff,#fff);
+  border:1px solid #bae6fd;
+  border-radius:var(--radius);
+  padding:clamp(18px, 3vw, 28px);
+  width:100%;
+}
+.eyebrow{
+  font-size:11px;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+  font-weight:900;
+  color:var(--primary2);
+  margin-bottom:5px;
+}
+h1{
+  font-size:clamp(21px, 3.5vw, 32px);
+  line-height:1.25;
+  font-weight:900;
+  word-wrap:break-word;
+}
+.lead{
+  margin-top:6px;
+  color:#475569;
+  font-size:clamp(13.5px, 1.8vw, 15px);
+  max-width:880px;
+}
+.direct{
+  margin-top:14px;
+  background:#fff;
+  border:1px solid #cbd5e1;
+  border-left:4px solid var(--primary);
+  border-radius:10px;
+  padding:12px 16px;
+  font-size:14px;
+  word-break:break-word;
+}
+.direct strong{color:var(--primary2)}
+
+/* Laptop & Desktop Precision Grid */
+.grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) 350px;
+  gap:20px;
+  align-items:start;
+  width:100%;
+}
+.card,.content{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:clamp(16px, 2.5vw, 24px);
+  min-width:0;
+}
+.card h2{
+  font-size:clamp(17px, 2vw, 20px);
+  margin-bottom:14px;
+}
+
+/* Form Fields */
+.fields{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:14px;
+  width:100%;
+}
+.field{
+  min-width:0;
+}
+.field label{
+  display:block;
+  font-size:11px;
+  font-weight:900;
+  color:var(--muted);
+  margin-bottom:5px;
+  text-transform:uppercase;
+}
+.field input,.field select{
+  width:100%;
+  min-height:46px;
+  height:46px;
+  border:1.5px solid #cbd5e1;
+  border-radius:10px;
+  padding:0 12px;
+  background:#fff;
+  color:var(--ink);
+  font-size:16px;
+  font-weight:700;
+  outline:none;
+  -webkit-appearance:none;
+  transition:border-color .15s;
+}
+.field select{
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748b'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-size:18px;
+  padding-right:32px;
+}
+.field input:focus,.field select:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(2,132,199,.12);
+}
+.hint{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:4px;
+  line-height:1.3;
+}
+
+/* Action Buttons */
+.actions{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(115px, 1fr));
+  gap:8px;
+  margin-top:18px;
+  width:100%;
+}
+.btn{
+  min-height:46px;
+  border:0;
+  border-radius:10px;
+  padding:8px 12px;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.btn-main{background:var(--primary);color:#fff}
+.btn-light{background:#f1f5f9;color:var(--ink)}
+.btn-main:hover{background:var(--primary2)}
+
+/* Summary Panel */
+.summary{
+  position:-webkit-sticky;
+  position:sticky;
+  top:76px;
+  min-width:0;
+}
+.big-save{
+  background:var(--soft);
+  border:1px solid #bae6fd;
+  border-radius:13px;
+  padding:16px;
+  margin-bottom:12px;
+  text-align:center;
+}
+.big-save span{
+  font-size:11px;
+  color:var(--muted);
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.big-save strong{
+  display:block;
+  font-size:clamp(22px, 3.2vw, 28px);
+  line-height:1.2;
+  color:var(--red);
+  margin-top:4px;
+  word-break:break-word;
+}
+.mini{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:8px;
+}
+.metric{
+  border:1px solid var(--line);
+  background:#f8fafc;
+  border-radius:10px;
+  padding:10px 12px;
+  min-width:0;
+}
+.metric span{
+  display:block;
+  color:var(--muted);
+  font-size:10.5px;
+  font-weight:800;
+}
+.metric strong{
+  display:block;
+  font-size:14.5px;
+  margin-top:2px;
+  word-break:break-word;
+}
+.notice{
+  margin-top:12px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:#f0fdf4;
+  border:1px solid #bbf7d0;
+  color:#166534;
+  font-size:11.5px;
+  line-height:1.45;
+}
+
+/* Visualization Bar */
+.chart{
+  margin-top:18px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px;
+  width:100%;
+}
+.chart h3{font-size:13px;margin-bottom:10px}
+.bars{display:grid;gap:8px}
+.bar-row{
+  display:grid;
+  grid-template-columns:90px minmax(0, 1fr) 90px;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+}
+.track{height:12px;background:#e2e8f0;border-radius:99px;overflow:hidden;width:100%}
+.fill{height:100%;background:var(--primary);border-radius:99px}
+
+/* Tables */
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  margin-top:18px;
+  border-radius:10px;
+  border:1px solid var(--line);
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:440px;
+  font-size:12.5px;
+}
+th,td{
+  text-align:left;
+  padding:9px 12px;
+  border-bottom:1px solid var(--line);
+}
+th{background:#f1f5f9;color:var(--muted);font-weight:900}
+.good{color:var(--green);font-weight:900}
+.warn{color:var(--red);font-weight:900}
+
+/* Content & FAQs */
+.content{margin:20px 0 30px;width:100%}
+.content h2{font-size:18px;margin:20px 0 8px}
+.content h2:first-child{margin-top:0}
+.content p{color:#334155;margin-bottom:10px;font-size:13.5px}
+.faq{margin-top:10px}
+.faq details{border-top:1px solid var(--line);padding:10px 0}
+.faq summary{cursor:pointer;font-weight:850;font-size:13px}
+.faq p{margin-top:6px;font-size:12.5px;color:#475569}
+
+.embed{
+  margin-top:18px;
+  background:#f8fafc;
+  border:1px dashed #cbd5e1;
+  border-radius:11px;
+  padding:12px;
+}
+.embed summary{cursor:pointer;font-weight:850;font-size:12px}
+.embed textarea{
+  width:100%;
+  height:65px;
+  margin-top:8px;
+  padding:8px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  font:11px monospace;
+  resize:none;
+}
+.footer{
+  border-top:1px solid var(--line);
+  background:#fff;
+  color:var(--muted);
+  padding:24px 0;
+  font-size:12px;
+  text-align:center;
+  width:100%;
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width:880px){
+  .grid{grid-template-columns:1fr}
+  .summary{position:static}
+}
+@media (max-width:560px){
+  .fields{grid-template-columns:1fr}
+  .actions{grid-template-columns:repeat(2, 1fr)}
+  .badge{display:none}
+  .bar-row{grid-template-columns:75px minmax(0, 1fr) 75px}
+}
+@media print{
+  .nav,.actions,.embed,.footer{display:none!important}
+  body{background:#fff}
+  .summary{position:static}
+  .card,.content,.hero{box-shadow:none;border:none;padding:0}
+}
+</style>
+</head>
+
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><span class="mark">AS</span><span>ArthaSetu</span></a>
+    <span class="badge">Section 111A & 112A Rates</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> › <a href="/tax.html">Tax Planning Tools</a> › Capital Gains Tax Calculator
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">Capital Asset Taxation Engine</div>
+    <h1>Capital Gains Tax Calculator (STCG & LTCG)</h1>
+    <p class="lead">Calculate taxable capital gains on listed shares, equity mutual funds, and real estate under updated statutory tax slabs, Section 112A exemptions, and cess.</p>
+    <div class="direct" id="directAnswer">Calculating your capital gains tax…</div>
+  </section>
+
+  <div class="grid">
+    <section class="card" id="calculator">
+      <h2>Transaction Details</h2>
+      <div class="fields">
+        <div class="field">
+          <label for="assetType">Asset Class</label>
+          <select id="assetType">
+            <option value="equity_listed" selected>Listed Equity Shares & Equity Mutual Funds</option>
+            <option value="real_estate">Real Estate / Immovable Property</option>
+            <option value="debt_mf">Debt Mutual Funds / Gold / Unlisted</option>
+          </select>
+          <div class="hint">Governs the statutory holding period and tax slab.</div>
+        </div>
+        <div class="field">
+          <label for="holdingPeriod">Holding Period (Months)</label>
+          <input id="holdingPeriod" type="number" value="18" min="1" max="600" step="1" inputmode="numeric">
+          <div class="hint">Shares: &gt;12 mos = LTCG; Property: &gt;24 mos = LTCG.</div>
+        </div>
+        <div class="field">
+          <label for="salePrice">Total Sale Consideration (₹)</label>
+          <input id="salePrice" type="number" value="850000" min="1000" max="1000000000" step="10000" inputmode="decimal">
+          <div class="hint">Gross proceeds received upon transfer.</div>
+        </div>
+        <div class="field">
+          <label for="purchasePrice">Cost of Acquisition / Purchase (₹)</label>
+          <input id="purchasePrice" type="number" value="500000" min="0" max="1000000000" step="10000" inputmode="decimal">
+          <div class="hint">Actual purchase price paid for the asset.</div>
+        </div>
+        <div class="field">
+          <label for="transferExpenses">Transfer Expenses / Brokerage (₹)</label>
+          <input id="transferExpenses" type="number" value="2500" min="0" max="10000000" step="500" inputmode="decimal">
+          <div class="hint">Brokerage, stamp duty, or legal transfer charges.</div>
+        </div>
+        <div class="field">
+          <label for="slabRate">Applicable Income Tax Slab (%)</label>
+          <select id="slabRate">
+            <option value="30" selected>30% Slab (High Earner)</option>
+            <option value="20">20% Slab</option>
+            <option value="15">15% Slab</option>
+            <option value="10">10% Slab</option>
+            <option value="5">5% Slab</option>
+            <option value="0">0% (Nil / Below Basic Exemption)</option>
+          </select>
+          <div class="hint">Applied only to assets taxed at slab rate (e.g. Debt MF).</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-main" id="share">Share on WhatsApp</button>
+        <button class="btn btn-light" id="print">Print / PDF</button>
+        <button class="btn btn-light" id="csv">Download CSV</button>
+        <button class="btn btn-light" id="reset">Reset</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Computation Component</th>
+              <th>Statutory Base / Rate</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="cgTable"></tbody>
+        </table>
+      </div>
+
+      <div class="chart">
+        <h3>Capital Gain vs Tax Liability</h3>
+        <div class="bars" id="bars"></div>
+      </div>
+
+      <details class="embed">
+        <summary>Embed this Capital Gains Calculator on your website / blog</summary>
+        <textarea readonly onclick="this.select()"><iframe src="https://arthasetu.in/capital-gains-calculator.html" title="Capital Gains Tax Calculator" width="100%" height="850" loading="lazy" style="border:0;border-radius:12px"></iframe>
+<p style="font-size:11px">Powered by <a href="https://arthasetu.in/">ArthaSetu</a></p></textarea>
+      </details>
+    </section>
+
+    <aside class="summary">
+      <div class="card">
+        <div class="big-save">
+          <span>TOTAL CAPITAL GAINS TAX</span>
+          <strong id="totalTaxVal">—</strong>
+        </div>
+        <div class="mini">
+          <div class="metric"><span>Net Capital Gain</span><strong id="netGainVal">—</strong></div>
+          <div class="metric"><span>Gain Nature</span><strong id="gainTypeVal">—</strong></div>
+          <div class="metric"><span>Tax Exemption</span><strong id="exemptionVal">—</strong></div>
+          <div class="metric"><span>Health & Edu Cess (4%)</span><strong id="cessVal">—</strong></div>
+        </div>
+        <div class="notice" id="statutoryNotice">Calculating capital gains tax liability…</div>
+      </div>
+    </aside>
+  </div>
+
+  <article class="content">
+    <h2>Understanding Statutory Capital Gains Tax in India</h2>
+    <p>Profits arising from the sale of a capital asset are taxed under the head <strong>Capital Gains</strong>. The statutory tax rate depends directly on the <strong>holding period</strong> (the duration between acquisition and sale) and the classification of the asset:</p>
+    <ul style="margin-left:20px;margin-bottom:12px;color:#334155;font-size:13.5px">
+      <li><strong>Listed Equities & Equity Mutual Funds:</strong> Holding up to 12 months is classified as Short-Term (STCG) and taxed at <strong>20%</strong> under Section 111A. Holding beyond 12 months is classified as Long-Term (LTCG) and taxed at <strong>12.5%</strong> under Section 112A after a statutory tax-free threshold of <strong>₹1,25,000</strong> per financial year.</li>
+      <li><strong>Immovable Property (Real Estate):</strong> Holding up to 24 months is Short-Term (taxed at regular income tax slabs). Holding beyond 24 months is Long-Term, taxed at <strong>12.5% without indexation</strong>.</li>
+      <li><strong>Specified Mutual Funds / Debt Funds:</strong> Taxed as short-term capital gains at applicable personal slab rates regardless of holding duration.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Can unexhausted basic exemption limit be set off against capital gains?</summary>
+        <p>Yes. For a resident individual or HUF, if your other total taxable income is below the basic exemption threshold (₹3 Lakh under New Regime or ₹2.5 Lakh under Old Regime), the unexhausted shortfall can be adjusted against LTCG (Section 112A) and STCG (Section 111A) to reduce tax liability.</p>
+      </details>
+      <details>
+        <summary>What is Section 54 and Section 54EC exemption for property gains?</summary>
+        <p>If you realize long-term capital gains on residential property, you can claim 100% tax exemption under Section 54 by reinvesting the capital gain into another residential house, or under Section 54EC by investing up to ₹50 Lakh in specified NHAI/REC capital gain bonds within 6 months.</p>
+      </details>
+      <details>
+        <summary>Are capital losses allowed to be carried forward?</summary>
+        <p>Yes. Both short-term and long-term capital losses can be carried forward for up to 8 subsequent assessment years, provided the income tax return (ITR) is filed on or before the statutory due date under Section 139(1).</p>
+      </details>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© 2026 ArthaSetu • Open financial and taxation intelligence engines for Indian taxpayers.</p>
+    <p style="margin-top:5px"><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+(() => {
+  const $ = id => document.getElementById(id);
+  const money = n => new Intl.NumberFormat("en-IN", {
+    style:"currency", currency:"INR", maximumFractionDigits:0
+  }).format(Math.max(0, Number(n) || 0));
+
+  const num = (id, fallback, min, max) => {
+    let v = Number($(id).value);
+    if (!Number.isFinite(v)) v = fallback;
+    if (min != null) v = Math.max(min, v);
+    if (max != null) v = Math.min(max, v);
+    return v;
+  };
+
+  function render() {
+    const asset = $("assetType").value;
+    const months = num("holdingPeriod", 18, 1, 600);
+    const sale = num("salePrice", 850000, 0, 1000000000);
+    const purchase = num("purchasePrice", 500000, 0, 1000000000);
+    const expenses = num("transferExpenses", 2500, 0, 10000000);
+    const slab = num("slabRate", 30, 0, 45);
+
+    const netSale = Math.max(0, sale - expenses);
+    const netGain = netSale - purchase;
+
+    let isLtcg = false;
+    let thresholdMonths = 12;
+
+    if (asset === "equity_listed") thresholdMonths = 12;
+    else if (asset === "real_estate") thresholdMonths = 24;
+    else thresholdMonths = 36;
+
+    if (asset !== "debt_mf") {
+      isLtcg = months > thresholdMonths;
+    }
+
+    let taxRate = 0;
+    let exemption = 0;
+    let taxableGain = 0;
+    let applicableSection = "";
+
+    if (netGain <= 0) {
+      taxableGain = 0;
+    } else {
+      if (asset === "equity_listed") {
+        if (isLtcg) {
+          applicableSection = "Section 112A (LTCG)";
+          taxRate = 12.5;
+          exemption = Math.min(netGain, 125000);
+          taxableGain = Math.max(0, netGain - exemption);
+        } else {
+          applicableSection = "Section 111A (STCG)";
+          taxRate = 20.0;
+          exemption = 0;
+          taxableGain = netGain;
+        }
+      } else if (asset === "real_estate") {
+        if (isLtcg) {
+          applicableSection = "Section 112 (Real Estate LTCG)";
+          taxRate = 12.5; // New regime rate without indexation
+          exemption = 0;
+          taxableGain = netGain;
+        } else {
+          applicableSection = "Income Tax Slab (STCG)";
+          taxRate = slab;
+          exemption = 0;
+          taxableGain = netGain;
+        }
+      } else {
+        applicableSection = "Income Tax Slab Rate";
+        taxRate = slab;
+        exemption = 0;
+        taxableGain = netGain;
+      }
+    }
+
+    const baseTax = Math.round(taxableGain * (taxRate / 100));
+    const cess = Math.round(baseTax * 0.04);
+    const totalTax = baseTax + cess;
+
+    $("totalTaxVal").textContent = money(totalTax);
+    $("netGainVal").textContent = netGain >= 0 ? money(netGain) : `-${money(Math.abs(netGain))}`;
+    $("gainTypeVal").textContent = netGain <= 0 ? "Capital Loss" : (isLtcg ? "Long-Term (LTCG)" : "Short-Term (STCG)");
+    $("exemptionVal").textContent = money(exemption);
+    $("cessVal").textContent = money(cess);
+
+    if (netGain <= 0) {
+      $("totalTaxVal").style.color = "var(--green)";
+      $("statutoryNotice").textContent = "No tax payable. Capital loss can be carried forward for up to 8 assessment years to offset future gains.";
+      $("statutoryNotice").style.background = "#f0fdf4";
+      $("statutoryNotice").style.color = "#166534";
+      $("statutoryNotice").style.borderColor = "#bbf7d0";
+      $("directAnswer").innerHTML = `Transfer of this asset results in a <strong>Capital Loss of ${money(Math.abs(netGain))}</strong>. Total capital gains tax liability is <strong>₹0</strong>.`;
+    } else {
+      $("totalTaxVal").style.color = "var(--red)";
+      $("statutoryNotice").textContent = `Tax computed under ${applicableSection} at ${taxRate.toFixed(1)}% plus 4% health & education cess.`;
+      $("statutoryNotice").style.background = "#fffbeb";
+      $("statutoryNotice").style.color = "#92400e";
+      $("statutoryNotice").style.borderColor = "#fde68a";
+      $("directAnswer").innerHTML = `On a net capital gain of <strong>${money(netGain)}</strong> (${isLtcg ? 'LTCG' : 'STCG'}), after statutory exemption of <strong>${money(exemption)}</strong>, your total tax liability is <strong>${money(totalTax)}</strong> (Base Tax: ${money(baseTax)} at ${taxRate.toFixed(1)}% + Cess: ${money(cess)}).`;
+    }
+
+    $("cgTable").innerHTML = `
+      <tr><td>Gross Sale Consideration</td><td>—</td><td>${money(sale)}</td></tr>
+      <tr><td>Less: Transfer Expenses / Brokerage</td><td>—</td><td>${money(expenses)}</td></tr>
+      <tr><td>Net Sale Consideration</td><td>—</td><td>${money(netSale)}</td></tr>
+      <tr><td>Less: Cost of Acquisition</td><td>—</td><td>${money(purchase)}</td></tr>
+      <tr style="font-weight:900"><td>Net Capital Gain / (Loss)</td><td>—</td><td class="${netGain >= 0 ? 'good' : 'warn'}">${netGain >= 0 ? money(netGain) : '-' + money(Math.abs(netGain))}</td></tr>
+      <tr><td>Statutory Exemption Limit</td><td>${asset === 'equity_listed' && isLtcg ? 'Section 112A (₹1.25L)' : 'Nil'}</td><td class="good">${money(exemption)}</td></tr>
+      <tr><td>Taxable Capital Gain</td><td>—</td><td style="font-weight:800">${money(taxableGain)}</td></tr>
+      <tr><td>Tax Rate</td><td>${applicableSection}</td><td>${taxRate.toFixed(1)}%</td></tr>
+      <tr><td>Base Tax</td><td>—</td><td>${money(baseTax)}</td></tr>
+      <tr><td>Health & Education Cess</td><td>4%</td><td>${money(cess)}</td></tr>
+      <tr style="font-weight:900;background:#f8fafc"><td>Total Tax Liability</td><td>Final Payable</td><td class="warn" style="font-size:14px">${money(totalTax)}</td></tr>
+    `;
+
+    const chartGain = Math.max(1, netGain);
+    const pTax = Math.min(100, (totalTax / chartGain) * 100);
+    const pRetained = Math.max(0, 100 - pTax);
+
+    $("bars").innerHTML = `
+      <div class="bar-row">
+        <span>Retained</span>
+        <div class="track"><div class="fill" style="width:${pRetained.toFixed(1)}%;background:var(--green)"></div></div>
+        <strong style="color:var(--green)">${money(Math.max(0, netGain - totalTax))}</strong>
+      </div>
+      <div class="bar-row">
+        <span>Tax Outgo</span>
+        <div class="track"><div class="fill" style="width:${pTax.toFixed(1)}%;background:var(--red)"></div></div>
+        <strong style="color:var(--red)">${money(totalTax)}</strong>
+      </div>
+    `;
+  }
+
+  $("share").addEventListener("click", () => {
+    const text = `ArthaSetu Capital Gains Tax Calculator\nNet Gain: ${$("netGainVal").textContent}\nTax Liability: ${$("totalTaxVal").textContent}\nhttps://arthasetu.in/capital-gains-calculator.html`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
+  });
+
+  $("print").addEventListener("click", () => window.print());
+
+  $("csv").addEventListener("click", () => {
+    const rows = [["Computation Component", "Statutory Base / Rate", "Amount"]];
+    document.querySelectorAll("#cgTable tr").forEach(tr => {
+      rows.push([...tr.querySelectorAll("td")].map(td => td.innerText));
+    });
+    const csv = rows.map(r => r.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "arthasetu-capital-gains-tax-computation.csv";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  $("reset").addEventListener("click", () => {
+    $("assetType").value = "equity_listed";
+    $("holdingPeriod").value = 18;
+    $("salePrice").value = 850000;
+    $("purchasePrice").value = 500000;
+    $("transferExpenses").value = 2500;
+    $("slabRate").value = 30;
+    render();
+  });
+
+  ["assetType","holdingPeriod","salePrice","purchasePrice","transferExpenses","slabRate"].forEach(id => {
+    $(id).addEventListener("input", render);
+    $(id).addEventListener("change", render);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
