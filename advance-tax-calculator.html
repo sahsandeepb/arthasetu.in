@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+<title>Advance Tax Calculator Online | Section 208, 234B & 234C Schedule | ArthaSetu</title>
+<meta name="description" content="Calculate quarterly advance tax liability, installment dues, and interest penalty under Section 234B and 234C. Free online tax calculator by ArthaSetu.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://arthasetu.in/advance-tax-calculator.html">
+<meta name="theme-color" content="#0284c7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArthaSetu">
+<meta property="og:title" content="Advance Tax Calculator (Quarterly Installment Schedule & Penalties)">
+<meta property="og:description" content="Calculate quarterly advance tax installments (15%, 45%, 75%, 100%) and verify Section 234C interest liability online.">
+<meta property="og:url" content="https://arthasetu.in/advance-tax-calculator.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230284c7'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='26' font-family='Arial' font-weight='800' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
+
+<!-- Google AdSense Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7895642857043729" crossorigin="anonymous"></script>
+
+<!-- Structured Data: WebApplication + BreadcrumbList + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "@id":"https://arthasetu.in/advance-tax-calculator.html#calculator",
+      "name":"Advance Tax Calculator",
+      "url":"https://arthasetu.in/advance-tax-calculator.html",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"All",
+      "isAccessibleForFree":true,
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://arthasetu.in/advance-tax-calculator.html#breadcrumbs",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://arthasetu.in/"},
+        {"@type":"ListItem","position":2,"name":"Tax Planning Tools","item":"https://arthasetu.in/tax.html"},
+        {"@type":"ListItem","position":3,"name":"Advance Tax Calculator","item":"https://arthasetu.in/advance-tax-calculator.html"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://arthasetu.in/advance-tax-calculator.html#faq",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"Who is liable to pay Advance Tax in India?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Under Section 208 of the Income Tax Act, any taxpayer whose estimated net tax liability for the financial year (after reducing TDS/TCS) is ₹10,000 or more is required to pay Advance Tax."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"What are the statutory due dates for Advance Tax payments?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"For corporate and non-corporate assessees, the due dates are: 15% on or before 15 June, 45% on or before 15 September, 75% on or before 15 December, and 100% on or before 15 March."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"What is the penalty interest under Section 234C and Section 234B?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Section 234C charges simple interest at 1% per month for deferment or shortfall in individual quarterly installments. Section 234B charges 1% per month if at least 90% of total assessed tax is not deposited before the end of the financial year (31 March)."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --primary:#0284c7;--primary2:#0369a1;--soft:#f0f9ff;--soft2:#e0f2fe;
+  --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#fff;
+  --green:#047857;--red:#b91c1c;--radius:16px;--shadow:0 10px 30px rgba(15,23,42,.05)
+}
+*{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%}
+a{color:var(--primary2);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select{font:inherit}
+.wrap{width:100%;max-width:1080px;margin:auto;padding:0 16px}
+
+/* Sticky Header */
+.nav{position:-webkit-sticky;position:sticky;top:0;z-index:100;background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:900;text-decoration:none}
+.mark{width:32px;height:32px;border-radius:9px;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:900;font-size:13px}
+.badge{font-size:11.5px;color:var(--green);font-weight:800}
+.crumb{font-size:12px;color:var(--muted);padding:12px 0 4px;white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* Hero Unit */
+.hero{margin:8px 0 16px;background:linear-gradient(135deg,#eff8ff,#fff);border:1px solid #bae6fd;border-radius:var(--radius);padding:clamp(16px, 3.5vw, 24px)}
+.eyebrow{font-size:11px;letter-spacing:.7px;text-transform:uppercase;font-weight:900;color:var(--primary2);margin-bottom:4px}
+h1{font-size:clamp(21px,4vw,32px);line-height:1.2;font-weight:900}
+.lead{margin-top:6px;color:#475569;font-size:clamp(13px, 2vw, 14.5px)}
+.direct{margin-top:12px;background:#fff;border:1px solid #cbd5e1;border-left:4px solid var(--primary);border-radius:10px;padding:12px 14px;font-size:13.5px}
+.direct strong{color:var(--primary2)}
+
+/* Layout Grid */
+.grid{display:grid;grid-template-columns:1fr 330px;gap:16px;align-items:start}
+.card,.content{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(15px, 3vw, 22px)}
+.card h2{font-size:clamp(16.5px, 2.5vw, 19px);margin-bottom:12px}
+
+/* Sizing Fields */
+.fields{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.field label{display:block;font-size:11px;font-weight:900;color:var(--muted);margin-bottom:4px;text-transform:uppercase}
+.field input,.field select{width:100%;height:46px;border:1.5px solid #cbd5e1;border-radius:10px;padding:0 12px;background:#fff;color:var(--ink);font-size:16px;font-weight:700;outline:none;-webkit-appearance:none;transition:border-color .15s}
+.field select{background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748b'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:18px;padding-right:32px}
+.field input:focus,.field select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(2,132,199,.12)}
+.hint{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.25}
+
+/* Action Buttons */
+.actions{display:grid;grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));gap:8px;margin-top:16px}
+.btn{min-height:46px;border:0;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.btn-main{background:var(--primary);color:#fff}
+.btn-light{background:#f1f5f9;color:var(--ink)}
+.btn-main:hover{background:var(--primary2)}
+
+/* Summary Panel */
+.summary{position:-webkit-sticky;position:sticky;top:72px}
+.big-save{background:var(--soft);border:1px solid #bae6fd;border-radius:13px;padding:16px;margin-bottom:12px;text-align:center}
+.big-save span{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.5px}
+.big-save strong{display:block;font-size:clamp(23px, 4vw, 30px);line-height:1.15;color:var(--primary2);margin-top:4px}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.metric{border:1px solid var(--line);background:#f8fafc;border-radius:10px;padding:10px}
+.metric span{display:block;color:var(--muted);font-size:10.5px;font-weight:800}
+.metric strong{display:block;font-size:15.5px;margin-top:2px}
+.notice{margin-top:12px;padding:10px 12px;border-radius:10px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-size:11.5px;line-height:1.45}
+
+/* Fluid Table */
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:16px;border-radius:10px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;min-width:440px;font-size:12.5px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line)}
+th{background:#f1f5f9;color:var(--muted);font-weight:900}
+.good{color:var(--green);font-weight:900}
+
+/* Content & FAQs */
+.content{margin:18px 0 28px}
+.content h2{font-size:17.5px;margin:18px 0 8px}
+.content h2:first-child{margin-top:0}
+.content p{color:#334155;margin-bottom:10px;font-size:13px}
+.faq{margin-top:8px}
+.faq details{border-top:1px solid var(--line);padding:10px 0}
+.faq summary{cursor:pointer;font-weight:850;font-size:13px}
+.faq p{margin-top:6px;font-size:12.5px;color:#475569}
+
+.embed{margin-top:16px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:11px;padding:12px}
+.embed summary{cursor:pointer;font-weight:850;font-size:12px}
+.embed textarea{width:100%;height:65px;margin-top:8px;padding:8px;border:1px solid var(--line);border-radius:8px;font:11px monospace;resize:none}
+.footer{border-top:1px solid var(--line);background:#fff;color:var(--muted);padding:22px 0;font-size:12px;text-align:center}
+
+@media(max-width:880px){
+  .grid{grid-template-columns:1fr}
+  .summary{position:static}
+}
+@media(max-width:560px){
+  .fields{grid-template-columns:1fr}
+  .actions{grid-template-columns:1fr 1fr}
+  .badge{display:none}
+}
+@media print{
+  .nav,.actions,.embed,.footer{display:none!important}
+  body{background:#fff}
+  .summary{position:static}
+  .card,.content,.hero{box-shadow:none;border:none;padding:0}
+}
+</style>
+</head>
+
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><span class="mark">AS</span><span>ArthaSetu</span></a>
+    <span class="badge">100% Free & Private</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> › <a href="/tax.html">Tax Planning Tools</a> › Advance Tax Calculator
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">Tax Compliance & Cash Flow Engine</div>
+    <h1>Advance Tax Calculator (Quarterly Schedules & Section 208)</h1>
+    <p class="lead">Compute exact quarterly advance tax dues (15%, 45%, 75%, 100%) and prevent simple interest penalties under Section 234B & 234C.</p>
+    <div class="direct" id="directAnswer">Calculating advance tax schedule…</div>
+  </section>
+
+  <div class="grid">
+    <section class="card" id="calculator">
+      <h2>Income & Tax Details</h2>
+      <div class="fields">
+        <div class="field">
+          <label for="estimatedTax">Estimated Total Tax for FY (₹)</label>
+          <input id="estimatedTax" type="number" value="120000" min="0" max="100000000" step="5000" inputmode="decimal">
+          <div class="hint">Your calculated annual income tax liability including cess.</div>
+        </div>
+        <div class="field">
+          <label for="tdsCredit">TDS / TCS Deducted by Others (₹)</label>
+          <input id="tdsCredit" type="number" value="40000" min="0" max="100000000" step="5000" inputmode="decimal">
+          <div class="hint">Tax already deducted by clients/employers in Form 26AS.</div>
+        </div>
+        <div class="field">
+          <label for="assesseType">Taxpayer Category</label>
+          <select id="assesseType">
+            <option value="regular" selected>Regular (Salaried, Freelancer, Business)</option>
+            <option value="presumptive">Presumptive Tax (Sec 44AD / 44ADA)</option>
+          </select>
+          <div class="hint">Presumptive tax filers pay 100% in a single installment by 15 March.</div>
+        </div>
+        <div class="field">
+          <label for="regimePref">Applicable Regime</label>
+          <select id="regimePref">
+            <option value="new" selected>New Tax Regime (Section 115BAC)</option>
+            <option value="old">Old Tax Regime</option>
+          </select>
+          <div class="hint">Used for compliance context and reference.</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-main" id="share">Share on WhatsApp</button>
+        <button class="btn btn-light" id="print">Print / PDF</button>
+        <button class="btn btn-light" id="csv">Download CSV</button>
+        <button class="btn btn-light" id="reset">Reset</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Installment Due Date</th>
+              <th>Cumulative Target</th>
+              <th>Minimum Cumulative Tax</th>
+              <th>Net Due This Quarter</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleTable"></tbody>
+        </table>
+      </div>
+
+      <details class="embed">
+        <summary>Embed this Advance Tax Calculator on your website / blog</summary>
+        <textarea readonly onclick="this.select()"><iframe src="https://arthasetu.in/advance-tax-calculator.html" title="Advance Tax Calculator Online" width="100%" height="800" loading="lazy" style="border:0;border-radius:12px"></iframe>
+<p style="font-size:11px">Powered by <a href="https://arthasetu.in/">ArthaSetu</a></p></textarea>
+      </details>
+    </section>
+
+    <aside class="summary">
+      <div class="card">
+        <div class="big-save">
+          <span>NET ADVANCE TAX PAYABLE</span>
+          <strong id="netAdvanceVal">—</strong>
+        </div>
+        <div class="mini">
+          <div class="metric"><span>Gross Tax Assessed</span><strong id="grossVal">—</strong></div>
+          <div class="metric"><span>TDS / TCS Credit</span><strong id="tdsVal">—</strong></div>
+          <div class="metric"><span>Section 208 Status</span><strong id="sec208Val">—</strong></div>
+          <div class="metric"><span>Installments Count</span><strong id="instCountVal">—</strong></div>
+        </div>
+        <div class="notice" id="statusNotice">Checking Section 208 statutory compliance requirement…</div>
+      </div>
+    </aside>
+  </div>
+
+  <article class="content">
+    <h2>Understanding Advance Tax Rules in India (Section 208)</h2>
+    <p>Under Section 208 of the Income Tax Act, every individual, professional, freelancer, and corporate assessee whose estimated net tax liability for the financial year exceeds <strong>₹10,000</strong> (after accounting for TDS and TCS credits) is mandated to pay taxes in advance in quarterly installments rather than waiting until ITR filing season.</p>
+
+    <h2>Statutory Quarterly Installments & Due Dates</h2>
+    <p>For standard taxpayers, the payment schedule is divided into four milestones across the financial year:</p>
+    <ul style="margin-left:20px;margin-bottom:12px;color:#334155;font-size:13.5px">
+      <li><strong>15th June:</strong> Minimum 15% of total estimated advance tax.</li>
+      <li><strong>15th September:</strong> Minimum 45% of total estimated advance tax (less earlier paid amount).</li>
+      <li><strong>15th December:</strong> Minimum 75% of total estimated advance tax (less earlier paid amounts).</li>
+      <li><strong>15th March:</strong> 100% of total advance tax payable.</li>
+    </ul>
+    <p><em>Note: Taxpayers opting for presumptive taxation under Section 44AD or 44ADA are permitted to pay 100% of their advance tax in a single installment on or before 15th March.</em></p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Are senior citizens required to pay Advance Tax?</summary>
+        <p>Resident senior citizens aged 60 years or above who do not have any income chargeable under the head "Profits and Gains of Business or Profession" are fully exempt from paying advance tax.</p>
+      </details>
+      <details>
+        <summary>What happens if I miss an Advance Tax deadline?</summary>
+        <p>Missing a quarterly deadline or underpaying triggers interest penalties under Section 234C at 1% per month for the period of shortfall. If less than 90% of the tax is paid by 31st March, additional 1% monthly interest under Section 234B applies from 1st April until the date of payment.</p>
+      </details>
+      <details>
+        <summary>How can I pay Advance Tax online?</summary>
+        <p>Advance tax is paid through the e-Filing portal of the Income Tax Department under Challan 280, selecting Tax Applicable as "(0021) Income Tax (Other than Companies)" and Type of Payment as "(100) Advance Tax".</p>
+      </details>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© 2026 ArthaSetu • Open financial and taxation intelligence engines for Indian taxpayers.</p>
+    <p style="margin-top:5px"><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+(() => {
+  const $ = id => document.getElementById(id);
+  const money = n => new Intl.NumberFormat("en-IN", {
+    style:"currency", currency:"INR", maximumFractionDigits:0
+  }).format(Math.max(0, Number(n) || 0));
+
+  const num = (id, fallback, min, max) => {
+    let v = Number($(id).value);
+    if (!Number.isFinite(v)) v = fallback;
+    if (min != null) v = Math.max(min, v);
+    if (max != null) v = Math.min(max, v);
+    return v;
+  };
+
+  function render() {
+    const grossTax = num("estimatedTax", 120000, 0, 100000000);
+    const tds = num("tdsCredit", 40000, 0, 100000000);
+    const assesse = $("assesseType").value;
+
+    const netTax = Math.max(0, grossTax - tds);
+    const isLiable = netTax >= 10000;
+
+    $("netAdvanceVal").textContent = money(netTax);
+    $("grossVal").textContent = money(grossTax);
+    $("tdsVal").textContent = money(tds);
+    $("sec208Val").textContent = isLiable ? "Liable (≥ ₹10,000)" : "Exempt (< ₹10,000)";
+    $("instCountVal").textContent = !isLiable ? "0" : (assesse === "presumptive" ? "1 Installment" : "4 Installments");
+
+    if (!isLiable) {
+      $("statusNotice").textContent = "Your net tax payable after TDS is less than ₹10,000. You are NOT liable to pay advance tax under Section 208.";
+      $("statusNotice").style.background = "#f0fdf4";
+      $("statusNotice").style.color = "#166534";
+      $("statusNotice").style.borderColor = "#bbf7d0";
+      $("directAnswer").innerHTML = `With net tax payable of <strong>${money(netTax)}</strong> (below ₹10,000 threshold), you have <strong>₹0 Advance Tax liability</strong>. You can pay the balance during regular return filing.`;
+      $("scheduleTable").innerHTML = `<tr><td colspan="4" style="text-align:center;padding:16px;color:var(--muted)">No Advance Tax installments applicable (Tax liability &lt; ₹10,000).</td></tr>`;
+      return;
+    }
+
+    $("statusNotice").textContent = "Net tax exceeds ₹10,000. Pay installments strictly on or before due dates to avoid Section 234C penal interest.";
+    $("statusNotice").style.background = "#fffbeb";
+    $("statusNotice").style.color = "#92400e";
+    $("statusNotice").style.borderColor = "#fde68a";
+
+    if (assesse === "presumptive") {
+      $("directAnswer").innerHTML = `Under presumptive taxation, your entire advance tax liability of <strong>${money(netTax)}</strong> must be deposited in a single payment on or before <strong>15th March</strong>.`;
+      $("scheduleTable").innerHTML = `
+        <tr>
+          <td>On or before 15th March</td>
+          <td>100%</td>
+          <td class="good">${money(netTax)}</td>
+          <td style="font-weight:900" class="good">${money(netTax)}</td>
+        </tr>
+      `;
+    } else {
+      const q1 = netTax * 0.15;
+      const q2 = netTax * 0.45;
+      const q3 = netTax * 0.75;
+      const q4 = netTax * 1.00;
+
+      const d1 = q1;
+      const d2 = q2 - q1;
+      const d3 = q3 - q2;
+      const d4 = q4 - q3;
+
+      $("directAnswer").innerHTML = `Your total net advance tax is <strong>${money(netTax)}</strong>. Pay in 4 installments: <strong>${money(d1)}</strong> by 15 June, <strong>${money(d2)}</strong> by 15 Sept, <strong>${money(d3)}</strong> by 15 Dec, and <strong>${money(d4)}</strong> by 15 March.`;
+      $("scheduleTable").innerHTML = `
+        <tr>
+          <td>1st Installment (On or before 15 June)</td>
+          <td>15%</td>
+          <td>${money(q1)}</td>
+          <td class="good" style="font-weight:800">${money(d1)}</td>
+        </tr>
+        <tr>
+          <td>2nd Installment (On or before 15 September)</td>
+          <td>45%</td>
+          <td>${money(q2)}</td>
+          <td class="good" style="font-weight:800">${money(d2)}</td>
+        </tr>
+        <tr>
+          <td>3rd Installment (On or before 15 December)</td>
+          <td>75%</td>
+          <td>${money(q3)}</td>
+          <td class="good" style="font-weight:800">${money(d3)}</td>
+        </tr>
+        <tr>
+          <td>4th Installment (On or before 15 March)</td>
+          <td>100%</td>
+          <td>${money(q4)}</td>
+          <td class="good" style="font-weight:800">${money(d4)}</td>
+        </tr>
+      `;
+    }
+  }
+
+  $("share").addEventListener("click", () => {
+    const text = `ArthaSetu Advance Tax Calculator\nNet Advance Tax: ${$("netAdvanceVal").textContent}\nStatus: ${$("sec208Val").textContent}\nhttps://arthasetu.in/advance-tax-calculator.html`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
+  });
+
+  $("print").addEventListener("click", () => window.print());
+
+  $("csv").addEventListener("click", () => {
+    const rows = [["Installment Due Date", "Cumulative Target", "Minimum Cumulative Tax", "Net Due This Quarter"]];
+    document.querySelectorAll("#scheduleTable tr").forEach(tr => {
+      rows.push([...tr.querySelectorAll("td")].map(td => td.innerText));
+    });
+    const csv = rows.map(r => r.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "arthasetu-advance-tax-schedule.csv";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  $("reset").addEventListener("click", () => {
+    $("estimatedTax").value = 120000;
+    $("tdsCredit").value = 40000;
+    $("assesseType").value = "regular";
+    $("regimePref").value = "new";
+    render();
+  });
+
+  ["estimatedTax","tdsCredit","assesseType","regimePref"].forEach(id => {
+    $(id).addEventListener("input", render);
+    $(id).addEventListener("change", render);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
