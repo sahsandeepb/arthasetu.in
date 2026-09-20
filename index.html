@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
-<meta name="description" content="ArthaSetu India is an authoritative open financial intelligence platform providing machine-readable Income Tax (Section 115BAC), Home Loan Amortization, CTC In-Hand Hike, GST, and Wealth Compounding calculation engines.">
+<meta name="description" content="ArthaSetu India is an India-focused financial calculation platform providing machine-readable Income Tax (Section 115BAC), Home Loan Amortization, CTC In-Hand Hike, GST, and Wealth Compounding calculation engines.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="ArthaSetu India Financial Intelligence Lab">
 <meta name="theme-color" content="#0b1b2b">
@@ -18,7 +18,7 @@
 <meta property="og:url" content="https://arthasetu.in/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ArthaSetu India | India's Premier Financial Decision Platform">
-<meta name="twitter:description" content="Zero-error statutory calculations, live amortization scenarios, and open data export.">
+<meta name="twitter:description" content="Statutory calculation models, live amortization scenarios, and open data export.">
 
 <title>ArthaSetu India | Premier Tax, Loan Amortization & Money Decision Engine</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230284c7'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='26' font-family='Arial' font-weight='800' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
@@ -99,6 +99,142 @@
 </script>
 
 <style>
+
+/* --- 100% Verified Perfect Sleek Header CSS --- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+.nav .wrap {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  max-width: 1100px;
+  margin: auto;
+  box-sizing: border-box;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  color: var(--dark);
+  text-decoration: none;
+}
+.mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 10px;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.navlinks a {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 13.5px;
+  text-decoration: none;
+}
+.navlinks a:hover {
+  color: var(--primary);
+}
+.theme-btn {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Pure Setting Icon Dropdown for All Calculators */
+.all-calc-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.all-calc-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 27px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.all-calc-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--card);
+  width: 260px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  z-index: 1000;
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  margin-top: 8px;
+}
+.all-calc-content.show {
+  display: block;
+}
+.all-calc-content a {
+  color: var(--text) !important;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block !important;
+  font-size: 12.5px;
+  border-bottom: 1px solid var(--line);
+  border-radius: 4px;
+}
+.all-calc-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+}
+
+/* Mobile Screen par text links hide ho jayenge aur sirf Setting icon aur Theme button dikhega */
+@media(max-width: 768px) {
+  .navlinks {
+    display: none;
+  }
+}
+
 :root {
   --primary: #0284c7;
   --primary-hover: #0369a1;
@@ -127,9 +263,16 @@ button{cursor:pointer}
 .wrap{width:min(1100px,100%);margin:auto;padding:0 16px}
 
 /* Top Verified Status Bar */
-.top{background:var(--dark);color:#cbd5e1;font-size:11.5px;padding:6px 0;border-bottom:1px solid #1e293b}
+.top{background:var(--dark);color:#cbd5e1;font-size:11.5px;padding:1.5px 0;border-bottom:1px solid #1e293b}
 .top .wrap{display:flex;justify-content:space-between;align-items:center}
 
+/* Mobile screen ke liye special fix taaki phone par bhi ekdum patla rahe */
+@media(max-width: 768px) {
+  .top {
+    font-size: 6.6px;
+    padding: 1.2px 0;
+  }
+}
 /* Header */
 .nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,0.95);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
 .nav .wrap{min-height:58px;display:flex;align-items:center;justify-content:space-between}
@@ -150,7 +293,7 @@ button{cursor:pointer}
 .searchline{display:flex;gap:8px;margin:10px 0}
 .searchline input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;font-size:14.5px;background:#fff;outline:none}
 .searchline input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(2,132,199,0.12)}
-.btn-clear{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:0 14px;font-weight:600;font-size:13px}
+.btn-clear{background:var(--primary-light);border:1px solid var(--primary);border-radius:10px;padding:0 14px;font-weight:600;font-size:13px}
 
 /* Tab Bar */
 .tab-container{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:4px;margin-bottom:12px}
@@ -161,14 +304,14 @@ button{cursor:pointer}
 
 /* Calculator Component */
 .calculator{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-.calc-head{padding:16px 20px;background:linear-gradient(180deg,#fff,#f8fafc);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.calc-head{padding:10px 14px;background:linear-gradient(180deg,#fff,#f8fafc);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
 .calc-head h2{margin:0;font-size:17.5px;color:var(--dark);font-weight:800}
 .reset-btn{border:none;background:none;color:var(--primary);font-size:13px;font-weight:700;cursor:pointer}
-.calc-body{padding:20px}
+.calc-body{padding:2px}
 
 .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .field label{display:block;font-weight:700;margin-bottom:5px;font-size:13px;color:var(--dark)}
-.field input,.field select{width:100%;border:1.5px solid #cbd5e1;border-radius:9px;padding:10px 12px;background:#fff;color:var(--text);font-size:14px}
+.field input,.field select{width:100%;border:1.5px solid #cbd5e1;border-radius:9px;padding:3px 4px;background:#fff;color:var(--text);font-size:14px}
 .field input:focus,.field select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(2,132,199,0.12)}
 
 /* Decision Banner */
@@ -176,7 +319,8 @@ button{cursor:pointer}
 .insight-icon{font-size:18px}
 
 /* Results & Chart Layout */
-.calc-result-wrap{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;margin-top:16px}
+.calc-result-wrap{display:grid;grid-template-columns:1fr
+   auto;gap:16px;align-items:center;margin-top:16px}
 .result{padding:16px;background:var(--primary-light);border:1px solid #bae6fd;border-radius:12px;width:100%}
 .result-head{font-size:12px;font-weight:800;color:var(--primary-hover);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px}
 .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
@@ -192,17 +336,44 @@ button{cursor:pointer}
 .chart-legend{margin-top:8px;font-size:11px;font-weight:700;color:var(--muted);text-align:center}
 
 /* Scenarios Comparison Matrix */
-.scenario-box{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
-.scenario-title{font-size:13px;font-weight:800;color:var(--dark);margin-bottom:8px}
-.scenario-table{width:100%;border-collapse:collapse;font-size:12.5px}
-.scenario-table th,.scenario-table td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
-.scenario-table th{background:var(--bg);color:var(--muted);font-weight:700}
+/* Scenario Box ko movable / horizontal scrollable banane ke liye */
+.scenario-box {
+  margin-top: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  overflow-x: auto; /* Yeh table ko mobile par scrollable/movable banayega */
+  -webkit-overflow-scrolling: touch;
+}
+.scenario-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.scenario-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  white-space: nowrap; /* Text ko wrap hone se rogega taaki table proper width mein scroll ho */
+}
+.scenario-table th, .scenario-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.scenario-table th {
+  background: var(--bg);
+  color: var(--muted);
+  font-weight: 700;
+}
 
 /* Action Share & Export Bar */
 .share-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
 .btn-action{border:none;border-radius:9px;padding:10px;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}
 .btn-whatsapp{background:#25d366;color:#fff}
-.btn-csv{background:var(--dark);color:#fff}
+.btn-csv{background:var(--dark);color:#2b9ed8}
 .btn-print{background:var(--card);color:var(--text);border:1px solid var(--line)}
 
 /* Ad Placement Area */
@@ -227,20 +398,38 @@ button{cursor:pointer}
 /* Footer */
 .footer{background:var(--dark);color:#cbd5e1;padding:32px 0;font-size:13px;margin-top:30px}
 .footer a{color:#93c5fd}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 .footer h3{margin:0 0 10px;color:#fff;font-size:14.5px}
 .footer p{color:#94a3b8;font-size:12.5px;line-height:1.6}
 
 @media(max-width:768px){
-  .fields,.footer-grid,.calc-result-wrap{grid-template-columns:1fr}
+  .fields,.calc-result-wrap{grid-template-columns:1fr}
   .result-grid{grid-template-columns:1fr 1fr}
   .share-bar{grid-template-columns:1fr}
-  .chart-container{width:100%;flex-direction:row;gap:14px;padding:10px}
+  .chart-container{width:100%;flex-direction:row;gap:3px;padding:4px}
   .navlinks a{display:none}
+}
+@media(max-width:768px){
+  .calc-body{padding:10px !important;}
+  .field{margin-bottom:10px !important;}
+  .field input,.field select{padding:7px 9px !important;font-size:12px !important;}
+  .insight-box{margin-top:4px !important;padding:4px 6px !important;font-size:12px !important;}
+  .calc-result-wrap{margin-top:8px !important;gap:8px !important;}
+  .result{padding:10px !important;}
+  .metric{padding:8px !important;}
+  .metric strong{font-size:12px !important;}
+  .scenario-box{margin-top:10px !important;padding:10px !important;}
 }
 @media(max-width:480px){
   .result-grid{grid-template-columns:1fr}
   .calc-body{padding:15px}
+}
+/* Print friendly styling */
+@media print {
+  body { background: #fff; color: #000; }
+  .nav, .top, .tab-container, .searchline, .share-bar, .footer, .ad-slot { display: none !important; }
+  .calculator { border: none; box-shadow: none; }
+  .calc-body { padding: 0; }
 }
 
 /* Dark Mode Support */
@@ -265,11 +454,118 @@ body.dark .footer{background:#070d14}
 </head>
 <body>
 
-<div class="top"><div class="wrap"><span>Verified Indian Financial Intelligence Platform</span><span>Statutory Slabs • Live Scenario Matrix • Open Data</span></div></div>
+<div class="top"><div class="wrap"><span>Indian Financial Intelligence Platform</span><span>Statutory Slabs • Live Scenario Matrix • Open Data</span></div></div>
 
 <header class="nav"><div class="wrap">
-<a class="brand" href="./" aria-label="Home"><span class="mark">AS</span><span>ArthaSetu India<small>Tax, Loan & Decision Intelligence</small></span></a>
-<nav class="navlinks"><a href="#calculator">Calculators</a><a href="#editorial-guide">Tax Guide</a><a href="#faq">FAQ</a><a href="#about">About</a><button class="theme-btn" id="theme" type="button" aria-label="Toggle theme">◐</button></nav>
+  <a class="brand" href="./" aria-label="Home">
+    <span class="mark">AS</span>
+    <span>ArthaSetu India<small>Tax, Loan & Decision Intelligence</small></span>
+  </a>
+  
+  <div class="header-right">
+    <nav class="navlinks">
+      <a href="#calculator">Calculators</a>
+      <a href="#editorial-guide">Tax Guide</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <!-- Pure Setting Icon Dropdown -->
+    <div class="all-calc-dropdown">
+      <button class="all-calc-btn" id="allCalcToggle" type="button" title="All Calculators">⚙️</button>
+      <div class="all-calc-content" id="allCalcMenu">
+        <a href="about.html">About Us</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="advance-tax-calculator.html">Advance Tax Calculator</a>
+        <a href="cagr.html">CAGR Calculator</a>
+        <a href="capital-gains-calculator.html">Capital Gains Calculator</a>
+        <a href="car-loan-calculator.html">Car Loan Calculator</a>
+        <a href="compound-interest-calculator.html">Compound Interest Calculator</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="corrections.html">Corrections Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="editorial-policy.html">Editorial Policy</a>
+        <a href="emi.html">EMI Calculator</a>
+        <a href="epf-calculator.html">EPF Calculator</a>
+        <a href="fd-calculator.html">FD Calculator</a>
+        <a href="fd.html">Fixed Deposit Info</a>
+        <a href="gratuity-calculator.html">Gratuity Calculator</a>
+        <a href="gst-calculator.html">GST Calculator</a>
+        <a href="gst-late-fee-calculator.html">GST Late Fee Calculator</a>
+        <a href="gst.html">GST Guide</a>
+        <a href="home-loan-1-crore.html">Home Loan 1 Crore</a>
+        <a href="home-loan-20-lakh.html">Home Loan 20 Lakh</a>
+        <a href="home-loan-25-lakh.html">Home Loan 25 Lakh</a>
+        <a href="home-loan-30-lakh.html">Home Loan 30 Lakh</a>
+        <a href="home-loan-35-lakh.html">Home Loan 35 Lakh</a>
+        <a href="home-loan-40-lakh.html">Home Loan 40 Lakh</a>
+        <a href="home-loan-45-lakh.html">Home Loan 45 Lakh</a>
+        <a href="home-loan-50-lakh.html">Home Loan 50 Lakh</a>
+        <a href="home-loan-55-lakh.html">Home Loan 55 Lakh</a>
+        <a href="home-loan-60-lakh.html">Home Loan 60 Lakh</a>
+        <a href="home-loan-70-lakh.html">Home Loan 70 Lakh</a>
+        <a href="home-loan-75-lakh.html">Home Loan 75 Lakh</a>
+        <a href="hra-calculator.html">HRA Calculator</a>
+        <a href="income-tax.html">Income Tax Guide</a>
+        <a href="leave-encashment-calculator.html">Leave Encashment Calculator</a>
+        <a href="lumpsum.html">Lumpsum Investment</a>
+        <a href="nps-calculator.html">NPS Calculator</a>
+        <a href="ppf-calculator.html">PPF Calculator</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="rd-calculator.html">RD Calculator</a>
+        <a href="salary.html">Salary Calculator</a>
+        <a href="salary-6-lpa.html">Salary 6 LPA</a>
+        <a href="salary-7-lpa.html">Salary 7 LPA</a>
+        <a href="salary-8-lpa.html">Salary 8 LPA</a>
+        <a href="salary-9-lpa.html">Salary 9 LPA</a>
+        <a href="salary-10-lpa.html">Salary 10 LPA</a>
+        <a href="salary-11-lpa.html">Salary 11 LPA</a>
+        <a href="salary-12-lpa.html">Salary 12 LPA</a>
+        <a href="salary-13-lpa.html">Salary 13 LPA</a>
+        <a href="salary-14-lpa.html">Salary 14 LPA</a>
+        <a href="salary-15-lpa.html">Salary 15 LPA</a>
+        <a href="salary-16-lpa.html">Salary 16 LPA</a>
+        <a href="salary-18-lpa.html">Salary 18 LPA</a>
+        <a href="salary-20-lpa.html">Salary 20 LPA</a>
+        <a href="salary-22-lpa.html">Salary 22 LPA</a>
+        <a href="salary-25-lpa.html">Salary 25 LPA</a>
+        <a href="salary-30-lpa.html">Salary 30 LPA</a>
+        <a href="security.html">Security</a>
+        <a href="simple-interest-calculator.html">Simple Interest Calculator</a>
+        <a href="sip-calculator.html">SIP Calculator</a>
+        <a href="sip.html">SIP Guide</a>
+        <a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a>
+        <a href="swp-calculator.html">SWP Calculator</a>
+        <a href="tds.html">TDS Guide</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="home-loan-prepayment-calculator.html">Home Loan Prepayment Calc</a>
+        <a href="lumpsum-calculator.html">Lumpsum Calculator</a>
+        <a href="tds-on-property-calculator.html">TDS on Property Calculator</a>
+        <a href="health-insurance-tax-calculator.html">Health Insurance Tax Calc</a>
+        <a href="education-loan-calculator.html">Education Loan Calculator</a>
+        <a href="freelance-tax-44ada-calculator.html">Freelance Tax 44ADA Calc</a>
+        <a href="ar-lease-tax-calculator.html">Ar-Lease Tax Calculator</a>
+        <a href="gst-calculator-itc.html">GST Calculator ITC</a>
+        <a href="case-study-home-loan-prepayment-math.html">Case Study: Home Loan Prepayment</a>
+        <a href="case-study-15-vs-16-lpa-salary-trap.html">Case Study: 15 vs 16 LPA Trap</a>
+        <a href="case-study-fd-vs-inflation-wealth-trap.html">Case Study: FD vs Inflation</a>
+        <a href="case-study-sip-inflation-reality.html">Case Study: SIP Inflation</a>
+        <a href="case-study-rent-vs-buy-math.html">Case Study: Rent vs Buy Math</a>
+        <a href="case-study-ppf-vs-mutual-fund-math.html">Case Study: PPF vs Mutual Fund</a>
+        <a href="case-study-car-loan-prepayment-vs-sip.html">Case Study: Car Loan vs SIP</a>
+        <a href="case-study-credit-card-minimum-due-trap.html">Case Study: Credit Card Minimum Due</a>
+        <a href="case-study-7-year-car-loan-trap.html">Case Study: 7-Year Car Loan Trap</a>
+        <a href="case-study-epf-tax-trap.html">Case Study: EPF Tax Trap</a>
+        <a href="case-study-gold-loan-vs-personal-loan.html">Case Study: Gold vs Personal Loan</a>
+        <a href="case-study-cibil-score-drop-trap.html">Case Study: CIBIL Score Drop</a>
+        <a href="case-study-lic-vs-term-sip.html">Case Study: LIC vs Term SIP</a>
+        <a href="case-study-home-loan-overdraft-trap.html">Case Study: Home Loan Overdraft</a>
+        <a href="case-study-no-cost-emi-trap.html">Case Study: No-Cost EMI Trap</a>
+      </div>
+    </div>
+
+    <button class="theme-btn" id="theme" type="button" aria-label="Toggle theme">◐</button>
+  </div>
 </div></header>
 
 <main class="wrap" id="main">
@@ -343,14 +639,12 @@ body.dark .footer{background:#070d14}
         </table>
       </div>
 
-      <div class="share-bar">
+     <div class="share-bar">
         <button class="btn-action btn-whatsapp" id="shareWhatsApp" type="button">💬 WhatsApp</button>
-        <button class="btn-action btn-csv" id="exportCSV" type="button">📥 Export CSV Data</button>
+        <button class="btn-action" id="copySummary" type="button" style="background:#0284c7; color:#fff;">📋 Copy Summary</button>
+        <button class="btn-action btn-csv" id="exportCSV" type="button">📥 Export CSV</button>
         <button class="btn-action btn-print" id="printReport" type="button">📄 Print / PDF</button>
       </div>
-    </div>
-  </section>
-</div>
 
 <!-- Detailed Editorial Guide for SEO and AdSense Compliance -->
 <section class="section" id="editorial-guide">
@@ -358,7 +652,7 @@ body.dark .footer{background:#070d14}
   <p class="intro">Statutory tax slabs, reducing-balance loan mathematics, and systematic wealth growth models explained for Indian taxpayers.</p>
 
   <h3>1. Income Tax Slab Breakdown (New vs Old Tax Regime)</h3>
-  <p class="intro">Under Section 115BAC (New Tax Regime), salaried employees receive a <strong>₹75,000 standard deduction</strong>. With the enhanced Section 87A rebate for taxable income up to ₹12,00,000, gross salary up to <strong>₹12.75 Lakhs incurs ₹0 net tax</strong>.</p>
+  <p class="intro">Under Section 115BAC (New Tax Regime), salaried employees receive a <strong>₹75,000 standard deduction</strong>. For a resident salaried individual eligible for the ₹75,000 standard deduction, gross salary up to <strong>₹12.75 lakh</strong> can result in ₹0 tax under the New Regime because taxable income is ₹12 lakh and the Section 87A rebate can offset the calculated tax.</p>
 
   <div class="table-wrap">
     <table class="data-table">
@@ -370,16 +664,13 @@ body.dark .footer{background:#070d14}
         </tr>
       </thead>
       <tbody>
-        <tr><td>Up to ₹2,50,000</td><td>Nil</td><td>Nil</td></tr>
-        <tr><td>₹2,50,001 – ₹4,00,000</td><td>Nil</td><td>5%</td></tr>
-        <tr><td>₹4,00,001 – ₹5,00,000</td><td>5%</td><td>5%</td></tr>
-        <tr><td>₹5,00,001 – ₹8,00,000</td><td>5%</td><td>20%</td></tr>
-        <tr><td>₹8,00,001 – ₹10,00,000</td><td>10%</td><td>20%</td></tr>
-        <tr><td>₹10,00,001 – ₹12,00,000</td><td>10% (87A Rebate)</td><td>30%</td></tr>
-        <tr><td>₹12,00,001 – ₹16,00,000</td><td>15%</td><td>30%</td></tr>
-        <tr><td>₹16,00,001 – ₹20,00,000</td><td>20%</td><td>30%</td></tr>
-        <tr><td>₹20,00,001 – ₹24,00,000</td><td>25%</td><td>30%</td></tr>
-        <tr><td>Above ₹24,00,000</td><td>30%</td><td>30%</td></tr>
+        <tr><td>Up to ₹4,00,000</td><td>Nil</td><td>Old regime uses a separate ₹2.5L basic slab (below 60)</td></tr>
+        <tr><td>₹4,00,001 – ₹8,00,000</td><td>5%</td><td>Old: 5% on ₹2.5L–₹5L</td></tr>
+        <tr><td>₹8,00,001 – ₹12,00,000</td><td>10%</td><td>Old: 20% on ₹5L–₹10L</td></tr>
+        <tr><td>₹12,00,001 – ₹16,00,000</td><td>15%</td><td>Old: 30% above ₹10L</td></tr>
+        <tr><td>₹16,00,001 – ₹20,00,000</td><td>20%</td><td>Old: 30% above ₹10L</td></tr>
+        <tr><td>₹20,00,001 – ₹24,00,000</td><td>25%</td><td>Old: 30% above ₹10L</td></tr>
+        <tr><td>Above ₹24,00,000</td><td>30%</td><td>Old: 30% above ₹10L</td></tr>
       </tbody>
     </table>
   </div>
@@ -396,14 +687,14 @@ body.dark .footer{background:#070d14}
   <h2>Frequently Asked Questions</h2>
   <details><summary>Is ArthaSetu India affiliated with the Income Tax Department?</summary><p>No. ArthaSetu India is an independent financial intelligence platform. We provide transparent mathematical engines based on published statutory rules.</p></details>
   <details><summary>What is the Breakeven Deduction for Old vs New Tax Regime?</summary><p>The breakeven deduction is the exact amount of tax exemptions (80C, 80D, HRA, home loan interest) you need so that tax liability in the Old Regime is lower than the New Regime.</p></details>
-  <details><summary>How much interest can I save with Home Loan prepayments?</summary><p>Even a modest extra prepayment of ₹2,000 to ₹5,000 per month or one additional EMI every year can save ₹5 to ₹15 Lakhs in interest and cut a 20-year loan tenure by 3 to 6 years.</p></details>
+  <details><summary>How much interest can I save with Home Loan prepayments?</summary><p>The interest and tenure impact of prepayment depends on principal, rate, remaining tenure, EMI structure and the timing of each prepayment. Use the calculator above for an input-specific amortization estimate.</p></details>
   <details><summary>Why does a CTC hike not translate to the same in-hand increase?</summary><p>A higher CTC often pushes additional earnings into higher income tax brackets (up to 30% + cess) and increases statutory deductions like Employee Provident Fund (EPF), leading to a lower net in-hand increment.</p></details>
 </section>
 
 <!-- About Section -->
 <section class="section" id="about">
   <h2>About ArthaSetu India</h2>
-  <p class="intro">ArthaSetu India empowers taxpayers, borrowers, and investors with clean, transparent, and accurate financial decision intelligence.</p>
+  <p class="intro">ArthaSetu India provides transparent calculation models for taxpayers, borrowers, and investors. Results are estimates and should be checked against the applicable law, lender terms, employer payroll structure, or product terms before making a financial decision.</p>
 </section>
 </main>
 
@@ -424,494 +715,609 @@ body.dark .footer{background:#070d14}
 
 <script>
 "use strict";
-(function(){
-const $=id=>document.getElementById(id), 
-      money=x=>{const n=Number(x);return Number.isFinite(n)?new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(n):"—"}, 
-      pct=x=>{const n=Number(x);return Number.isFinite(n)?n.toFixed(2)+"%":"—"}, 
-      num=id=>Number($(id)?.value||0);
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const money = (x) => {
+    const n = Number(x);
+    return Number.isFinite(n)
+      ? new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(n)
+      : "—";
+  };
+  const pct = (x) => {
+    const n = Number(x);
+    return Number.isFinite(n) ? n.toFixed(2) + "%" : "—";
+  };
+  const num = (id) => {
+    const el = $(id);
+    const n = Number(el?.value);
+    return Number.isFinite(n) ? Math.max(0, n) : 0;
+  };
 
-function slab(income,bands){let tax=0,prev=0;for(const [cap,rate] of bands){if(income<=prev)break;const top=Math.min(income,cap);if(top>prev)tax+=(top-prev)*rate;prev=cap;if(income<=cap)break}return tax}
+  // AY 2026-27 / FY 2025-26 rates published by the Income Tax Department.
+  const NEW_BANDS = [
+    [400000, 0], [800000, .05], [1200000, .10],
+    [1600000, .15], [2000000, .20], [2400000, .25], [Infinity, .30]
+  ];
+  const OLD_BANDS_UNDER_60 = [
+    [250000, 0], [500000, .05], [1000000, .20], [Infinity, .30]
+  ];
 
-const tools={
-"tax-breakeven":{
-  title:"New vs Old Tax Regime Breakeven Analyzer",
-  fields:[
-    {id:"tbSalary",label:"Annual Gross Salary (₹)",type:"number",value:"1500000",min:"0",step:"25000"},
-    {id:"tbCurrentDed",label:"Planned Deductions in Old Regime (80C/80D/HRA) (₹)",type:"number",value:"250000",min:"0",step:"10000"}
-  ],
-  calc(){
-    const salary=num("tbSalary"),plannedDed=num("tbCurrentDed");
-    // New Regime Tax
-    const taxableNew=Math.max(0,salary-75000);
-    let baseTaxNew=slab(taxableNew,[[400000,0],[800000,.05],[1200000,.10],[1600000,.15],[2000000,.20],[2400000,.25],[Infinity,.30]]);
-    if(taxableNew<=1200000) baseTaxNew=Math.max(0,baseTaxNew-60000);
-    else if(taxableNew>1200000 && baseTaxNew>(taxableNew-1200000)) baseTaxNew=taxableNew-1200000;
-    const taxNew=baseTaxNew*1.04;
-
-    // Old Regime Tax with planned deductions
-    const taxableOld=Math.max(0,salary-50000-plannedDed);
-    let baseTaxOld=slab(taxableOld,[[250000,0],[500000,.05],[1000000,.20],[Infinity,.30]]);
-    if(taxableOld<=500000) baseTaxOld=Math.max(0,baseTaxOld-12500);
-    const taxOld=baseTaxOld*1.04;
-
-    // Compute required breakeven deduction
-    let breakevenDed=0;
-    if(taxNew>0){
-      for(let d=0; d<=salary; d+=5000){
-        let tOld=Math.max(0,salary-50000-d);
-        let bTax=slab(tOld,[[250000,0],[500000,.05],[1000000,.20],[Infinity,.30]]);
-        if(tOld<=500000) bTax=Math.max(0,bTax-12500);
-        if(bTax*1.04 <= taxNew){ breakevenDed=d; break; }
-      }
+  function slab(income, bands) {
+    let tax = 0, prev = 0;
+    const x = Math.max(0, Number(income) || 0);
+    for (const [cap, rate] of bands) {
+      if (x <= prev) break;
+      const top = Math.min(x, cap);
+      if (top > prev) tax += (top - prev) * rate;
+      prev = cap;
+      if (x <= cap) break;
     }
+    return tax;
+  }
 
-    const diff=Math.abs(taxNew-taxOld);
-    let insight="";
-    if(salary<=1275000){
-      insight="New Tax Regime is 100% Tax-Free under Section 87A rebate.";
-    } else if(taxNew < taxOld){
-      insight=`New Regime saves ${money(diff)} for you. You need at least ${money(breakevenDed)} in total deductions to make Old Regime better.`;
+  function newRegimeTax(totalIncome, resident = true) {
+    const income = Math.max(0, Number(totalIncome) || 0);
+    const base = slab(income, NEW_BANDS);
+    let tax = base;
+
+    // Section 87A rebate: resident individual, total income <= ₹12 lakh.
+    if (resident && income <= 1200000) {
+      tax = Math.max(0, base - Math.min(base, 60000));
+    } else if (resident && income > 1200000) {
+      // Marginal relief under the new regime for income just above ₹12 lakh.
+      const excess = income - 1200000;
+      tax = Math.min(base, excess);
+    }
+    return tax * 1.04;
+  }
+
+  function oldRegimeTax(totalIncome, resident = true, age = "under60") {
+    const income = Math.max(0, Number(totalIncome) || 0);
+    let bands = OLD_BANDS_UNDER_60;
+    if (age === "60to79") bands = [[300000,0],[500000,.05],[1000000,.20],[Infinity,.30]];
+    if (age === "80plus") bands = [[500000,0],[1000000,.20],[Infinity,.30]];
+    let base = slab(income, bands);
+    if (resident) {
+      const rebateLimit = age === "under60" ? 500000 : 500000;
+      if (income <= rebateLimit) base = Math.max(0, base - Math.min(base, 12500));
+    }
+    return base * 1.04;
+  }
+
+  function createField(f) {
+    const div = document.createElement("div");
+    div.className = "field";
+    const lbl = document.createElement("label");
+    lbl.htmlFor = f.id;
+    lbl.textContent = f.label;
+    div.appendChild(lbl);
+
+    if (f.type === "select") {
+      const s = document.createElement("select");
+      s.id = f.id;
+      f.options.forEach(([v, t]) => {
+        const o = document.createElement("option");
+        o.value = v;
+        o.textContent = t;
+        if (f.value === v) o.selected = true;
+        s.appendChild(o);
+      });
+      s.addEventListener("change", updateResults);
+      div.appendChild(s);
     } else {
-      insight=`Old Regime saves ${money(diff)} with your current planned deductions of ${money(plannedDed)}.`;
+      const i = document.createElement("input");
+      i.id = f.id;
+      i.type = f.type;
+      i.value = f.value;
+      if (f.min != null) i.min = f.min;
+      if (f.max != null) i.max = f.max;
+      if (f.step != null) i.step = f.step;
+      i.inputMode = f.type === "number" ? "decimal" : "text";
+      i.addEventListener("input", updateResults);
+      div.appendChild(i);
     }
-
-    const ratio = Math.max(0, Math.min(100, (taxNew / Math.max(1, taxOld)) * 50));
-    
-    // Multi-Scenario Table
-    const scenarios = [
-      ["Current Planned (₹" + plannedDed + ")", money(taxNew), money(taxOld), taxNew <= taxOld ? "New Regime" : "Old Regime"],
-      ["Deductions ₹3,50,000", money(taxNew), money(slab(Math.max(0, salary - 400000), [[250000,0],[500000,.05],[1000000,.20],[Infinity,.30]])*1.04), "Scenario A"],
-      ["Deductions ₹4,50,000", money(taxNew), money(slab(Math.max(0, salary - 500000), [[250000,0],[500000,.05],[1000000,.20],[Infinity,.30]])*1.04), "Scenario B"]
-    ];
-
-    return {
-      insight,
-      chartRatio: ratio,
-      chartLabel: "Tax Comp.",
-      metrics:[
-        ["New Regime Tax",money(taxNew)],
-        ["Old Regime Tax",money(taxOld)],
-        ["Breakeven Deduction",money(breakevenDed)],
-        ["Net Tax Savings",money(diff)]
-      ],
-      scenarioHeaders: ["Deduction Level", "New Regime Tax", "Old Regime Tax", "Recommendation"],
-      scenarios
-    };
+    return div;
   }
-},
-"loan-prepayment":{
-  title:"Home Loan Prepayment & Savings Optimizer",
-  fields:[
-    {id:"lpAmount",label:"Outstanding Principal (₹)",type:"number",value:"4000000",min:"100000",step:"50000"},
-    {id:"lpRate",label:"Interest Rate (% p.a.)",type:"number",value:"8.5",min:"5",max:"20",step:"0.05"},
-    {id:"lpTenure",label:"Remaining Tenure (Years)",type:"number",value:"20",min:"1",max:"35",step:"1"},
-    {id:"lpExtraMonthly",label:"Extra Prepayment / Month (₹)",type:"number",value:"3000",min:"0",step:"500"}
-  ],
-  calc(){
-    const P=num("lpAmount"),r=(num("lpRate")/100)/12,origMonths=num("lpTenure")*12,extra=num("lpExtraMonthly");
-    const origEmi=r===0?P/origMonths:P*r*Math.pow(1+r,origMonths)/(Math.pow(1+r,origMonths)-1);
-    const origTotalInterest=(origEmi*origMonths)-P;
 
-    function simulate(extraAmt){
-      let bal=P,m=0,totInt=0;
-      while(bal>0 && m<origMonths){
-        let intM=bal*r;
-        let princM=Math.min(bal,(origEmi-intM)+extraAmt);
-        totInt+=intM;
-        bal-=princM;
-        m++;
+  function sipFutureValue(p, annualRate, months) {
+    const r = (Number(annualRate) || 0) / 100 / 12;
+    if (r === 0) return p * months;
+    // End-of-month SIP convention.
+    return p * ((Math.pow(1 + r, months) - 1) / r);
+  }
+
+  function fdValue(P, annualRate, years, frequency) {
+    const r = (Number(annualRate) || 0) / 100;
+    return P * Math.pow(1 + r / frequency, frequency * years);
+  }
+
+  const tools = {
+    "tax-breakeven": {
+      title: "New vs Old Tax Regime Breakeven Analyzer",
+      fields: [
+        {id:"tbSalary", label:"Annual Gross Salary (₹)", type:"number", value:"1500000", min:"0", step:"25000"},
+        {id:"tbCurrentDed", label:"Old-Regime Deductions / Exemptions (₹)", type:"number", value:"250000", min:"0", step:"5000"},
+        {id:"tbResident", label:"Resident Individual", type:"select", value:"yes", options:[["yes","Yes — eligible for 87A"],["no","No — no 87A rebate"]]}
+      ],
+      calc() {
+        const salary = num("tbSalary");
+        const plannedDed = num("tbCurrentDed");
+        const resident = $("tbResident").value === "yes";
+        const taxableNew = Math.max(0, salary - Math.min(salary, 75000));
+        const taxableOld = Math.max(0, salary - Math.min(salary, 50000) - plannedDed);
+        const taxNew = newRegimeTax(taxableNew, resident);
+        const taxOld = oldRegimeTax(taxableOld, resident);
+        const diff = Math.abs(taxNew - taxOld);
+
+        // Exact to the nearest rupee, using binary search over possible old-regime deductions.
+        let breakevenDed = null;
+        if (taxOld > taxNew || taxNew > 0) {
+          let lo = 0, hi = Math.max(0, salary);
+          if (oldRegimeTax(Math.max(0, salary - 50000 - hi), resident) <= taxNew) {
+            while (lo <= hi) {
+              const mid = Math.floor((lo + hi) / 2);
+              const t = oldRegimeTax(Math.max(0, salary - 50000 - mid), resident);
+              if (t <= taxNew) { breakevenDed = mid; hi = mid - 1; }
+              else lo = mid + 1;
+            }
+          }
+        }
+
+        let insight;
+        if (resident && taxableNew <= 1200000) {
+          insight = "At this taxable income, the resident-individual Section 87A rebate can reduce New-Regime tax to ₹0.";
+        } else if (taxNew < taxOld) {
+          insight = `New Regime tax is lower by ${money(diff)} on these inputs.`;
+        } else if (taxOld < taxNew) {
+          insight = `Old Regime tax is lower by ${money(diff)} on these inputs.`;
+        } else {
+          insight = "The two calculated tax liabilities are equal on these inputs.";
+        }
+
+        const ratio = taxOld > 0 ? (taxNew / taxOld) * 100 : (taxNew > 0 ? 100 : 0);
+        const d350 = oldRegimeTax(Math.max(0, salary - 50000 - 350000), resident);
+        const d450 = oldRegimeTax(Math.max(0, salary - 50000 - 450000), resident);
+
+        return {
+          insight,
+          chartRatio: ratio,
+          chartLabel: "New / Old",
+          metrics: [
+            ["New Regime Tax", money(taxNew)],
+            ["Old Regime Tax", money(taxOld)],
+            ["Breakeven Deduction", breakevenDed == null ? "Not reached" : money(breakevenDed)],
+            ["Tax Difference", money(diff)]
+          ],
+          scenarioHeaders: ["Deduction Level", "New Regime Tax", "Old Regime Tax", "Result"],
+          scenarios: [
+            [`Current (${money(plannedDed)})`, money(taxNew), money(taxOld), taxNew < taxOld ? "New lower" : taxOld < taxNew ? "Old lower" : "Equal"],
+            ["₹3,50,000", money(taxNew), money(d350), taxNew < d350 ? "New lower" : d350 < taxNew ? "Old lower" : "Equal"],
+            ["₹4,50,000", money(taxNew), money(d450), taxNew < d450 ? "New lower" : d450 < taxNew ? "Old lower" : "Equal"]
+          ]
+        };
       }
-      return {months:m, interest:totInt, saved:Math.max(0,origTotalInterest-totInt)};
+    },
+
+    "loan-prepayment": {
+      title: "Home Loan Prepayment & Savings Optimizer",
+      fields: [
+        {id:"lpAmount",label:"Outstanding Principal (₹)",type:"number",value:"4000000",min:"1",step:"50000"},
+        {id:"lpRate",label:"Interest Rate (% p.a.)",type:"number",value:"8.5",min:"0",max:"50",step:"0.05"},
+        {id:"lpTenure",label:"Remaining Tenure (Years)",type:"number",value:"20",min:"1",max:"50",step:"1"},
+        {id:"lpExtraMonthly",label:"Extra Prepayment / Month (₹)",type:"number",value:"3000",min:"0",step:"500"}
+      ],
+      calc() {
+        const P = num("lpAmount");
+        const r = num("lpRate") / 100 / 12;
+        const origMonths = Math.max(1, Math.round(num("lpTenure") * 12));
+        const extra = num("lpExtraMonthly");
+        const origEmi = r === 0 ? P / origMonths : P * r * Math.pow(1+r, origMonths) / (Math.pow(1+r, origMonths)-1);
+        const base = simulateLoan(P, r, origEmi, origMonths, 0);
+        const current = simulateLoan(P, r, origEmi, origMonths, extra);
+        const savedYears = Math.max(0, (base.months - current.months) / 12);
+
+        const scenarios = [0, 2000, 5000].map(x => {
+          const s = simulateLoan(P, r, origEmi, origMonths, x);
+          return [
+            `Extra ${money(x)}/mo`,
+            money(origEmi + x),
+            money(Math.max(0, base.interest - s.interest)) + " saved",
+            `${(s.months/12).toFixed(1)} Years`
+          ];
+        });
+
+        return {
+          insight: extra > 0
+            ? `An extra ${money(extra)}/month reduces the modeled tenure by ${savedYears.toFixed(1)} years and saves ${money(Math.max(0, base.interest-current.interest))} in interest.`
+            : "Enter an extra monthly payment to model prepayment savings.",
+          chartRatio: base.interest > 0 ? (current.interest / base.interest) * 100 : 0,
+          chartLabel: "Interest Left",
+          metrics: [
+            ["Standard EMI", money(origEmi)],
+            ["Interest Saved", money(Math.max(0, base.interest-current.interest))],
+            ["Tenure Reduced", `${savedYears.toFixed(1)} Years`],
+            ["New Duration", `${(current.months/12).toFixed(1)} Years`]
+          ],
+          scenarioHeaders: ["Prepayment", "Monthly Outflow", "Interest Benefit", "New Tenure"],
+          scenarios
+        };
+      }
+    },
+
+    "ctc-hike": {
+      title:"CTC Hike vs In-Hand Estimate",
+      fields:[
+        {id:"chOldCTC",label:"Current Annual CTC (₹)",type:"number",value:"1200000",min:"0",step:"50000"},
+        {id:"chNewCTC",label:"Offered Annual CTC (₹)",type:"number",value:"1600000",min:"0",step:"50000"},
+        {id:"chPf",label:"Employee PF / Month (₹)",type:"number",value:"1800",min:"0",step:"100"},
+        {id:"chOther",label:"Other Monthly Deductions (₹)",type:"number",value:"0",min:"0",step:"100"}
+      ],
+      calc(){
+        const oldC=num("chOldCTC"), newC=num("chNewCTC"), pf=num("chPf"), other=num("chOther");
+        // CTC is not itself a statutory taxable-income figure. This is an estimate based on
+        // CTC less the supplied employee deductions, then new-regime tax for a resident individual.
+        function estimate(ctc){
+          const annualPf = pf * 12;
+          const annualOther = other * 12;
+          const grossProxy = Math.max(0, ctc - annualPf);
+          const taxable = Math.max(0, grossProxy - Math.min(grossProxy, 75000));
+          const tax = newRegimeTax(taxable, true);
+          return Math.max(0, (grossProxy - annualOther - tax) / 12);
+        }
+        const oldMonthly=estimate(oldC), newMonthly=estimate(newC);
+        const monthlyHike=newMonthly-oldMonthly;
+        const ctcHikePct=oldC>0 ? (newC-oldC)/oldC*100 : 0;
+        const inHandHikePct=oldMonthly>0 ? monthlyHike/oldMonthly*100 : 0;
+        return {
+          insight:`This is an estimate, not an exact payroll result: CTC rises ${pct(ctcHikePct)} and modeled monthly in-hand changes by ${money(monthlyHike)} (${pct(inHandHikePct)}).`,
+          chartRatio: Math.max(0, Math.min(100, inHandHikePct)),
+          chartLabel:"In-Hand Change",
+          metrics:[
+            ["Current Monthly Estimate",money(oldMonthly)],
+            ["New Monthly Estimate",money(newMonthly)],
+            ["Monthly Difference",money(monthlyHike)],
+            ["CTC vs In-Hand",`${pct(ctcHikePct)} → ${pct(inHandHikePct)}`]
+          ],
+          scenarioHeaders:["Package","Annual CTC","Monthly Estimate","Change"],
+          scenarios:[
+            ["Current",money(oldC),money(oldMonthly),"Base"],
+            ["Offered",money(newC),money(newMonthly),`${pct(inHandHikePct)}`],
+            ["Offered +10%",money(newC*1.1),money(estimate(newC*1.1)), "Illustration"]
+          ]
+        };
+      }
+    },
+
+    "income-tax": {
+      title:"Income Tax Calculator (AY 2026-27)",
+      fields:[
+        {id:"taxIncome",label:"Annual Gross Salary / Income (₹)",type:"number",value:"1200000",min:"0",step:"10000"},
+        {id:"taxDed",label:"Old-Regime Deductions / Exemptions (₹)",type:"number",value:"0",min:"0",step:"5000"},
+        {id:"taxRegime",label:"Tax Regime",type:"select",value:"new",options:[["new","New Regime (Section 115BAC)"],["old","Old Regime"]]},
+        {id:"taxResident",label:"Resident Individual",type:"select",value:"yes",options:[["yes","Yes"],["no","No"]]}
+      ],
+      calc(){
+        const income=num("taxIncome"), ded=num("taxDed"), reg=$("taxRegime").value, resident=$("taxResident").value==="yes";
+        const standard = Math.min(income, reg==="new" ? 75000 : 50000);
+        const taxable = Math.max(0, income - standard - (reg==="old" ? ded : 0));
+        const totalTax = reg==="new" ? newRegimeTax(taxable,resident) : oldRegimeTax(taxable,resident);
+        const baseBeforeCess = totalTax / 1.04;
+        const cess = totalTax - baseBeforeCess;
+        const zeroTax = totalTax === 0;
+        return {
+          insight: zeroTax
+            ? "Calculated tax payable is ₹0 on these inputs. Eligibility for rebates depends on the selected regime and residency."
+            : `Calculated total tax liability is ${money(totalTax)}, including 4% Health & Education Cess.`,
+          chartRatio: income > 0 ? totalTax/income*100 : 0,
+          chartLabel:"Effective Tax",
+          metrics:[
+            ["Taxable Income",money(taxable)],
+            ["Tax Before Cess",money(baseBeforeCess)],
+            ["Health & Education Cess",money(cess)],
+            ["Total Tax Liability",money(totalTax)]
+          ],
+          scenarioHeaders:["Regime","Standard Deduction","Taxable Income","Total Tax"],
+          scenarios:[
+            ["Selected",money(standard),money(taxable),money(totalTax)],
+            ["New Regime",money(Math.min(income,75000)),money(Math.max(0,income-Math.min(income,75000))),money(newRegimeTax(Math.max(0,income-Math.min(income,75000)),resident))],
+            ["Old Regime",money(Math.min(income,50000)),money(Math.max(0,income-Math.min(income,50000)-ded)),money(oldRegimeTax(Math.max(0,income-Math.min(income,50000)-ded),resident))]
+          ]
+        };
+      }
+    },
+
+    "gst":{
+      title:"GST Calculator",
+      fields:[
+        {id:"gstAmount",label:"Transaction Amount (₹)",type:"number",value:"10000",min:"0",step:"100"},
+        {id:"gstRate",label:"GST Rate (%)",type:"number",value:"18",min:"0",max:"100",step:"0.5"},
+        {id:"gstType",label:"Price Type",type:"select",value:"exclusive",options:[["exclusive","Add GST (Exclusive)"],["inclusive","Extract GST (Inclusive)"]]},
+        {id:"gstSupply",label:"Supply Type",type:"select",value:"intra",options:[["intra","Intra-state (CGST + SGST)"],["inter","Inter-state (IGST)"]]}
+      ],
+      calc(){
+        const amount=num("gstAmount"), rate=num("gstRate")/100, inclusive=$("gstType").value==="inclusive", intra=$("gstSupply").value==="intra";
+        const base=inclusive && rate>0 ? amount/(1+rate) : amount;
+        const tax=base*rate, total=base+tax;
+        return {
+          insight: inclusive ? `GST extracted from the inclusive amount is ${money(tax)}.` : `GST of ${money(tax)} is added to the taxable value.`,
+          chartRatio: total>0 ? tax/total*100 : 0,
+          chartLabel:"GST Share",
+          metrics:[
+            ["Taxable Value",money(base)],
+            [intra?"CGST":"IGST",money(intra?tax/2:tax)],
+            [intra?"SGST":"Total IGST",money(intra?tax/2:tax)],
+            ["Invoice Total",money(total)]
+          ],
+          scenarioHeaders:["Rate","Taxable Value","Tax","Invoice Total"],
+          scenarios:[
+            ["5%",money(inclusive?amount/1.05:amount),money(inclusive?amount-amount/1.05:amount*.05),money(inclusive?amount:amount*1.05)],
+            ["18%",money(inclusive?amount/1.18:amount),money(inclusive?amount-amount/1.18:amount*.18),money(inclusive?amount:amount*1.18)],
+            ["28%",money(inclusive?amount/1.28:amount),money(inclusive?amount-amount/1.28:amount*.28),money(inclusive?amount:amount*1.28)]
+          ]
+        };
+      }
+    },
+
+    "sip":{
+      title:"SIP Compounding Calculator",
+      fields:[
+        {id:"sipMonthly",label:"Monthly Investment (₹)",type:"number",value:"5000",min:"0",step:"500"},
+        {id:"sipRate",label:"Expected Annual Return (%)",type:"number",value:"12",min:"0",max:"100",step:"0.5"},
+        {id:"sipYears",label:"Duration (Years)",type:"number",value:"10",min:"1",max:"50",step:"1"}
+      ],
+      calc(){
+        const p=num("sipMonthly"), rate=num("sipRate"), years=num("sipYears"), n=Math.round(years*12);
+        const fv=sipFutureValue(p,rate,n), invested=p*n, gain=Math.max(0,fv-invested);
+        const scenarioYears=[5,10,15];
+        return {
+          insight:`At the selected assumed return, the modeled SIP corpus is ${money(fv)}. Returns are an assumption, not a guarantee.`,
+          chartRatio:fv>0 ? invested/fv*100 : 0,
+          chartLabel:"Principal",
+          metrics:[
+            ["Future Corpus",money(fv)],
+            ["Total Invested",money(invested)],
+            ["Estimated Gain",money(gain)],
+            ["Corpus / Invested",invested>0?(fv/invested).toFixed(2)+"x":"—"]
+          ],
+          scenarioHeaders:["Horizon","Invested","Estimated Corpus","Gain"],
+          scenarios:scenarioYears.map(y=>{
+            const m=y*12, v=sipFutureValue(p,rate,m);
+            return [`${y} Years`,money(p*m),money(v),money(v-p*m)];
+          })
+        };
+      }
+    },
+
+    "salary":{
+      title:"In-Hand Salary Calculator",
+      fields:[
+        {id:"salGross",label:"Monthly Gross Salary (₹)",type:"number",value:"75000",min:"0",step:"1000"},
+        {id:"salDed",label:"Monthly Deductions (PF/PT/TDS) (₹)",type:"number",value:"6000",min:"0",step:"100"}
+      ],
+      calc(){
+        const g=num("salGross"),d=Math.min(num("salDed"),g),net=Math.max(0,g-d);
+        return {
+          insight:`Modeled monthly take-home is ${money(net)}, which is ${pct(g>0?net/g*100:0)} of gross salary.`,
+          chartRatio:g>0?net/g*100:0,
+          chartLabel:"Take-Home",
+          metrics:[
+            ["Monthly In-Hand",money(net)],["Annual In-Hand",money(net*12)],
+            ["Annual Deductions",money(d*12)],["Annual Gross",money(g*12)]
+          ],
+          scenarioHeaders:["Frequency","Gross","Deductions","Net"],
+          scenarios:[
+            ["Monthly",money(g),money(d),money(net)],
+            ["Quarterly",money(g*3),money(d*3),money(net*3)],
+            ["Annual",money(g*12),money(d*12),money(net*12)]
+          ]
+        };
+      }
+    },
+
+    "fd":{
+      title:"Fixed Deposit (FD) Mathematics Calculator",
+      fields:[
+        {id:"fdP",label:"Deposit Amount (₹)",type:"number",value:"100000",min:"0",step:"5000"},
+        {id:"fdR",label:"Interest Rate (% p.a.)",type:"number",value:"7.25",min:"0",max:"50",step:"0.05"},
+        {id:"fdY",label:"Tenure (Years)",type:"number",value:"3",min:"0.25",max:"20",step:"0.25"}
+      ],
+      calc(){
+        const P=num("fdP"), r=num("fdR"), t=num("fdY"), fv=fdValue(P,r,t,4);
+        return {
+          insight:`At the entered rate with quarterly compounding, modeled interest is ${money(fv-P)}. Actual bank FD terms can differ.`,
+          chartRatio:fv>0?P/fv*100:0,
+          chartLabel:"Principal",
+          metrics:[
+            ["Maturity Value",money(fv)],["Interest Earned",money(fv-P)],
+            ["Principal",money(P)],["Effective Annual Yield",pct((Math.pow(1+r/100/4,4)-1)*100)]
+          ],
+          scenarioHeaders:["Mathematical Frequency","Effective Yield","Interest","Maturity"],
+          scenarios:[1,4,12].map(f=>{
+            const v=fdValue(P,r,t,f);
+            return [`${f}×/year`,pct((Math.pow(1+r/100/f,f)-1)*100),money(v-P),money(v)];
+          })
+        };
+      }
+    },
+
+    "cagr":{
+      title:"CAGR Calculator",
+      fields:[
+        {id:"cgS",label:"Initial Value (₹)",type:"number",value:"50000",min:"0.01",step:"1000"},
+        {id:"cgE",label:"Final Value (₹)",type:"number",value:"120000",min:"0.01",step:"1000"},
+        {id:"cgY",label:"Period (Years)",type:"number",value:"4",min:"0.1",step:"0.5"}
+      ],
+      calc(){
+        const s=num("cgS"),e=num("cgE"),y=num("cgY");
+        const c=s>0&&e>0&&y>0?Math.pow(e/s,1/y)-1:0;
+        return {
+          insight:`The CAGR implied by the two values is ${pct(c*100)} over ${y} years.`,
+          chartRatio:Math.max(0,Math.min(100,s/e*100)),
+          chartLabel:"Initial Value",
+          metrics:[
+            ["CAGR",pct(c*100)],["Absolute Change",money(e-s)],["Final / Initial",s>0?(e/s).toFixed(2)+"x":"—"]
+          ],
+          scenarioHeaders:["Milestone","Value","Duration","CAGR"],
+          scenarios:[
+            ["Start",money(s),"Year 0","—"],
+            ["End",money(e),`${y} Years`,pct(c*100)],
+            ["+2 Years (model)",money(s*Math.pow(1+c,y+2)),`${y+2} Years`,pct(c*100)]
+          ]
+        };
+      }
     }
+  };
 
-    const simCurrent=simulate(extra);
-    const savedYears=((origMonths-simCurrent.months)/12).toFixed(1);
-
-    const insight=extra>0 
-      ? `Paying extra ${money(extra)}/mo saves ${money(simCurrent.saved)} in interest and finishes your loan ${savedYears} years earlier!`
-      : "Enter an extra monthly payment to simulate your interest and tenure savings.";
-
-    const ratio = Math.max(0, Math.min(100, (simCurrent.interest / Math.max(1, origTotalInterest)) * 100));
-
-    const scenarios = [
-      ["Extra ₹0/mo (Base)", money(origEmi), money(origTotalInterest), `${num("lpTenure")} Years`],
-      ["Extra ₹2,000/mo", money(origEmi + 2000), money(simulate(2000).saved) + " saved", `${(simulate(2000).months/12).toFixed(1)} Years`],
-      ["Extra ₹5,000/mo", money(origEmi + 5000), money(simulate(5000).saved) + " saved", `${(simulate(5000).months/12).toFixed(1)} Years`]
-    ];
-
-    return {
-      insight,
-      chartRatio: ratio,
-      chartLabel: "Interest Left",
-      metrics:[
-        ["Standard Monthly EMI",money(origEmi)],
-        ["Total Interest Saved",money(simCurrent.saved)],
-        ["Tenure Reduced",`${savedYears} Years`],
-        ["New Loan Duration",`${(simCurrent.months/12).toFixed(1)} Years`]
-      ],
-      scenarioHeaders: ["Prepayment Strategy", "Monthly Outflow", "Interest Benefit", "New Tenure"],
-      scenarios
-    };
-  }
-},
-"ctc-hike":{
-  title:"CTC Hike vs In-Hand Reality Check",
-  fields:[
-    {id:"chOldCTC",label:"Current Annual CTC (₹)",type:"number",value:"1200000",min:"0",step:"50000"},
-    {id:"chNewCTC",label:"Offered New Annual CTC (₹)",type:"number",value:"1600000",min:"0",step:"50000"}
-  ],
-  calc(){
-    const oldC=num("chOldCTC"),newC=num("chNewCTC");
-    function estimateInHand(ctc){
-      const pf=Math.min(ctc*0.12, 180000);
-      const gross=ctc-pf;
-      const taxable=Math.max(0,gross-75000);
-      let tax=slab(taxable,[[400000,0],[800000,.05],[1200000,.10],[1600000,.15],[2000000,.20],[2400000,.25],[Infinity,.30]]);
-      if(taxable<=1200000) tax=Math.max(0,tax-60000);
-      else if(taxable>1200000 && tax>(taxable-1200000)) tax=taxable-1200000;
-      tax=tax*1.04;
-      return (gross-tax)/12;
+  function simulateLoan(P, r, emi, maxMonths, extra) {
+    let bal=P, months=0, interest=0;
+    const paymentCap=emi+Math.max(0,extra);
+    while (bal > 0.005 && months < maxMonths) {
+      const intM=bal*r;
+      const scheduledPrincipal=Math.max(0, paymentCap-intM);
+      const principal=Math.min(bal, scheduledPrincipal);
+      interest += intM;
+      bal -= principal;
+      months++;
+      if (principal <= 0 && r > 0) break;
     }
-    const oldMonthly=estimateInHand(oldC);
-    const newMonthly=estimateInHand(newC);
-    const monthlyHike=newMonthly-oldMonthly;
-    const ctcHikePct=oldC>0?((newC-oldC)/oldC)*100:0;
-    const inHandHikePct=oldMonthly>0?(monthlyHike/oldMonthly)*100:0;
-
-    const insight=`Your CTC increases by ${pct(ctcHikePct)}, resulting in an actual in-hand increase of ${money(monthlyHike)}/month (${pct(inHandHikePct)}).`;
-    const ratio = Math.max(0, Math.min(100, inHandHikePct));
-
-    const scenarios = [
-      ["Current Package", money(oldC), money(oldMonthly), "Base"],
-      ["Offered Package", money(newC), money(newMonthly), `+${pct(inHandHikePct)}`],
-      ["If Offered +10% More", money(newC * 1.1), money(estimateInHand(newC * 1.1)), "Target Offer"]
-    ];
-
-    return {
-      insight,
-      chartRatio: ratio,
-      chartLabel: "In-Hand %",
-      metrics:[
-        ["Current Monthly In-Hand",money(oldMonthly)],
-        ["New Monthly In-Hand",money(newMonthly)],
-        ["Net Monthly Hike",money(monthlyHike)],
-        ["CTC vs In-Hand Hike",`${pct(ctcHikePct)} → ${pct(inHandHikePct)}`]
-      ],
-      scenarioHeaders: ["CTC Level", "Annual CTC", "Monthly In-Hand", "Real Growth"],
-      scenarios
-    };
+    return {months, interest};
   }
-},
-"income-tax":{
-  title:"Standard Income Tax Calculator (TY 2026-27)",
-  fields:[
-    {id:"taxSalary",label:"Annual Salary / Income (₹)",type:"number",value:"1200000",min:"0",step:"10000"},
-    {id:"taxDed",label:"Deductions under Old Regime (₹)",type:"number",value:"0",min:"0",step:"5000"},
-    {id:"taxRegime",label:"Tax Regime",type:"select",options:[["new","New Regime (Section 115BAC)"],["old","Old Regime"]]}
-  ],
-  calc(){
-    const salary=num("taxSalary"),ded=num("taxDed"),reg=$("taxRegime").value;
-    const standard=Math.min(salary,reg==="new"?75000:50000);
-    const taxable=Math.max(0,salary-standard-(reg==="old"?ded:0));
-    let baseTax=0;
-    if(reg==="new"){
-      baseTax=slab(taxable,[[400000,0],[800000,.05],[1200000,.10],[1600000,.15],[2000000,.20],[2400000,.25],[Infinity,.30]]);
-    }else{
-      baseTax=slab(taxable,[[250000,0],[500000,.05],[1000000,.20],[Infinity,.30]]);
+
+  let activeTool="tax-breakeven";
+
+  function setTool(tool) {
+    if (!tools[tool]) tool="tax-breakeven";
+    activeTool=tool;
+    const t=tools[tool];
+    $("toolTitle").textContent=t.title;
+    $("inputContainer").replaceChildren(...t.fields.map(createField));
+    document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.toggle("active", btn.dataset.tool===tool));
+    updateResults();
+  }
+
+  function updateResults() {
+    let res;
+    try { res=tools[activeTool].calc(); }
+    catch (err) {
+      console.error(err);
+      $("insightText").textContent="Please check the entered values.";
+      $("metricsGrid").replaceChildren();
+      $("scenarioBody").replaceChildren();
+      return;
     }
-    let rebate=0;
-    if(reg==="new"&&taxable<=1200000) rebate=Math.min(baseTax,60000);
-    if(reg==="old"&&taxable<=500000) rebate=Math.min(baseTax,12500);
-    let taxAfterRebate=Math.max(0,baseTax-rebate);
-    if(reg==="new"&&taxable>1200000){
-      const excess=taxable-1200000;
-      if(taxAfterRebate>excess) taxAfterRebate=excess;
-    }
-    const cess=taxAfterRebate*.04,total=taxAfterRebate+cess;
-    const effRate = (total/Math.max(1,salary))*100;
-    const insight=salary<=1275000 && reg==="new"
-      ? "Zero tax payable under the New Tax Regime with ₹75k Standard Deduction & Section 87A rebate."
-      : `Standard Deduction of ${money(standard)} applied. Total tax liability is ${money(total)}.`;
-    return {
-      insight,
-      chartRatio: effRate,
-      chartLabel: "Tax Rate",
-      metrics:[
-        ["Taxable Income",money(taxable)],
-        ["Base Tax Payable",money(taxAfterRebate)],
-        ["Health Cess (4%)",money(cess)],
-        ["Total Tax Liability",money(total)]
-      ],
-      scenarioHeaders: ["Income Slabs", "Tax Rate", "Rebate / Relief", "Net Impact"],
-      scenarios: [
-        ["₹0 – ₹4,00,000", "0%", "Nil", "Tax Free"],
-        ["₹4,00,001 – ₹8,00,000", "5%", "87A Covered", "Offset by rebate"],
-        ["₹8,00,001 – ₹12,00,000", "10%", "87A Covered", "Offset up to ₹12L"]
-      ]
-    };
-  }
-},
-"gst":{
-  title:"GST Calculator",
-  fields:[
-    {id:"gstAmount",label:"Transaction Amount (₹)",type:"number",value:"10000",min:"1",step:"100"},
-    {id:"gstRate",label:"GST Rate (%)",type:"number",value:"18",min:"0",max:"40",step:"0.5"},
-    {id:"gstType",label:"Transaction Type",type:"select",options:[["exclusive","Add GST (Exclusive)"],["inclusive","Extract GST (Inclusive)"]]}
-  ],
-  calc(){
-    const amount=num("gstAmount"),rate=num("gstRate")/100,isInc=$("gstType").value==="inclusive";
-    const base=isInc?amount/(1+rate):amount,tax=base*rate,total=base+tax;
-    const ratio = (tax/total)*100;
-    return {
-      insight: isInc?`Extracted ${money(tax)} GST from inclusive price of ${money(amount)}.`:`Added ${money(tax)} GST on taxable value of ${money(base)}.`,
-      chartRatio: ratio,
-      chartLabel: "Tax Share",
-      metrics:[
-        ["Taxable Base",money(base)],
-        ["CGST (50%)",money(tax/2)],
-        ["SGST (50%)",money(tax/2)],
-        ["Total Invoice Value",money(total)]
-      ],
-      scenarioHeaders: ["GST Bracket", "Tax Rate", "CGST Share", "SGST Share"],
-      scenarios: [
-        ["Essential Goods", "5%", "2.5%", "2.5%"],
-        ["Standard Rate", "18%", "9.0%", "9.0%"],
-        ["Luxury / Demerit", "28%", "14.0%", "14.0%"]
-      ]
-    };
-  }
-},
-"sip":{
-  title:"SIP Compounding Calculator",
-  fields:[
-    {id:"sipMonthly",label:"Monthly Investment (₹)",type:"number",value:"5000",min:"500",step:"500"},
-    {id:"sipRate",label:"Expected Annual Return (%)",type:"number",value:"12",min:"1",max:"35",step:"0.5"},
-    {id:"sipYears",label:"Duration (Years)",type:"number",value:"10",min:"1",max:"40",step:"1"}
-  ],
-  calc(){
-    const p=num("sipMonthly"),r=(num("sipRate")/100)/12,n=num("sipYears")*12;
-    const fv=r===0?p*n:p*((Math.pow(1+r,n)-1)/r)*(1+r),invested=p*n;
-    const ratio = (invested/fv)*100;
-    return {
-      insight:`Disciplined monthly SIP of ${money(p)} generates ${money(fv-invested)} in wealth gain.`,
-      chartRatio: ratio,
-      chartLabel: "Principal %",
-      metrics:[
-        ["Future Corpus",money(fv)],
-        ["Total Invested",money(invested)],
-        ["Wealth Gain",money(fv-invested)],
-        ["Growth Multiplier",((fv/invested).toFixed(2))+"x"]
-      ],
-      scenarioHeaders: ["Investment Horizon", "Total Capital", "Estimated Corpus", "Wealth Multiplier"],
-      scenarios: [
-        ["5 Years", money(p*60), money(p*((Math.pow(1+r,60)-1)/r)*(1+r)), "1.3x"],
-        ["10 Years", money(p*120), money(fv), ((fv/invested).toFixed(2))+"x"],
-        ["15 Years", money(p*180), money(p*((Math.pow(1+r,180)-1)/r)*(1+r)), "3.2x"]
-      ]
-    };
-  }
-},
-"salary":{
-  title:"In-Hand Salary Calculator",
-  fields:[
-    {id:"salGross",label:"Monthly Gross Salary (₹)",type:"number",value:"75000",min:"0",step:"1000"},
-    {id:"salDed",label:"Monthly Deductions (PF/PT/TDS) (₹)",type:"number",value:"6000",min:"0",step:"100"}
-  ],
-  calc(){
-    const g=num("salGross"),d=num("salDed"),net=Math.max(0,g-d);
-    const ratio = (net/Math.max(1,g))*100;
-    return {
-      insight:`Your monthly take-home salary is ${money(net)} (${pct(ratio)} of gross salary).`,
-      chartRatio: ratio,
-      chartLabel: "Take-Home",
-      metrics:[
-        ["Monthly In-Hand",money(net)],
-        ["Annual In-Hand",money(net*12)],
-        ["Annual Deductions",money(d*12)],
-        ["Annual Gross",money(g*12)]
-      ],
-      scenarioHeaders: ["Frequency", "Gross Earnings", "Deductions", "Net Take-Home"],
-      scenarios: [
-        ["Monthly", money(g), money(d), money(net)],
-        ["Quarterly", money(g*3), money(d*3), money(net*3)],
-        ["Annual", money(g*12), money(d*12), money(net*12)]
-      ]
-    };
-  }
-},
-"fd":{
-  title:"Fixed Deposit (FD) Calculator",
-  fields:[
-    {id:"fdP",label:"Deposit Amount (₹)",type:"number",value:"100000",min:"5000",step:"5000"},
-    {id:"fdR",label:"Interest Rate (% p.a.)",type:"number",value:"7.25",min:"3",max:"15",step:"0.05"},
-    {id:"fdY",label:"Tenure (Years)",type:"number",value:"3",min:"0.25",max:"10",step:"0.25"}
-  ],
-  calc(){
-    const P=num("fdP"),r=num("fdR")/100,t=num("fdY"),fv=P*Math.pow(1+r/4,4*t);
-    const ratio = (P/fv)*100;
-    return {
-      insight:`Quarterly compounded FD earns ${money(fv-P)} interest over ${t} years.`,
-      chartRatio: ratio,
-      chartLabel: "Principal %",
-      metrics:[
-        ["Maturity Payout",money(fv)],
-        ["Interest Earned",money(fv-P)],
-        ["Principal Deposited",money(P)],
-        ["Annual Yield",pct(((Math.pow(1+r/4,4)-1))*100)]
-      ],
-      scenarioHeaders: ["Compounding Option", "Effective Yield", "Interest Earned", "Maturity Total"],
-      scenarios: [
-        ["Monthly", pct((Math.pow(1+r/12,12)-1)*100), money(P*Math.pow(1+r/12,12*t)-P), money(P*Math.pow(1+r/12,12*t))],
-        ["Quarterly (Standard)", pct((Math.pow(1+r/4,4)-1)*100), money(fv-P), money(fv)],
-        ["Yearly", pct(r*100), money(P*Math.pow(1+r,t)-P), money(P*Math.pow(1+r,t))]
-      ]
-    };
-  }
-},
-"cagr":{
-  title:"CAGR Calculator",
-  fields:[
-    {id:"cgS",label:"Initial Value (₹)",type:"number",value:"50000",min:"1",step:"1000"},
-    {id:"cgE",label:"Final Value (₹)",type:"number",value:"120000",min:"1",step:"1000"},
-    {id:"cgY",label:"Period (Years)",type:"number",value:"4",min:"0.1",step:"0.5"}
-  ],
-  calc(){
-    const s=num("cgS"),e=num("cgE"),y=num("cgY"),c=Math.pow(e/s,1/y)-1;
-    const ratio = Math.min(100, (s/e)*100);
-    return {
-      insight:`Investment compounded at an annual rate of ${pct(c*100)} over ${y} years.`,
-      chartRatio: ratio,
-      chartLabel: "Initial %",
-      metrics:[
-        ["CAGR Rate",pct(c*100)],
-        ["Absolute Gain",money(e-s)],
-        ["Multiplier",((e/s).toFixed(2))+"x"]
-      ],
-      scenarioHeaders: ["Milestone", "Asset Value", "Holding Duration", "Annualized Rate"],
-      scenarios: [
-        ["Start", money(s), "Year 0", "—"],
-        ["Target End", money(e), `${y} Years`, pct(c*100)],
-        ["If Held +2 Yrs", money(s * Math.pow(1+c, y+2)), `${y+2} Years`, pct(c*100)]
-      ]
-    };
-  }
-}
-};
+    $("insightText").textContent=res.insight;
+    $("metricsGrid").innerHTML=res.metrics.map(([label,val]) =>
+      `<div class="metric"><span>${escapeHtml(label)}</span><strong>${escapeHtml(val)}</strong></div>`
+    ).join("");
 
-function createField(f){
-  const div=document.createElement("div");
-  div.className="field";
-  const lbl=document.createElement("label");
-  lbl.htmlFor=f.id;
-  lbl.textContent=f.label;
-  div.appendChild(lbl);
-  if(f.type==="select"){
-    const s=document.createElement("select");
-    s.id=f.id;
-    f.options.forEach(([v,t])=>{
-      const o=document.createElement("option");
-      o.value=v;o.textContent=t;s.appendChild(o);
-    });
-    s.addEventListener("change",()=>updateResults());
-    div.appendChild(s);
-  } else {
-    const i=document.createElement("input");
-    i.id=f.id;i.type=f.type;i.value=f.value;
-    if(f.min) i.min=f.min;
-    if(f.max) i.max=f.max;
-    if(f.step) i.step=f.step;
-    i.addEventListener("input",()=>updateResults());
-    div.appendChild(i);
-  }
-  return div;
-}
+    const ratio=Math.max(0,Math.min(100,Number(res.chartRatio)||0));
+    const circumference=251.2;
+    $("chartFill").style.strokeDashoffset=circumference-(ratio/100)*circumference;
+    $("chartLegend").textContent=`${res.chartLabel}: ${ratio.toFixed(0)}%`;
 
-let activeTool="tax-breakeven";
-function setTool(tool){
-  if(!tools[tool]) tool="tax-breakeven";
-  activeTool=tool;
-  const t=tools[tool];
-  $("toolTitle").textContent=t.title;
-  $("inputContainer").replaceChildren(...t.fields.map(createField));
-  document.querySelectorAll(".tab-btn").forEach(btn=>btn.classList.toggle("active",btn.dataset.tool===tool));
-  updateResults();
-}
-
-function updateResults(){
-  const res=tools[activeTool].calc();
-  $("insightText").textContent=res.insight;
-  $("metricsGrid").innerHTML=res.metrics.map(([label,val])=>`
-    <div class="metric">
-      <span>${label}</span>
-      <strong>${val}</strong>
-    </div>
-  `).join("");
-
-  // Dynamic Chart Update
-  const ratio = Math.max(0, Math.min(100, res.chartRatio || 50));
-  const circumference = 251.2;
-  const offset = circumference - (ratio / 100) * circumference;
-  $("chartFill").style.strokeDashoffset = offset;
-  $("chartLegend").textContent = `${res.chartLabel}: ${ratio.toFixed(0)}%`;
-
-  // Scenario Table Rendering
-  if(res.scenarioHeaders && res.scenarios){
     $("scenarioContainer").style.display="block";
-    $("scenarioHeader").innerHTML=res.scenarioHeaders.map(h=>`<th>${h}</th>`).join("");
-    $("scenarioBody").innerHTML=res.scenarios.map(row=>`<tr>${row.map(cell=>`<td>${cell}</td>`).join("")}</tr>`).join("");
-  } else {
-    $("scenarioContainer").style.display="none";
+    $("scenarioHeader").innerHTML=res.scenarioHeaders.map(h=>`<th>${escapeHtml(h)}</th>`).join("");
+    $("scenarioBody").innerHTML=res.scenarios.map(row =>
+      `<tr>${row.map(cell=>`<td>${escapeHtml(cell)}</td>`).join("")}</tr>`
+    ).join("");
   }
-}
 
-document.querySelectorAll(".tab-btn").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    setTool(btn.dataset.tool);
-    $("calculatorCard").scrollIntoView({behavior:"smooth",block:"nearest"});
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, c => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+    }[c]));
+  }
+
+  function currentSummary() {
+    const toolName=tools[activeTool].title;
+    const insight=$("insightText").textContent;
+    let out=`📊 ArthaSetu Financial Insight\nTool: ${toolName}\n${insight}\n`;
+    document.querySelectorAll("#metricsGrid .metric").forEach(m=>{
+      const label=m.querySelector("span")?.textContent||"";
+      const val=m.querySelector("strong")?.textContent||"";
+      if(label&&val) out += `${label}: ${val}\n`;
+    });
+    return out;
+  }
+
+  // Tool tabs
+  document.querySelectorAll(".tab-btn").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      setTool(btn.dataset.tool);
+      $("calculatorCard").scrollIntoView({behavior:"smooth",block:"nearest"});
+    });
   });
-});
 
-$("resetBtn").addEventListener("click",()=>setTool(activeTool));
-$("clearSearch").addEventListener("click",()=>{$("toolSearch").value="";$("toolSearch").focus()});
+  // Search/filter actually filters the calculator tabs.
+  $("toolSearch").addEventListener("input",()=>{
+    const q=$("toolSearch").value.trim().toLowerCase();
+    document.querySelectorAll(".tab-btn").forEach(btn=>{
+      btn.hidden=!!q && !btn.textContent.toLowerCase().includes(q);
+    });
+  });
+  $("clearSearch").addEventListener("click",()=>{
+    $("toolSearch").value="";
+    document.querySelectorAll(".tab-btn").forEach(btn=>btn.hidden=false);
+    $("toolSearch").focus();
+  });
 
-// WhatsApp Share Handler
-$("shareWhatsApp").addEventListener("click",()=>{
-  const toolName=tools[activeTool].title;
-  const insightText=$("insightText").textContent;
-  const text=encodeURIComponent(`📊 *ArthaSetu Financial Insight*\nTool: ${toolName}\n${insightText}\nCheck free open engine at: https://arthasetu.in/`);
-  window.open(`https://api.whatsapp.com/send?text=${text}`,'_blank');
-});
+  $("resetBtn").addEventListener("click",()=>setTool(activeTool));
 
-// CSV Data Export Handler
-$("exportCSV").addEventListener("click",()=>{
-  const res=tools[activeTool].calc();
-  let csv="data:text/csv;charset=utf-8,Metric,Value\n";
-  res.metrics.forEach(([k,v])=>{ csv+=`"${k}","${v.replace(/₹|,/g,'')}"\n`; });
-  if(res.scenarios){
-    csv+="\n" + res.scenarioHeaders.join(",") + "\n";
-    res.scenarios.forEach(row=>{ csv+=row.map(c=>`"${c.replace(/₹|,/g,'')}"`).join(",") + "\n"; });
-  }
-  const encodedUri=encodeURI(csv);
-  const link=document.createElement("a");
-  link.setAttribute("href",encodedUri);
-  link.setAttribute("download",`${activeTool}-arthasetu-data.csv`);
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-});
+  $("shareWhatsApp").addEventListener("click",()=>{
+    const text=encodeURIComponent(`${currentSummary()}\nhttps://arthasetu.in/`);
+    window.open(`https://api.whatsapp.com/send?text=${text}`,"_blank","noopener,noreferrer");
+  });
 
-// Print & PDF Handler
-$("printReport").addEventListener("click",()=>{
-  window.print();
-});
+  $("copySummary").addEventListener("click",async()=>{
+    const btn=$("copySummary"), original=btn.textContent;
+    try {
+      await navigator.clipboard.writeText(currentSummary());
+    } catch {
+      const ta=document.createElement("textarea");
+      ta.value=currentSummary(); document.body.appendChild(ta);
+      ta.select(); document.execCommand("copy"); ta.remove();
+    }
+    btn.textContent="✅ Copied!";
+    setTimeout(()=>btn.textContent=original,2000);
+  });
 
-$("theme").addEventListener("click",()=>{
-  document.body.classList.toggle("dark");
-  localStorage.setItem("arthasetu-theme",document.body.classList.contains("dark")?"dark":"light");
-});
-if(localStorage.getItem("arthasetu-theme")==="dark") document.body.classList.add("dark");
+  $("exportCSV").addEventListener("click",()=>{
+    const res=tools[activeTool].calc();
+    const csvRows=[["Metric","Value"],...res.metrics];
+    csvRows.push([]);
+    csvRows.push(res.scenarioHeaders);
+    csvRows.push(...res.scenarios);
+    const csv=csvRows.map(row=>row.map(v=>`"${String(v??"").replace(/"/g,'""').replace(/₹/g,"").trim()}"`).join(",")).join("\r\n");
+    const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
+    const url=URL.createObjectURL(blob);
+    const link=document.createElement("a");
+    link.href=url; link.download=`${activeTool}-arthasetu-data.csv`;
+    document.body.appendChild(link); link.click(); link.remove();
+    URL.revokeObjectURL(url);
+  });
 
-setTool("tax-breakeven");
+  $("printReport").addEventListener("click",()=>window.print());
+
+  $("theme").addEventListener("click",()=>{
+    document.body.classList.toggle("dark");
+    localStorage.setItem("arthasetu-theme",document.body.classList.contains("dark")?"dark":"light");
+  });
+  if(localStorage.getItem("arthasetu-theme")==="dark") document.body.classList.add("dark");
+
+  // All-calculator menu
+  $("allCalcToggle").addEventListener("click",e=>{
+    e.stopPropagation();
+    $("allCalcMenu").classList.toggle("show");
+  });
+  document.addEventListener("click",e=>{
+    const menu=$("allCalcMenu");
+    if(!menu.contains(e.target) && e.target!==$("allCalcToggle")) menu.classList.remove("show");
+  });
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape") $("allCalcMenu").classList.remove("show");
+  });
+
+  setTool(activeTool);
 })();
 </script>
 </body>
