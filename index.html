@@ -598,7 +598,6 @@ body.dark .footer{background:#070d14}
   </div>
 
   <!-- Ad Banner Space -->
-  <div class="ad-slot"><span>Google AdSense Header Unit Area</span></div>
 
   <!-- Main Calculator Card -->
   <section class="calculator" id="calculatorCard">
@@ -648,6 +647,10 @@ body.dark .footer{background:#070d14}
         <button class="btn-action btn-print" id="printReport" type="button">📄 Print / PDF</button>
       </div>
 
+       </div>
+    </section>
+    </div>
+
 <!-- Detailed Editorial Guide for SEO and AdSense Compliance -->
 <section class="section" id="editorial-guide">
   <h2>Comprehensive Indian Tax & Financial Planning Guide</h2>
@@ -685,6 +688,61 @@ body.dark .footer{background:#070d14}
 </section>
 
 <!-- FAQs Section -->
+
+
+<section class="section" id="calculation-methodology">
+  <h2>How Our Financial Calculators Work</h2>
+
+  <p>
+    ArthaSetu provides financial estimates using the values entered by
+    the visitor and the calculation method described for each tool.
+    Results are illustrative and may differ from actual tax assessments,
+    lender statements, payroll calculations or financial product terms.
+  </p>
+
+  <h3>How EMI Is Calculated</h3>
+  <p>
+    For a standard fixed-rate loan with monthly repayments, the EMI
+    is calculated using the principal, monthly interest rate and
+    number of monthly instalments. The calculation assumes that the
+    interest rate and repayment schedule remain unchanged.
+  </p>
+  <p>
+    Example: For a loan principal of ₹10,00,000, an annual interest
+    rate of 9% and a tenure of 10 years, the monthly interest rate
+    is 0.75%. The EMI formula estimates the regular monthly repayment.
+    Actual lender charges, fees, insurance and rate changes may affect
+    the final amount.
+  </p>
+
+  <h3>How SIP Projections Are Estimated</h3>
+  <p>
+    SIP projections use the monthly contribution, assumed annual return
+    and investment duration to estimate a future value. The result is
+    a mathematical projection, not a promise of investment performance.
+    Market-linked investments can lose value, and actual returns vary.
+  </p>
+
+  <h3>How GST Is Calculated</h3>
+  <p>
+    For a price before GST, the tax amount is calculated by multiplying
+    the taxable value by the selected GST rate. For a GST-inclusive
+    price, the taxable value is estimated by dividing the total price
+    by 1 plus the GST rate expressed as a decimal. The applicable rate
+    depends on the product or service and the relevant tax rules.
+  </p>
+
+  <h3>Important Limitations</h3>
+  <ul>
+    <li>Check the financial year and applicable tax rules before relying on tax estimates.</li>
+    <li>Tax results can depend on residency, income type, deductions, rebates and other eligibility conditions.</li>
+    <li>Loan calculations may not include lender fees, insurance or variable interest rates.</li>
+    <li>SIP and FD projections use assumptions; actual product terms and returns can differ.</li>
+    <li>Verify important decisions with the relevant official authority or financial institution.</li>
+  </ul>
+  
+</section>
+
 <section class="section faq" id="faq">
   <h2>Frequently Asked Questions</h2>
   <details><summary>Is ArthaSetu India affiliated with the Income Tax Department?</summary><p>No. ArthaSetu India is an independent financial intelligence platform. We provide transparent mathematical engines based on published statutory rules.</p></details>
@@ -1304,7 +1362,14 @@ body.dark .footer{background:#070d14}
     document.body.classList.toggle("dark");
     localStorage.setItem("arthasetu-theme",document.body.classList.contains("dark")?"dark":"light");
   });
-  if(localStorage.getItem("arthasetu-theme")==="dark") document.body.classList.add("dark");
+ 
+try {
+  if (localStorage.getItem("arthasetu-theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+} catch (error) {
+  console.warn("Theme preference could not be loaded.", error);
+}
 
   // All-calculator menu
   $("allCalcToggle").addEventListener("click",e=>{
