@@ -1,0 +1,67 @@
+<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Loan Intelligence India | ArthaSetu</title><meta name="description" content="Find Government, MSME, business, education, agriculture, home, vehicle and personal loan routes with official application links."><style>:root{--line:#dfe5ec;--card:#fff;--bg:#f6f8fb;--text:#18202a;--muted:#667085;--primary:#146ef5;--primary-light:#eef5ff}body{font-family:Arial,sans-serif;margin:0;background:#f6f8fb;color:#18202a}.wrap{max-width:920px;margin:auto;padding:18px}.brand{font-weight:900;font-size:22px}.sub{color:#667085;font-size:13px;line-height:1.5}.loan-intelligence{background:#fff}
+/* Loan Intelligence FINAL */
+.loan-final{margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.loan-final h2{margin:0 0 4px;font-size:20px}.loan-final p{font-size:12px;line-height:1.55;color:var(--muted)}
+.loan-final-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.loan-final-grid a{padding:11px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--text);font-size:11px;font-weight:900}
+.loan-final-grid a:hover{border-color:var(--p)}
+.loan-final-note{margin-top:12px;padding:10px;border-radius:10px;background:#f1f8fc;font-size:11px;line-height:1.5}
+@media(max-width:700px){.loan-final-grid{grid-template-columns:1fr 1fr}}@media(max-width:500px){.loan-final-grid{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><div class="brand">ArthaSetu</div><p class="sub">Loan Intelligence — official application and lender links</p>
+<div class="loan-intelligence" id="loan-intelligence">
+  <div class="gov-kicker">ArthaSetu Loan Intelligence</div>
+  <h3>कौन-सा Loan लेना है?</h3>
+  <p class="li-sub">Government schemes, business finance, education, agriculture, housing, vehicle और personal-loan discovery एक जगह। हर application button official lender/portal पर जाता है।</p>
+  <div class="li-tools">
+    <button onclick="liPreset('business loan')">Business</button><button onclick="liPreset('personal loan')">Personal</button>
+    <button onclick="liPreset('education loan')">Education</button><button onclick="liPreset('home loan')">Home</button>
+    <button onclick="liPreset('agriculture loan')">Agriculture</button><button onclick="liPreset('vehicle loan')">Vehicle</button>
+    <button onclick="liPreset('msme loan')">MSME</button><button onclick="liPreset('subsidy loan')">Subsidy</button>
+  </div>
+  <div class="li-search"><input id="liInput" type="search" placeholder="जैसे PMEGP, MUDRA, personal loan, education loan, KCC..."><button onclick="liSearch()">Find Loan</button></div>
+  <div id="liResults" class="li-results" aria-live="polite"></div>
+  <div class="li-note"><b>Application rule:</b> ArthaSetu loan approve नहीं करता। Final eligibility, interest rate, sanction, subsidy and documentation संबंधित scheme/lender तय करता है।</div>
+  <div class="li-disclaimer">Government scheme limits/eligibility can change. Before applying, verify the latest official terms on the linked portal. Private lenders shown are examples, not an exhaustive list of every lender in India.</div>
+</div>
+<script>
+const LI=[
+ {k:['pmegp','employment generation','subsidy loan','business','msme'],n:'PMEGP — Prime Minister Employment Generation Programme',d:'New micro-enterprise finance with margin-money subsidy subject to current PMEGP rules.',t:['Government','Business','Subsidy'],a:'https://www.common-pmegp.msme.gov.in/'},
+ {k:['mudra','mudra loan','shishu','kishor','tarun','tarun plus','business'],n:'PM MUDRA Yojana',d:'Collateral-free micro-enterprise credit through eligible lending institutions; four categories.',t:['Government','Business','Up to ₹20L'],a:'https://www.jansamarth.in/'},
+ {k:['stand up india','standup','sc st women business'],n:'Stand-Up India',d:'Institutional finance route for eligible SC/ST and women entrepreneurs; verify current portal status.',t:['Government','Business'],a:'https://www.standupmitra.in/'},
+ {k:['vishwakarma','pm vishwakarma','artisan','craftsman'],n:'PM Vishwakarma',d:'Credit and other support for eligible traditional artisans/craftspeople.',t:['Government','Artisan'],a:'https://pmvishwakarma.gov.in/'},
+ {k:['svanidhi','street vendor','vendor'],n:'PM SVANidhi',d:'Micro-credit support for eligible street vendors with progressive loan tranches.',t:['Government','Micro-credit'],a:'https://pmsvanidhi.mohua.gov.in/'},
+ {k:['cgtmse','collateral free msme','credit guarantee','msme loan'],n:'CGTMSE Credit Guarantee',d:'Credit guarantee framework that supports eligible lenders in extending collateral-free MSE credit; borrower applies through a participating lender.',t:['Government','MSME','Guarantee'],a:'https://www.cgtmse.in/'},
+ {k:['kcc','kisan credit card','agriculture loan','farmer','crop loan'],n:'Kisan Credit Card / Agriculture Credit',d:'Agriculture credit route; eligibility and limits depend on the lending institution and applicable rules.',t:['Agriculture','Government-linked'],a:'https://www.jansamarth.in/'},
+ {k:['education loan','education','student loan','vidyalaxmi','pm vidyalaxmi'],n:'PM-Vidyalaxmi / Education Loan',d:'Digital education-loan route for eligible students; current scheme rules include collateral/guarantor-free product and interest-subvention provisions for eligible cases.',t:['Education','Government'],a:'https://pmvidyalaxmi.co.in/'},
+ {k:['home loan','housing loan','house loan'],n:'Home Loan — Banks / Housing Finance',d:'Compare current home-loan products and apply on an official lender website.',t:['Home','Bank/NBFC'],a:'https://sbi.co.in/web/personal-banking/loans/home-loans'},
+ {k:['personal loan','emergency loan','salary loan'],n:'Personal Loan — Banks / NBFCs',d:'Unsecured personal credit; rate, amount and approval depend on lender underwriting.',t:['Personal','Bank/NBFC'],a:'https://sbi.co.in/web/personal-banking/loans/personal-loans'},
+ {k:['vehicle loan','car loan','bike loan','two wheeler'],n:'Vehicle Loan',d:'Vehicle finance through banks/NBFCs; compare official lender terms before applying.',t:['Vehicle','Bank/NBFC'],a:'https://sbi.co.in/web/personal-banking/loans/auto-loans'},
+ {k:['loan against property','lap','property loan'],n:'Loan Against Property',d:'Secured loan against eligible property; lender valuation and eligibility apply.',t:['Secured','Property'],a:'https://sbi.co.in/web/personal-banking/loans/loan-against-property'},
+ {k:['gold loan','sona loan'],n:'Gold Loan',d:'Secured credit against eligible gold; terms vary by lender.',t:['Secured','Gold'],a:'https://www.sbi.co.in/web/personal-banking/loans/gold-loan'},
+ {k:['msme','working capital','term loan','business finance'],n:'MSME Working Capital / Term Loan',d:'Business financing through banks/NBFCs; collateral, cash-flow and credit assessment vary.',t:['MSME','Business'],a:'https://www.jansamarth.in/'},
+ {k:['loan comparison','compare loan','all loans','loan finder'],n:'Loan Finder — JanSamarth',d:'Government credit-linked schemes can be discovered and applied for through the official JanSamarth journey where supported.',t:['Government','Finder'],a:'https://www.jansamarth.in/'},
+ {k:['bank','private bank','nbfc','lender','all lenders'],n:'RBI Regulated Lender Discovery',d:'Use RBI resources to verify regulated entities before sharing documents or applying.',t:['Safety','Verification'],a:'https://www.rbi.org.in/'}
+];
+function liNorm(x){return (x||'').toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}\s]/gu,' ')}
+function liPreset(x){document.getElementById('liInput').value=x;liSearch()}
+function liSearch(){const q=liNorm(document.getElementById('liInput').value).trim();const box=document.getElementById('liResults');if(!q){box.innerHTML='';return;}const ts=q.split(/\s+/);let arr=LI.map(x=>({x,score:x.k.reduce((s,k)=>s+(ts.some(t=>liNorm(k).includes(t))?2:0),0)})).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);if(!arr.length)arr=[{x:LI.find(x=>x.n.includes('JanSamarth')),score:1}];box.innerHTML=arr.slice(0,10).map(({x})=>`<div class="li-card"><div class="li-card-top"><div><strong>${x.n}</strong><small>${x.d}</small></div></div><div class="li-tags">${x.t.map(t=>`<span class="li-tag">${t}</span>`).join('')}</div><div class="li-actions"><a href="${x.a}" target="_blank" rel="noopener noreferrer">Official / Lender ↗</a></div></div>`).join('')}
+</script>
+<p class="sub">Government scheme source references: MyMSME, PMEGP portal, PIB and Ministry of Education. Private lender products are not exhaustive and must be verified on the lender's official website.</p></div>
+<section class="loan-final" id="official-routes">
+  <h2>Official Loan Routes</h2>
+  <p>Direct application is shown only where an official application route is available. For private loans, ArthaSetu does not claim an exhaustive permanently current list of every lender; verify the lender and current terms before applying.</p>
+  <div class="loan-final-grid">
+    <a href="https://www.jansamarth.in/" target="_blank" rel="noopener noreferrer">JanSamarth — Government Credit ↗</a>
+    <a href="https://www.common-pmegp.msme.gov.in/" target="_blank" rel="noopener noreferrer">PMEGP Official Portal ↗</a>
+    <a href="https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy" target="_blank" rel="noopener noreferrer">MUDRA Official Information ↗</a>
+    <a href="https://pmvishwakarma.gov.in/" target="_blank" rel="noopener noreferrer">PM Vishwakarma ↗</a>
+    <a href="https://pmsvanidhi.mohua.gov.in/" target="_blank" rel="noopener noreferrer">PM SVANidhi ↗</a>
+    <a href="https://pmvidyalaxmi.co.in/" target="_blank" rel="noopener noreferrer">PM-Vidyalaxmi ↗</a>
+    <a href="https://www.cgtmse.in/" target="_blank" rel="noopener noreferrer">CGTMSE ↗</a>
+    <a href="https://www.rbi.org.in/" target="_blank" rel="noopener noreferrer">RBI — Lender Verification ↗</a>
+    <a href="https://www.msme.gov.in/" target="_blank" rel="noopener noreferrer">MSME Ministry ↗</a>
+  </div>
+  <div class="loan-final-note"><b>Important:</b> Government guarantee/subsidy does not mean automatic loan approval. CGTMSE provides a guarantee framework to eligible lenders; borrowers apply through participating lenders. PMEGP uses its official application process. Never pay a middleman for a “guaranteed” Government loan.</div>
+</section>
+
+</body></html>
